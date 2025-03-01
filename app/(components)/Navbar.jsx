@@ -16,11 +16,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between py-[1rem] px-8 font-bold text-lg md:text-[1rem] border-b border-b-color-2">
+      <nav className="flex items-center justify-between py-[1rem] md:py-0 px-8 font-bold text-lg md:text-[1rem] border-b border-b-color-2">
         <Image src={zimFlag} alt="Company logo" width={60} height={40} />
         <div
           className={`${
-            showNavbar ? "flex w-full" : " hidden"
+            showNavbar ? "flex w-full min-h-[50vh] overflow-y-auto" : " hidden"
           } md:flex flex-col items-center pt-[2rem] md:pt-0 max-h-screen overflow-y-auto md:flex-row fixed md:relative top-0 left-0 bg-white z-50`}
         >
           <button
