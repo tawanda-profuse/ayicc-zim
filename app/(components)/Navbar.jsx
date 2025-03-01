@@ -5,9 +5,14 @@ import zimFlag from "../../public/images/zim_national_flag.png";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const pathname = usePathname(); // Get current path
+
+  const getLinkClass = (href) =>
+    pathname === href ? "text-[#6C98E1]" : "text-[#002E5B]";
 
   return (
     <>
@@ -26,13 +31,17 @@ const Navbar = () => {
           </button>
           <Link
             href="/"
-            className="text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]"
+            className={`${getLinkClass(
+              "/"
+            )} py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
           >
             Home
           </Link>
           <Link
-            href="/"
-            className="text-[#002E5B] hover:text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]"
+            href="/about"
+            className={`${getLinkClass(
+              "/about"
+            )} hover:text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
           >
             About Us
           </Link>
@@ -92,46 +101,6 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBars} />
         </button>
       </nav>
-      <div className="w-[90vw] mx-auto items-center text-color-1 font-bold py-4 overflow-hidden">
-        <div className="flex whitespace-nowrap animate-scroll">
-          <div className="flex gap-2">
-            <span>
-              📈 SADC Commodity Market Update: Gold rises with strong demand in
-              South Africa |
-            </span>
-            <span>
-              Platinum gains amid supply concerns | Diamonds see stable prices
-              in Botswana |
-            </span>
-            <span>Crude oil steady as Angola boosts production |</span>
-            <span>Natural gas fluctuates in Mozambique |</span>
-            <span>Maize prices climb due to weather challenges |</span>
-            <span>Sugar surges with increased exports from Eswatini |</span>
-            <span>
-              Copper declines as Zambia and DRC face lower global demand | Stay
-              tuned for more regional market insights! 🚀📉
-            </span>
-          </div>
-          <div className="flex gap-2">
-            <span>
-              📈 SADC Commodity Market Update: Gold rises with strong demand in
-              South Africa |
-            </span>
-            <span>
-              Platinum gains amid supply concerns | Diamonds see stable prices
-              in Botswana |
-            </span>
-            <span>Crude oil steady as Angola boosts production |</span>
-            <span>Natural gas fluctuates in Mozambique |</span>
-            <span>Maize prices climb due to weather challenges |</span>
-            <span>Sugar surges with increased exports from Eswatini |</span>
-            <span>
-              Copper declines as Zambia and DRC face lower global demand | Stay
-              tuned for more regional market insights! 🚀📉
-            </span>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

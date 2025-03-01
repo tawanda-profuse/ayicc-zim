@@ -26,6 +26,7 @@ body {
   position: relative;
   margin-bottom: 1.5rem;
 }
+
 .heading-special::after {
   content: '';
   position: absolute;

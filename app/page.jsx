@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import carousel1 from "../public/images/carousel-1.png";
 import description from "../public/images/description.png";
@@ -13,6 +14,47 @@ import Link from "next/link";
 
 export default function Home() {
   return (
+    <>
+    <div className="w-[90vw] mx-auto items-center text-color-1 font-bold py-4 overflow-hidden">
+        <div className="flex whitespace-nowrap animate-scroll">
+          <div className="flex gap-2">
+            <span>
+              📈 SADC Commodity Market Update: Gold rises with strong demand in
+              South Africa |
+            </span>
+            <span>
+              Platinum gains amid supply concerns | Diamonds see stable prices
+              in Botswana |
+            </span>
+            <span>Crude oil steady as Angola boosts production |</span>
+            <span>Natural gas fluctuates in Mozambique |</span>
+            <span>Maize prices climb due to weather challenges |</span>
+            <span>Sugar surges with increased exports from Eswatini |</span>
+            <span>
+              Copper declines as Zambia and DRC face lower global demand | Stay
+              tuned for more regional market insights! 🚀📉
+            </span>
+          </div>
+          <div className="flex gap-2">
+            <span>
+              📈 SADC Commodity Market Update: Gold rises with strong demand in
+              South Africa |
+            </span>
+            <span>
+              Platinum gains amid supply concerns | Diamonds see stable prices
+              in Botswana |
+            </span>
+            <span>Crude oil steady as Angola boosts production |</span>
+            <span>Natural gas fluctuates in Mozambique |</span>
+            <span>Maize prices climb due to weather challenges |</span>
+            <span>Sugar surges with increased exports from Eswatini |</span>
+            <span>
+              Copper declines as Zambia and DRC face lower global demand | Stay
+              tuned for more regional market insights! 🚀📉
+            </span>
+          </div>
+        </div>
+      </div>
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <p className="text-color-2 font-semibold">
         Welcome to the SADC Online Trade, Investment, and Technology Platform
@@ -237,5 +279,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }

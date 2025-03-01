@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${openSans.variable} antialiased`}>
-      <InfoRibbon/>
-      <Navbar/>
-      {children}
-      <Footer/>
+        <InfoRibbon />
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
