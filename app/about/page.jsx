@@ -233,6 +233,7 @@ const page = () => {
                 src={item.image}
                 className="w-[7rem] md:w-[15rem] h-[7rem] md:h-[15rem] mx-auto rounded-full mb-[1rem]"
                 height={200}
+                alt={item.name}
               />
               <h3 className="font-bold text-[#002E5B]">{item.name}</h3>
               <h4 className="text-color-2">{item.role}</h4>
