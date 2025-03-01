@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-color-3 p-[1rem] flex justify-between items-center w-full">
+    <footer className="bg-[#002e5b] text-white py-[1rem] px-[4rem] flex justify-between items-center w-full">
       &copy; AYICC Zimbabwe {new Date().getFullYear()}
       <div className="flex gap-2">
         <a href="https://facebook.com" className="bg-white p-2 rounded-full hover:bg-[#3a5897]">
