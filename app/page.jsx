@@ -236,7 +236,7 @@ export default function Home() {
               link: "https://google.com"
             },
           ].map((item, index) => (
-            <Link key={index} className="relative shadow-sm shadow-color-2 rounded-sm max-h-[85vh]" href={item.link}>
+            <Link key={index} className="relative shadow-sm shadow-color-2 rounded-sm md:max-h-[85vh]" href={item.link}>
               <Image
                 src={item.image}
                 alt={item.title}
