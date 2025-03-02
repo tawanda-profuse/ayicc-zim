@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between py-[1rem] md:py-0 px-8 font-bold text-lg md:text-[1rem] border-b border-b-color-2">
+      <nav className="bg-white flex items-center justify-between py-[1rem] md:py-0 px-8 font-bold text-lg md:text-[1rem] border-b border-b-color-2">
         <Image src={zimFlag} alt="Company logo" width={60} height={40} />
         <div
           className={`${
@@ -34,6 +34,7 @@ const Navbar = () => {
             className={`${getLinkClass(
               "/"
             )} py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
           >
             Home
           </Link>
@@ -42,6 +43,7 @@ const Navbar = () => {
             className={`${getLinkClass(
               "/about"
             )} hover:text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
           >
             About Us
           </Link>
@@ -50,6 +52,7 @@ const Navbar = () => {
             className={`${getLinkClass(
               "/contact"
             )} hover:text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
           >
             Contact Us
           </Link>
