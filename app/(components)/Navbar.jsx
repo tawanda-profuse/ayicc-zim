@@ -50,6 +50,15 @@ const Navbar = () => {
             About Us
           </Link>
           <Link
+            href="/key-areas"
+            className={`${getLinkClass(
+              "/key-areas"
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
+          >
+            Key Areas
+          </Link>
+          <Link
             href="/contact"
             className={`${getLinkClass(
               "/contact"

@@ -20,28 +20,11 @@ const poppinsBlack = Poppins({
 });
 
 export default function Home() {
-  const eventsRef = useRef();
+  const eventsRef = useRef(null);
   const handleEventsScroll = () => {
     eventsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  const [events, setEvents] = useState([
-    {
-      title: "SADC Mining Indaba - Zimbabwe",
-      date: "Sat Mar 01 2025 14:39:36 GMT+0200 (Central Africa Time)",
-      location: "Harare",
-      image:
-        "https://sotip.cybersecdigital.com/wp-content/uploads/2025/02/DALL%C2%B7E-2025-02-12-15.53.39-A-professional-digital-flyer-for-the-SADC-Mining-Indaba-2025.-The-event-is-scheduled-for-25th-February-2025-and-will-focus-on-mining-investments-su.webp",
-      link: "https://google.com",
-    },
-    {
-      title: "SADC Imposium on Investment",
-      date: "Thu Feb 27 2025 17:39:36 GMT+0200 (Central Africa Time)",
-      location: "Gaborone",
-      image:
-        "https://sotip.cybersecdigital.com/wp-content/uploads/2025/02/Screenshot-2025-02-12-160756.png",
-      link: "https://google.com",
-    },
-  ]);
+  const [events, setEvents] = useState([]);
   return (
     <>
       {events.length > 0 && (

@@ -53,3 +53,9 @@ body {
   min-width: 200%;
   animation: scroll 100s linear infinite;
 }
+
+.required-field::after{
+  content: "*";
+  color: red;
+  font-weight: bold;
+}

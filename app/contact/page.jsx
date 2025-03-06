@@ -4,20 +4,78 @@ import {
   faEnvelope,
   faLocationPin,
   faPhone,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
-const page = () => {
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+  const messageRef = useRef(null);
+
   useEffect(() => {
     document.title = "Contact Us - AYICC Zim";
   }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
+
+    if (!formData.message) {
+      setIsError(true);
+      setSuccessMessage("Message is required");
+      setLoading(false);
+      return;
+    }
+
+    setSuccessMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccessMessage("Your message has been sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setSuccessMessage("Error: " + data.error);
+        setIsError(true);
+      }
+    } catch (error) {
+      setSuccessMessage("Failed to send message. Try again later.");
+      setIsError(true);
+    } finally {
+      setIsError(false);
+      setLoading(false);
+    }
+  };
+
   return (
     <main>
       <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row justify-center gap-10">
@@ -92,7 +150,10 @@ const page = () => {
             ))}
           </div>
         </div>
-        <form className="w-full md:w-2/4 order order-1 md:order-2">
+        <form
+          className="w-full md:w-2/4 order order-1 md:order-2"
+          onSubmit={handleSubmit}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <label htmlFor="first-name" className="text-lg font-bold">
@@ -101,34 +162,10 @@ const page = () => {
               <input
                 type="text"
                 id="first-name"
-                placeholder="First Name *"
+                name="name"
+                placeholder="Write your name e.g. John Doe"
                 className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="interest" className="text-lg font-bold">
-                Area of Interest
-              </label>
-              <select
-                id="interest"
-                className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-              >
-                <option value="">Select an option*</option>
-                <option value="Business">Business</option>
-                <option value="Investments">Investments</option>
-                <option value="Climate Change">Climate Change</option>
-                <option value="Politics">Politics</option>
-              </select>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="title" className="text-lg font-bold">
-                Title
-              </label>
-              <input
-                type="text"
-                id="title"
-                placeholder="Title e.g. Dr."
-                className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                onChange={handleChange}
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -138,8 +175,10 @@ const page = () => {
               <input
                 type="text"
                 id="subject"
-                placeholder="Topic to discuss*"
+                name="subject"
+                placeholder="Topic to discuss"
                 className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                onChange={handleChange}
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -149,27 +188,52 @@ const page = () => {
               <input
                 type="email"
                 id="email"
-                placeholder="Your email address*"
+                name="email"
+                placeholder="Your email address"
                 className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                onChange={handleChange}
               />
             </div>
           </div>
           <div className="flex flex-col gap-6 my-6">
-            <label htmlFor="message" className="text-lg font-bold">
+            <label
+              htmlFor="message"
+              className="text-lg font-bold required-field"
+            >
               Message
             </label>
             <textarea
               id="message"
-              placeholder="Write your message to us*"
+              name="message"
+              placeholder="Write your message to us"
               className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+              onChange={handleChange}
             />
             <button
               type="submit"
               className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
+              disabled={loading}
             >
-              Submit <FontAwesomeIcon icon={faChevronRight} />
+              {loading ? (
+                <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+              ) : (
+                <>
+                  Submit
+                  <FontAwesomeIcon icon={faChevronRight} />
+                </>
+              )}
             </button>
+            {successMessage && (
+              <p
+                className={`font-bold ${
+                  isError ? "text-red-500" : "text-green-600"
+                }`}
+              >
+                {successMessage}
+              </p>
+            )}
           </div>
+          <div ref={messageRef}></div>
         </form>
       </section>
       <iframe
@@ -184,4 +248,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Contact;
