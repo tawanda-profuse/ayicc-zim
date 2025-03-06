@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import zimFlag from "../../public/images/zim_national_flag.png";
+import logo from "../../public/images/ayicc-logo.jpeg";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -12,15 +12,17 @@ const Navbar = () => {
   const pathname = usePathname(); // Get current path
 
   const getLinkClass = (href) =>
-    pathname === href ? "text-[#6C98E1]" : "text-[#002E5B]";
+    pathname === href ? "text-ayicc-dark-green" : "text-[#002E5B]";
 
   return (
     <>
       <nav className="bg-white flex items-center justify-between py-[1rem] md:py-0 px-8 font-bold text-lg md:text-[1rem] border-b border-b-color-2">
-        <Image src={zimFlag} alt="Company logo" width={60} height={40} />
+        <Link href="/">
+          <Image src={logo} alt="Company logo" width={120} height={40} />
+        </Link>
         <div
           className={`${
-            showNavbar ? "flex w-full min-h-[50vh] overflow-y-auto" : " hidden"
+            showNavbar ? "flex w-full min-h-[50vh] overflow-y-auto" : "hidden"
           } md:flex flex-col items-center pt-[2rem] md:pt-0 max-h-screen overflow-y-auto md:flex-row fixed md:relative top-0 left-0 bg-white z-50`}
         >
           <button
@@ -33,7 +35,7 @@ const Navbar = () => {
             href="/"
             className={`${getLinkClass(
               "/"
-            )} py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
             onClick={() => setShowNavbar(false)}
           >
             Home
@@ -42,7 +44,7 @@ const Navbar = () => {
             href="/about"
             className={`${getLinkClass(
               "/about"
-            )} hover:text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
             onClick={() => setShowNavbar(false)}
           >
             About Us
@@ -51,7 +53,7 @@ const Navbar = () => {
             href="/contact"
             className={`${getLinkClass(
               "/contact"
-            )} hover:text-[#6C98E1] py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
             onClick={() => setShowNavbar(false)}
           >
             Contact Us

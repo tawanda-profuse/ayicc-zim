@@ -34,13 +34,13 @@ body {
   bottom: -25%;
   padding: 0.25rem;
   width: 2.5rem;
-  background-color: yellow;
+  background-color: #D1CE68;
 }
 
 
 @keyframes scroll {
   from {
-    transform: translateX(0%);
+    transform: translateX(50%);
   }
 
   to {
@@ -51,5 +51,5 @@ body {
 .animate-scroll {
   display: flex;
   min-width: 200%;
-  animation: scroll 30s linear infinite;
+  animation: scroll 100s linear infinite;
 }

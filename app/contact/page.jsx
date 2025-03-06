@@ -1,3 +1,4 @@
+"use client";
 import {
   faChevronRight,
   faEnvelope,
@@ -5,7 +6,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -14,6 +15,9 @@ import {
 } from "react-icons/fa";
 
 const page = () => {
+  useEffect(() => {
+    document.title = "Contact Us - AYICC Zim";
+  }, []);
   return (
     <main>
       <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row justify-center gap-10">
@@ -24,38 +28,57 @@ const page = () => {
           </p>
           <h1 className="my-[1rem] font-bold text-2xl">Contact Details</h1>
           <div className="flex gap-3 items-center">
-            <FontAwesomeIcon icon={faLocationPin} className="text-[#337ab7]" />
-            <address>6 Coombe Place, Rivonia</address>
+            <FontAwesomeIcon
+              icon={faLocationPin}
+              className="text-ayicc-light-green"
+            />
+            <address>
+              10th floor, Bard House, 69 Samora Machel, Harare, Zimbabwe
+            </address>
           </div>
           <div className="flex gap-3 items-center">
-            <FontAwesomeIcon icon={faPhone} className="text-[#337ab7]" />
-            <a href="tel:+27 010 596 1888" className="text-color-1 underline">
-              +27 010 596 1888
+            <FontAwesomeIcon
+              icon={faLocationPin}
+              className="text-ayicc-light-green"
+            />
+            <address>
+              Kuimba Shiri, Lake Chivero Recreational Park, Norton, Zimbabwe
+            </address>
+          </div>
+          <div className="flex gap-3 items-center">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="text-ayicc-light-green"
+            />
+            <a href="tel:+263785757022" className="text-color-1 underline">
+              +263 78 575 7022
             </a>
           </div>
           <div className="flex gap-3 items-center">
-            <FontAwesomeIcon icon={faEnvelope} className="text-[#337ab7]" />
-            <a href="mailto:info@sadcbc.org" className="text-color-1 underline">
-              info@sadcbc.org
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="text-ayicc-light-green"
+            />
+            <a
+              href="mailto:ayicczim@gmail.com"
+              className="text-color-1 underline"
+            >
+              ayicczim@gmail.com
             </a>
           </div>
           <div className="flex gap-3 items-center mt-[1rem]">
             {[
               {
                 icon: <FaFacebookF />,
-                link: "https://google.com",
+                link: "https://www.facebook.com/AYICCZimbabwe/",
               },
               {
                 icon: <FaTwitter />,
-                link: "https://google.com",
-              },
-              {
-                icon: <FaLinkedinIn />,
-                link: "https://google.com",
+                link: "https://x.com/ayicc",
               },
               {
                 icon: <FaInstagram />,
-                link: "https://google.com",
+                link: "https://www.instagram.com/ayiccafrica",
               },
             ].map((item, index) => (
               <a
@@ -142,7 +165,7 @@ const page = () => {
             />
             <button
               type="submit"
-              className="flex items-center justify-center gap-3 bg-[#002E5B] text-white hover:bg-[yellow] hover:text-[#002E5B] p-4 font-bold"
+              className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
             >
               Submit <FontAwesomeIcon icon={faChevronRight} />
             </button>
@@ -150,7 +173,7 @@ const page = () => {
         </form>
       </section>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.2686022751286!2d31.04689217356964!3d-17.82603907625209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e3b85d8e7f%3A0x3f6c0d6fffc5342e!2sReserve%20Bank%20of%20Zimbabwe!5e0!3m2!1sen!2szw!4v1740854139270!5m2!1sen!2szw"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.2675254791416!2d31.050202015215053!3d-17.826089588804248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e3dd900005%3A0x6662bdf052355d57!2sBard%20House!5e0!3m2!1sen!2szw!4v1741221974709!5m2!1sen!2szw"
         style={{ border: 0 }}
         allowFullScreen=""
         loading="lazy"
