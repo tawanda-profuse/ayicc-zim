@@ -15,7 +15,7 @@ const page = () => {
           backgroundSize: "cover",
         }}
       >
-        <h3 className="text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl">
+        <h3 className="text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl">
           Our Key Thematic Areas
         </h3>
         <div className="grid grid-cols-1 items-start justify-center my-[4rem] px-[1rem] md:px-[4rem]">
