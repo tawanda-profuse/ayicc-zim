@@ -70,17 +70,17 @@ export default function Home() {
           backgroundSize: "cover",
         }}
       >
-        <div className="relative w-[30rem] text-white">
+      
+        <div className="relative w-[90vw] md:w-[30rem] text-white">
           <h1
-            className={`text-9xl  text-center underline ${poppinsBlack.className}`}
+            className={`text-6xl md:text-9xl  text-center underline ${poppinsBlack.className}`}
           >
             AYICC
           </h1>
           <span
-            className="absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 text-2xl w-full text-center font-[700] font-sans"
+            className="hidden md:block absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 text-[1rem] md:text-2xl w-full text-center font-[700] font-sans bg-bottom"
             style={{
               backgroundImage: `url(${dryGround.src})`,
-              backgroundPosition: "bottom",
               backgroundSize: "cover",
             }}
           >

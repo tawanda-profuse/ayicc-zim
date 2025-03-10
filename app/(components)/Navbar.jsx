@@ -21,9 +21,11 @@ const Navbar = () => {
           <Image src={logo} alt="Company logo" width={120} height={40} />
         </Link>
         <div
-          className={`${
-            showNavbar ? "flex w-full min-h-[50vh] overflow-y-auto" : "hidden"
-          } md:flex flex-col items-center pt-[2rem] md:pt-0 max-h-screen overflow-y-auto md:flex-row fixed md:relative top-0 left-0 bg-white z-50`}
+          className={`flex items-center transition-all duration-500 ease-in-out fixed md:relative ${
+            showNavbar
+              ? "flex-col w-full min-h-[50vh] top-0 left-0 bg-white z-50 max-h-screen overflow-y-auto opacity-100 py-[2rem]"
+              : "-top-full -right-full opacity-0"
+          } md:flex-row md:top-0 md:left-0 md:pt-0 md:opacity-100`}
         >
           <button
             className="block md:hidden absolute top-2 right-2 text-color-1 text-4xl"
@@ -66,6 +68,15 @@ const Navbar = () => {
             onClick={() => setShowNavbar(false)}
           >
             Contact Us
+          </Link>
+          <Link
+            href="/innovation-hub"
+            className={`${getLinkClass(
+              "/innovation-hub"
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
+          >
+            Innovation Hub
           </Link>
         </div>
         <button
