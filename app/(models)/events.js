@@ -7,14 +7,23 @@ mongoose.connect(process.env.MONGO_URI);
 mongoose.Promise = global.Promise;
 
 const eventSchema = new Schema({
-  title: String,
-  date: Date,
-  time: Time,
+  title: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
   location: String,
   image: {
     type: String,
     required: true,
-    default: ""
+    default: "",
   },
   description: String,
 });
