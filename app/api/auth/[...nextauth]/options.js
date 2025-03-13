@@ -25,7 +25,12 @@ export const options = {
           user.password
         );
         if (!isValid) {
-          throw new Error("Invalid credentials");
+          throw new Error("Invalid credentials.");
+        }
+
+        const isVerified = user.isVerified;
+        if (!isVerified) {
+          throw new Error("User has not been verified.");
         }
 
         return {
