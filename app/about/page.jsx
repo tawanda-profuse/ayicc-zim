@@ -43,7 +43,7 @@ const page = () => {
     } else if(window.location.href.includes("staff")){
       staffRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, []);
+  });
   return (
     <main>
       <header
