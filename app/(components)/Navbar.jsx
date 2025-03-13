@@ -39,6 +39,10 @@ const Navbar = () => {
       url: "food-security",
       text: "Food Security",
     },
+    {
+      url: "research",
+      text: "Research",
+    },
   ];
 
   const aboutLinks = [

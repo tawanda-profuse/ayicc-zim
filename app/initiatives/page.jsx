@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import catchThemYoung from "../../public/images/catch-them-young.jpg";
 import conference3 from "../../public/images/conference-3.jpg";
 import conference4 from "../../public/images/conference-4.jpg";
@@ -17,8 +17,32 @@ const poppinsBlack = Poppins({
 });
 
 const Initiatives = () => {
+  const awarenessRef = useRef(null);
+  const advocacyRef = useRef(null);
+  const educationRef = useRef(null);
+  const bioRef = useRef(null);
+  const wasteRef = useRef(null);
+  const foodRef = useRef(null);
+  const researchRef = useRef(null);
+
   useEffect(() => {
     document.title = "Our Initiatives | AYICC";
+
+    if (window.location.href.includes("awareness")) {
+      awarenessRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (window.location.href.includes("advocacy")) {
+      advocacyRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (window.location.href.includes("climate-education")) {
+      educationRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (window.location.href.includes("bio-conservation")) {
+      bioRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (window.location.href.includes("waste-management")) {
+      wasteRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (window.location.href.includes("food-security")) {
+      foodRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (window.location.href.includes("research")) {
+      researchRef.current?.scrollIntoView({ behavior: "smooth" });
+    } 
   }, []);
 
   return (
@@ -37,7 +61,7 @@ const Initiatives = () => {
           Initiatives
         </h1>
       </header>
-      <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-between gap-4">
+      <section className="px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-between gap-4 h-screen" ref={awarenessRef}>
         <div className="flex flex-col">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Awareness
@@ -63,6 +87,7 @@ const Initiatives = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
+        ref={advocacyRef}
       >
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
@@ -78,6 +103,7 @@ const Initiatives = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
+        ref={educationRef}
       >
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
@@ -85,7 +111,7 @@ const Initiatives = () => {
           Climate Education
         </h2>
       </section>
-      <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-between gap-4 bg-ayicc-gold">
+      <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-between gap-4 bg-ayicc-gold" ref={bioRef}>
         <div className="flex flex-col">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Bio Diversity Conservation
@@ -114,6 +140,7 @@ const Initiatives = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
+        ref={wasteRef}
       >
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
@@ -129,6 +156,7 @@ const Initiatives = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
+        ref={foodRef}
       >
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
@@ -142,8 +170,9 @@ const Initiatives = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${research.src})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPosition: "top right"
+          backgroundPosition: "top right",
         }}
+        ref={researchRef}
       >
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
