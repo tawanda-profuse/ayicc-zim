@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import catchThemYoung from "../../public/images/catch-them-young.jpg";
-import conference2 from "../../public/images/conference-2.jpg";
 import conference3 from "../../public/images/conference-3.jpg";
 import conference4 from "../../public/images/conference-4.jpg";
 import unConference from "../../public/images/un-conference.jpg";
