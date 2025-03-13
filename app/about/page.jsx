@@ -4,9 +4,9 @@ import Image from "next/image";
 import waterHourGlass from "../../public/images/water-hour-glass.png";
 import profile from "../../public/images/profile.jpg";
 import profile2 from "../../public/images/profile-2.jpg";
-import conference from "../../public/images/conference.jpg";
+import meeting from "../../public/images/meeting.jpg";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
-import cleaning from "../../public/images/cleaning.jpg";
+import trash from "../../public/images/trash.jpg";
 import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
 import { Poppins } from "next/font/google";
 
@@ -49,7 +49,7 @@ const page = () => {
       <header
         className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${conference.src})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${meeting.src})`,
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}
@@ -88,7 +88,7 @@ const page = () => {
           </p>
         </div>
         <Image
-          src={cleaning}
+          src={trash}
           className="w-full md:w-2/4 h-auto"
           alt="People cleaning"
         />
