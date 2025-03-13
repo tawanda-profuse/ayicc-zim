@@ -72,15 +72,15 @@ const CreateEvent = () => {
           image: "",
           description: "",
         });
+        setIsError(false);
       } else {
-        setSuccessMessage("Error: " + data.error);
+        setSuccessMessage(data.message);
         setIsError(true);
       }
     } catch (error) {
       setSuccessMessage("Failed to create the event. Try again later.");
       setIsError(true);
     } finally {
-      setIsError(false);
       setLoading(false);
     }
   };

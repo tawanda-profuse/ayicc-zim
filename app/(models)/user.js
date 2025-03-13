@@ -6,13 +6,31 @@ if (!process.env.MONGO_URI) {
 mongoose.connect(process.env.MONGO_URI);
 mongoose.Promise = global.Promise;
 
-const userSchema = new Schema({
-  firstName: String,
-  lastName: Date,
-  email: {type: String, unique: true},
-  password: String,
-  role: { type: String, default: "user", enum: ["user", "admin"] },
-});
+const userSchema = new Schema(
+  {
+    firstName: String,
+    lastName: String,
+    email: { type: String, unique: true },
+    password: String,
+    role: { type: String, default: "user", enum: ["user", "admin"] },
+    isVerified: { type: Boolean, default: false },
+    userType: {
+      type: String,
+      default: "Innovator",
+      enum: [
+        "Innovator",
+        "Funding Partner",
+        "Expert",
+        "Private Sector",
+        "NGO",
+        "Community Group",
+      ],
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Event = mongoose.models.Event || mongoose.model("Event", userSchema);
-export default Event;
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+export default User;

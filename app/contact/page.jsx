@@ -64,14 +64,13 @@ const Contact = () => {
           message: "",
         });
       } else {
-        setSuccessMessage("Error: " + data.error);
+        setSuccessMessage(data.message);
         setIsError(true);
       }
     } catch (error) {
       setSuccessMessage("Failed to send message. Try again later.");
       setIsError(true);
     } finally {
-      setIsError(false);
       setLoading(false);
     }
   };

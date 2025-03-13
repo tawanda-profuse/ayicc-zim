@@ -37,7 +37,7 @@ const InfoRibbon = () => {
       </span>
       <button
         className="py-2 px-4 rounded-2xl bg-yellow-300 text-ayicc-dark-green font-bold opacity-90 transition-all hover:opacity-100 hover:translate-x-2"
-        onClick={() => router.push("/donate")}
+        onClick={() => router.push("/contact")}
       >
         Support
       </button>

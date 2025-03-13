@@ -4,6 +4,7 @@ import InfoRibbon from "./(components)/InfoRibbon";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
 import ScrollUp from "./(components)/ScrollUp";
+import AuthProvider from "./(components)/AuthProvider";
 
 const openSans = Open_Sans({
   variable: "--font-geist-mono",
@@ -18,6 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    <AuthProvider>
       <body className={`${openSans.variable} antialiased`}>
         <InfoRibbon />
         <Navbar />
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <ScrollUp/>
       </body>
+    </AuthProvider>
     </html>
   );
 }

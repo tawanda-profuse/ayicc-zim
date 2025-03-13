@@ -125,9 +125,9 @@ export default function Home() {
           people in Zimbabwe, Africa, and the world towards environmental and
           climate action for a sustainable future and planet.{" "}
         </p>
-        <button className="rounded-2xl w-[15rem] text-xl transition-all hover:scale-[1.1] bg-ayicc-dark-green text-white p-4 appear">
+        <Link href="/register" className="rounded-2xl w-[15rem] text-xl transition-all hover:scale-[1.1] bg-ayicc-dark-green text-white p-4 appear text-center">
           Join Us
-        </button>
+        </Link>
       </header>
       <main className="py-[2rem] px-[1rem] md:px-[4rem]">
         <section className="py-[4rem] relative flex flex-col md:flex-row justify-center items-center gap-[2rem]">
@@ -150,8 +150,8 @@ export default function Home() {
               water efficiency.
             </p>
             <button
-              className="py-2 px-4 rounded-2xl bg-yellow-300 font-bold opacity-90 transition-all hover:opacity-100 hover:scale-[1.2] min-w-[10rem] self-center text-4xl"
-              onClick={() => router.push("/donate")}
+              className="py-2 px-4 rounded-2xl bg-yellow-300 font-bold opacity-90 transition-all hover:opacity-100 hover:scale-[1.2] min-w-[10rem] self-center text-3xl"
+              onClick={() => router.push("/contact")}
             >
               Support
             </button>
