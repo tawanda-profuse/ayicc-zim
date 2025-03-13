@@ -6,8 +6,10 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import { redirect } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +28,7 @@ const Register = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const userTypeRef = useRef();
+  const { data: session, status } = useSession();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -126,6 +129,15 @@ const Register = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (status === "loading") return;
+
+    if (session) {
+      redirect("/innovation-hub");
+    }
+  }, [session, status]);
+
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">

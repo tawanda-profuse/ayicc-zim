@@ -7,9 +7,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import { signIn } from 'next-auth/react'
+import { redirect, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { signIn, useSession } from "next-auth/react";
 
 const Login = () => {
   const router = useRouter();
@@ -21,6 +21,7 @@ const Login = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const [togglePassword, setTogglePassword] = useState(false);
+  const { data: session, status } = useSession();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -68,6 +69,15 @@ const Login = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (status === "loading") return;
+
+    if (session) {
+      redirect("/innovation-hub");
+    }
+  }, [session, status]);
+
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
