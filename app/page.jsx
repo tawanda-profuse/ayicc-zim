@@ -289,6 +289,21 @@ export default function Home() {
             View All Events
           </Link>
         </section>
+        <section className="flex flex-col justify-evenly bg-yellow-300 px-4">
+          <h2 className={`text-5xl text-center ${poppinsBlack.className}`}>
+            Sign Up for Newsletter
+          </h2>
+          <form className="flex flex-col md:flex-row gap-4 items-center justify-center">
+            <input
+              type="email"
+              className="w-full md:w-2/4 p-2 rounded-md outline-none text-xl focus:border focus:border-black"
+              placeholder="Enter email address"
+            />
+            <button className="w-full md:w-2/4 bg-ayicc-dark-green text-white rounded-md hover:bg-black py-3 font-bold">
+              Sign Up
+            </button>
+          </form>
+        </section>
       </main>
     </>
   );
