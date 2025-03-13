@@ -23,7 +23,7 @@ const eventSchema = new Schema({
   image: {
     type: String,
     required: true,
-    default: "",
+    default: "https://github.com/tawanda-profuse/ayicc-zim/blob/master/public/images/ayicc-logo.png?raw=true",
   },
   description: String,
 });
