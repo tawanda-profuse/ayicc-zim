@@ -3,7 +3,7 @@ import { faChevronRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
-const Create = () => {
+const CreateEvent = () => {
   const [formData, setFormData] = useState({
     title: "",
     date: "",
@@ -20,7 +20,7 @@ const Create = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -164,7 +164,7 @@ const Create = () => {
           <textarea
             id="description"
             name="description"
-            placeholder="Write a short description about what this event is about"
+            placeholder="Write some details about this event about"
             className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
             onChange={handleChange}
           />
@@ -197,4 +197,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEvent;

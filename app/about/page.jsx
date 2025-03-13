@@ -1,24 +1,70 @@
 "use client";
-import {
-  faFish,
-  faTrash,
-  faTree,
-  faVolumeHigh,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import dryLandOverVast from "../../public/images/dry-land-overcast.png";
+import waterHourGlass from "../../public/images/water-hour-glass.png";
+import profile from "../../public/images/profile.jpg";
+import profile2 from "../../public/images/profile-2.jpg";
+import conference from "../../public/images/conference.jpg";
+import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
+import cleaning from "../../public/images/cleaning.jpg";
+import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
+import { Poppins } from "next/font/google";
+
+const poppinsBlack = Poppins({
+  weight: "900",
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
 
 const page = () => {
+  const visionRef = useRef(null);
+  const goalsRef = useRef(null);
+  const missionRef = useRef(null);
+  const historyRef = useRef(null);
+  const provincesRef = useRef(null);
+  const boardRef = useRef(null);
+  const staffRef = useRef(null);
+
   useEffect(() => {
     document.title = "About Us - AYICC Zim";
+
+    if (window.location.href.includes("vision")) {
+      visionRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if(window.location.href.includes("goals")){
+      goalsRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if(window.location.href.includes("mission")){
+      missionRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if(window.location.href.includes("history")){
+      historyRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if(window.location.href.includes("provinces")){
+      provincesRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if(window.location.href.includes("board")){
+      boardRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if(window.location.href.includes("staff")){
+      staffRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
   return (
     <main>
+      <header
+        className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${conference.src})`,
+          backgroundPosition: "bottom",
+          backgroundSize: "cover",
+        }}
+      >
+        <h1
+          className={`text-white uppercase text-6xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
+        >
+          About Us
+        </h1>
+      </header>
       <section className="py-[2rem] px-[1rem] md:px-[4rem]">
-        <h1 className="heading-special text-3xl">AYICC-Zimbabwe Overview</h1>
-        <p className="text-color-2 my-[1rem]">
+        <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+          AYICC Zimbabwe Overview
+        </h1>
+        <p className="my-[1rem] text-xl">
           African Youth Initiative on Climate Change Zimbabwe (AYICC) is a
           platform for African youths led by youths in influencing climate
           action through areas such as engaging young people and creating
@@ -30,58 +76,53 @@ const page = () => {
           increase sustainability, promote energy and water efficiency.
         </p>
       </section>
-      <section className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4">
+      <section className="py-[1rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4" ref={goalsRef}>
         <div className="grid w-full md:w-2/4 gap-y-4">
-          <h2 className="heading-special text-3xl">Our Goal</h2>
-          <p className="text-color-2">
+          <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+            Our Goal
+          </h2>
+          <p className="text-xl">
             To develop capacity and strong partnerships among youths in Africa
             so that they are better equipped to address climate change in their
             countries for the benefit of the present and future generations.
           </p>
         </div>
         <Image
-          src={dryLandOverVast}
-          className="w-full md:w-2/4 border border-black h-[50vh]"
-          alt="Dry land and overcast weather"
+          src={cleaning}
+          className="w-full md:w-2/4 h-auto"
+          alt="People cleaning"
         />
       </section>
-      <section className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4">
+      <section
+        className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4"
+        ref={visionRef}
+      >
         <Image
-          src={dryLandOverVast}
-          className="w-full md:w-2/4 border border-black h-[50vh]"
-          alt="Dry land and overcast weather"
+          src={catchThemYoung2}
+          className="w-full md:w-2/4 h-auto"
+          alt="Planting trees"
         />
         <div className="grid w-full md:w-2/4 gap-y-4">
-          <h2 className="heading-special text-3xl">Our Vision</h2>
-          <p className="text-color-2">
-            Empowered youths who can influence decisions on the adoption of
-            nature based solutions towards climate resilience.
+          <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+            Our Vision
+          </h2>
+          <p className="text-xl">
+            Empower young people to influence decisions on Environment and
+            Climate Initiatives, especially through innovation and nature-based
+            solutions towards climate resilience.
           </p>
         </div>
       </section>
-      <section className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4">
+      <section className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4" ref={missionRef}>
         <div className="grid w-full md:w-2/4 gap-y-4">
-          <h2 className="heading-special text-3xl">Our Mission</h2>
-          <p className="text-color-2">
-            To increase climate resilience in Zimbabwe and Africa through youth
-            led climate advocacy and climate initiatives.
+          <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+            Our Mission
+          </h2>
+          <p className="text-xl">
+            To increase climate resilience in Zimbabwe and Africa through
+            youth-led climate advocacy and projects
           </p>
-        </div>
-        <Image
-          src={dryLandOverVast}
-          className="w-full md:w-2/4 border border-black h-[50vh]"
-          alt="Dry land and overcast weather"
-        />
-      </section>
-      <section className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4">
-        <Image
-          src={dryLandOverVast}
-          className="w-full md:w-2/4 border border-black h-[50vh]"
-          alt="Dry land and overcast weather"
-        />
-        <div className="grid w-full md:w-2/4 gap-y-4">
-          <h2 className="heading-special text-3xl">Objectives</h2>
-          <ol className="text-color-2 list-decimal px-6">
+          <ol className="list-decimal px-6 text-lg pl-8">
             <li className="mb-[0.5rem]">
               To promote sustainable dialogue among the youth, governments,
               CSOs, development partners and UN agencies with regard to climate
@@ -112,44 +153,209 @@ const page = () => {
             </li>
           </ol>
         </div>
+        <Image
+          src={chiveroChallenge2}
+          className="w-full md:w-2/4 h-auto"
+          alt="Dry land and overcast weather"
+        />
       </section>
-      
-      <section className="py-[2rem] px-[4rem] bg-ayicc-light-green flex flex-col md:flex-row items-center justify-center gap-10">
-        <div className="w-full md:w-2/4 flex flex-col gap-4 text-[#002E5B]">
-          <h4 className="font-bold text-xl">Activities</h4>
-          <p>
-            To increase climate resilience in Zimbabwe and Africa through
-            youth-led climate advocacy and initiatives, we participate in these activities.
-          </p>
-        </div>
-        <div className="w-full md:w-2/4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 items-center justify-center">
+      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={historyRef}>
+        <h2
+          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+        >
+          History
+        </h2>
+        <p className="list-disc text-xl">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
+          excepturi ab optio aliquid dicta modi amet numquam quo ducimus rem ex
+          officiis, blanditiis repellat accusamus ipsam deserunt labore et velit
+          eveniet, expedita, eum alias quisquam? Corrupti, atque molestias
+          tempore illo quibusdam non voluptate illum facilis vel a minus velit
+          accusantium!
+        </p>
+      </section>
+      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={provincesRef}>
+        <h2
+          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+        >
+          National Provinces
+        </h2>
+        <p className="list-disc text-xl">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
+          excepturi ab optio aliquid dicta modi amet numquam quo ducimus rem ex
+          officiis, blanditiis repellat accusamus ipsam deserunt labore et velit
+          eveniet, expedita, eum alias quisquam? Corrupti, atque molestias
+          tempore illo quibusdam non voluptate illum facilis vel a minus velit
+          accusantium!
+        </p>
+      </section>
+      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={boardRef}>
+        <h2
+          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+        >
+          Board
+        </h2>
+        <h3 className="text-center text-color-2">AYICC Board Members</h3>
+        <div className="my-[4rem] grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
           {[
             {
-              icon: faTree,
-              text: "Tree Planting",
+              name: "John Doe",
+              role: "Secretary General",
+              image: profile,
             },
             {
-              icon: faTrash,
-              text: "Waste Management",
+              name: "Peter Dube",
+              role: "Investments",
+              image: profile,
             },
             {
-              icon: faFish,
-              text: "Fish Farming",
+              name: "John Moshoeu",
+              role: "Investments",
+              image: profile,
             },
             {
-              icon: faVolumeHigh,
-              text: "Thursday Climate Talk",
+              name: "Reuben Pedro",
+              role: "Trade Specialist",
+              image: profile,
+            },
+            {
+              name: "Mary Dos Santos",
+              role: "Administrator",
+              image: profile,
+            },
+            {
+              name: "Fernando Torres",
+              role: "Consultant",
+              image: profile,
             },
           ].map((item, index) => (
-            <div className="flex items-center gap-8 md:gap-4 text-[white]" key={index}>
-              <FontAwesomeIcon icon={item.icon} className="text-[6rem] md:text-5xl" />
-              <div className="flex flex-col font-bold">
-                <span>{item.text}</span>
-              </div>
+            <div className="flex flex-col items-center gap-2" key={index}>
+              <Image
+                src={item.image}
+                className="w-[7rem] md:w-[15rem] h-[7rem] md:h-[20rem] mx-auto rounded-lg mb-[1rem] object-cover"
+                height={200}
+                alt={item.name}
+              />
+              <h3 className="font-bold text-[#002E5B]">{item.name}</h3>
+              <h4 className="text-color-2">{item.role}</h4>
             </div>
           ))}
         </div>
       </section>
+      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={staffRef}>
+        <h2
+          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+        >
+          Staff
+        </h2>
+        <h3 className="text-center text-color-2">AYICC Zimbabwe Team</h3>
+        <div className="my-[4rem] grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
+          {[
+            {
+              name: "John Doe",
+              role: "Secretary General",
+              image: profile2,
+            },
+            {
+              name: "Peter Dube",
+              role: "Investments",
+              image: profile2,
+            },
+            {
+              name: "John Moshoeu",
+              role: "Investments",
+              image: profile2,
+            },
+            {
+              name: "Reuben Pedro",
+              role: "Trade Specialist",
+              image: profile2,
+            },
+            {
+              name: "Mary Dos Santos",
+              role: "Administrator",
+              image: profile2,
+            },
+            {
+              name: "Fernando Torres",
+              role: "Consultant",
+              image: profile2,
+            },
+          ].map((item, index) => (
+            <div className="flex flex-col items-center gap-2" key={index}>
+              <Image
+                src={item.image}
+                className="w-[7rem] md:w-[15rem] h-[7rem] md:h-[20rem] mx-auto rounded-lg mb-[1rem] object-cover"
+                height={200}
+                alt={item.name}
+              />
+              <h3 className="font-bold text-[#002E5B]">{item.name}</h3>
+              <h4 className="text-color-2">{item.role}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
+      <article
+        className="pt-[2rem] pb-[3rem]"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${waterHourGlass.src})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <h3
+          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+        >
+          Our Key Thematic Areas
+        </h3>
+        <div className="grid grid-cols-1 items-start justify-center my-[4rem] px-[1rem] md:px-[4rem]">
+          {[
+            {
+              heading: "Climate change mitigation",
+              paragraph:
+                "These are efforts to reduce or prevent emission of greenhouse gases.The world is moving towards a low- carbon society and certain strategies can be adopted to achieve this includes growing trees, reducing our carbon footprint by the practise of using renewable and clean energy e.g. cycling instead of driving or cook stove design- strategies that improve the energy efficiency of current equipment.",
+            },
+            {
+              heading: "Climate Change Adaptation",
+              paragraph:
+                "Climate change adaptation involves taking practical actions to manage risks from climate impacts, protecting communities and strengthening their resilience. It is a shared responsibility: governments, businesses, households, youth and women.",
+            },
+            {
+              heading: "Gender & Climate Change",
+              paragraph:
+                "Climate change has a greater impact on those sections of the population that are most reliant on natural resources for their livelihoods and have the least capacity to respond to natural hazards. Women commonly face higher risks and greater burdens from the impacts of climate change in situations of poverty, and the majority of the world’s poor are women. Women’s unequal participation in decision-making processes and labor markets compound inequalities and often prevent women from fully contributing to climate-related planning, policy-making and implementation. AYICC acknowledges that women’s participation in climate issues will result in greater responsiveness to citizen’s needs and improved outcomes of climate related projects and policies.",
+            },
+            {
+              heading: "Climate Education",
+              paragraph:
+                "Education is an essential element of the global response to climate change. AYICC Zimbabwe always conducts Climate Change, Climate Smart Agriculture, Environmental, Wetlands and Waste Management Workshops and education sessions in schools, universities and communities.",
+            },
+            {
+              heading: "Climate Change Policy/Advocacy",
+              paragraph:
+                "Since its inception, AYICC Zimbabwe has been actively participating in the development and implementation of the several policies and strategies and plans at national level. These include: Energy Policy, Climate Change Policy and Strategy, IntendedNationally Determined Contributions, National Adaptation Plan, National Positions on Climate Change and Climate Smart Agriculture Manual.",
+            },
+            {
+              heading: "Climate Smart Agriculture",
+              paragraph:
+                "Climate Change is negatively impacting affecting the agricultural sector with negative impacts and fish farming is one of the methods to adapt to the effects. We have and are still conducting workshops and awareness programs on Climate Smart Agriculture practices encouraging communities to engage more in climate smart practices and improve their yields sustainable.",
+            },
+            {
+              heading: "Bio - diversity and Climate Change",
+              paragraph:
+                "AYICC-Zim is aware of the importance of wetlands in absorbing carbon dioxide, to ensure sustainable conservation of wetlands AYICC- Zim is part of the National Wetlands Committee. AYICC Zimbabwe has led and coordinated eight (8) Chivero Clean-ups in partnership with Zimbabwe parks and wildlife, Environmental Management Agency (EMA), Kuimba Shiri, NGO’s, Lake Chivero Users Association and Volunteers, with more than 1 700 participants removing more than 70 tons of waste.",
+            },
+          ].map((item, index) => (
+            <div className="flex flex-col gap-6" key={index}>
+              <h3 className="text-2xl heading-special mt-[2rem]">
+                {`${index + 1}. `}
+                {item.heading}
+              </h3>
+              <p className="font-semibold md:w-[70%]">{item.paragraph}</p>
+            </div>
+          ))}
+        </div>
+      </article>
     </main>
   );
 };

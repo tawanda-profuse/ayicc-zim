@@ -4,9 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'sotip.cybersecdigital.com',
-        port: '',
-        pathname: '/**',
+        hostname: '**',
       },
     ],
   },
