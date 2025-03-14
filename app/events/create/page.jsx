@@ -1,6 +1,7 @@
 "use client";
 import { faChevronRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const CreateEvent = () => {
@@ -87,6 +88,16 @@ const CreateEvent = () => {
 
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
+    <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
+        <li className="transition-all hover:pl-2">
+          <Link
+            href="/admin/events"
+            className="underline hover:text-ayicc-light-green"
+          >
+            View All Events
+          </Link>
+        </li>
+      </ul>
       <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl my-6">
         Create an Event
       </h1>

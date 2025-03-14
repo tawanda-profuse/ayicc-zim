@@ -2,6 +2,20 @@ import User from "@/app/(models)/user";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 
+export async function GET() {
+  try {
+    const users = await User.find().sort({ lastName: "asc" });
+
+    return NextResponse.json({ users }, { status: 200 });
+  } catch (error) {
+    console.error("Error: ", error);
+    return NextResponse.json(
+      { message: "An error has occurred" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(req) {
   try {
     const body = await req.json();

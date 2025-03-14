@@ -173,8 +173,8 @@ const InnovationHub = () => {
           </li>
           {session?.user.role === "admin" && (
             <li className="hover:pl-2 transition-all">
-              <Link href="/events/create" className="underline">
-                Create Event
+              <Link href="/admin" className="underline">
+                Admin Portal
               </Link>
             </li>
           )}
