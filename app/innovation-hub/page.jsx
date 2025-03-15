@@ -2,8 +2,12 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
-import unConference from "../../public/images/un-conference.jpg";
-import catchThemYoung from "../../public/images/catch-them-young.jpg";
+import IHHeader from "../../public/images/innovation-hub-header.jpg";
+import IH from "../../public/images/innovation-hub.jpg";
+import IH1 from "../../public/images/innovation-hub-1.jpg";
+import IH2 from "../../public/images/innovation-hub-2.jpg";
+import IH3 from "../../public/images/innovation-hub-3.jpg";
+import IH4 from "../../public/images/innovation-hub-4.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightFromBracket,
@@ -103,7 +107,7 @@ const InnovationHub = () => {
       <header
         className="min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat p-4"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${unConference.src})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IHHeader.src})`,
           backgroundPosition: "top",
           backgroundSize: "cover",
         }}
@@ -201,8 +205,8 @@ const InnovationHub = () => {
           </h2>
         </div>
         <Image
-          src={unConference}
-          alt="Conference"
+          src={IH}
+          alt="Meeting"
           className="w-full md:w-2/4 h-auto"
           height={500}
         />
@@ -224,8 +228,8 @@ const InnovationHub = () => {
           </ul>
         </div>
         <Image
-          src={unConference}
-          alt="Conference"
+          src={IH1}
+          alt="Meeting"
           className="w-full md:w-2/4 h-auto"
           height={500}
         />
@@ -246,8 +250,8 @@ const InnovationHub = () => {
           </ol>
         </div>
         <Image
-          src={unConference}
-          alt="Conference"
+          src={IH2}
+          alt="Meeting"
           className="w-full md:w-2/4 h-auto"
           height={500}
         />
@@ -255,7 +259,7 @@ const InnovationHub = () => {
       <section
         className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${catchThemYoung.src})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH3.src})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -271,7 +275,7 @@ const InnovationHub = () => {
       <section
         className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${catchThemYoung.src})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH4.src})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",

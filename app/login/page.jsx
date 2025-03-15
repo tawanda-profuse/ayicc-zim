@@ -47,9 +47,9 @@ const Login = () => {
 
     try {
       const response = await signIn("credentials", {
-        redirect: false,
         email: formData.email,
         password: formData.password,
+        callbackUrl: "/innovation-hub", // Auto-redirect here
       });
 
       if (response?.error) {
@@ -57,13 +57,12 @@ const Login = () => {
         setSuccessMessage(response.error);
       } else {
         alert("Login successful");
-        router.push("/innovation-hub");
       }
     } catch (error) {
+      setIsError(true);
       setSuccessMessage(
         "An error has occurred while trying to login. Please try again later."
       );
-      setIsError(true);
     } finally {
       setLoading(false);
     }
