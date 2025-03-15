@@ -1,7 +1,8 @@
 "use client";
 import EventForm from "@/app/(components)/EventForm";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,15 @@ const CreateEvent = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState(false);
+  const { data: session, status } = useSession();
+
+  useEffect(() => {
+    if (status === "loading") return;
+
+    if (session?.user.role !== "admin") {
+      redirect("/innovation-hub");
+    }
+  }, [session, status]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -87,7 +97,7 @@ const CreateEvent = () => {
 
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-    <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
+      <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
         <li className="transition-all hover:pl-2">
           <Link
             href="/admin/events"
@@ -104,7 +114,11 @@ const CreateEvent = () => {
         className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
         onSubmit={handleSubmit}
       >
-        <EventForm handleChange={handleChange} loading={loading} formData={formData}/>
+        <EventForm
+          handleChange={handleChange}
+          loading={loading}
+          formData={formData}
+        />
         {successMessage && (
           <p
             className={`font-bold ${

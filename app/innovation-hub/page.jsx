@@ -15,7 +15,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
 const poppinsBlack = Poppins({
   weight: "900",
   subsets: ["latin"],
@@ -42,7 +41,7 @@ const InnovationHub = () => {
   const trainingsRef = useRef(null);
   const opportunitiesRef = useRef(null);
   const commentsRef = useRef(null);
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -63,7 +62,6 @@ const InnovationHub = () => {
     setSuccessMessage("");
 
     try {
-      console.log(formData);
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -92,14 +90,6 @@ const InnovationHub = () => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    if (status === "loading") return;
-
-    if (!session) {
-      redirect("/");
-    }
-  }, [session, status]);
 
   return (
     <main>

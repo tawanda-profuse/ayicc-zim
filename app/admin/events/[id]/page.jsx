@@ -40,7 +40,7 @@ const EventDetails = () => {
     if (status === "loading") return;
 
     if (session?.user?.role !== "admin") {
-      redirect("/");
+      redirect("/innovation-hub");
     }
   }, [session, status]);
 

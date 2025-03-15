@@ -20,6 +20,7 @@ const Admin = () => {
       redirect("/innovation-hub");
     }
   }, [session, status]);
+  
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <section className="min-h-[60vh]">
