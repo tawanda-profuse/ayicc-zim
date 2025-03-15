@@ -108,9 +108,14 @@ const InnovationHub = () => {
             Climate, Finance and Innovation Hub
           </h1>
           <span className="text-white">
-            {session?.user.email}
-            {session?.user.role === "admin" && " (Administrator)"}
-            {session?.user.role !== "admin" && ` (${session?.user.userType})`}
+            {session?.user && (
+              <>
+                {session.user.email}
+                {session?.user.role === "admin" && " (Administrator)"}
+                {session?.user.role !== "admin" &&
+                  ` (${session?.user.userType})`}
+              </>
+            )}
           </span>
         </div>
         <ul className="w-2/4 list-disc underline text-white text-xl flex flex-col gap-2">
@@ -185,7 +190,7 @@ const InnovationHub = () => {
         </ul>
       </header>
       <section
-        className="flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+        className="pt-12 md:pt-0 flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
         ref={descriptionRef}
       >
         <div className="flex flex-col items-center w-full md:w-2/4">
@@ -221,7 +226,7 @@ const InnovationHub = () => {
             backgroundSize: "cover",
           }}
         ></div>
-        <div className="flex flex-col items-center w-full md:w-2/4">
+        <div className="pt-12 md:pt-0 flex flex-col items-center w-full md:w-2/4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Tools
           </h2>
@@ -235,7 +240,7 @@ const InnovationHub = () => {
         </div>
       </section>
       <section
-        className="flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+        className="pt-12 md:pt-0 flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
         ref={trainingsRef}
       >
         <div className="flex flex-col items-center w-full md:w-2/4">
