@@ -58,7 +58,7 @@ const AdminEvents = () => {
   const handleDelete = async (eventId) => {
     setPending(true);
     try {
-      const response = await fetch(`/api/Events/${eventId}`, {
+      const response = await fetch(`/api/events/${eventId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -68,6 +68,7 @@ const AdminEvents = () => {
       if (response.ok) {
         const result = await response.json();
         alert(result.message);
+        window.location.reload();
       } else {
         alert("Failed to delete event.");
       }
@@ -102,6 +103,9 @@ const AdminEvents = () => {
           </Link>
         </li>
       </ul>
+      <p className="my-6 font-bold italic">
+        Click on the event name highlighted in green to edit the details.
+      </p>
       {loading && (
         <div className="min-h-[50vh] flex flex-col items-center justify-center">
           <FontAwesomeIcon
@@ -127,7 +131,7 @@ const AdminEvents = () => {
                     <tr key={index} className="border-b-2 border-b-black">
                       <td className="p-2 border-l-2 border-r-2 border-black">
                         <Link
-                          href={`/events/${item._id}`}
+                          href={`/admin/events/${item._id}`}
                           className="text-ayicc-dark-green underline"
                           title="Click to edit event details"
                         >

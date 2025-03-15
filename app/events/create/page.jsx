@@ -1,6 +1,5 @@
 "use client";
-import { faChevronRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EventForm from "@/app/(components)/EventForm";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -105,95 +104,7 @@ const CreateEvent = () => {
         className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col gap-2">
-          <label htmlFor="title" className="text-lg font-bold">
-            Event Title
-          </label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            placeholder="Write the name of the event"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="date" className="text-lg font-bold">
-            Date
-          </label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="time" className="text-lg font-bold">
-            Time
-          </label>
-          <input
-            type="time"
-            id="time"
-            name="time"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="location" className="text-lg font-bold">
-            Location
-          </label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            placeholder="The location of the event e.g. Harare"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="image" className="text-lg font-bold">
-            Image URL (optional)
-          </label>
-          <input
-            type="url"
-            id="image"
-            name="image"
-            placeholder="Paste an image URL"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="description" className="text-lg font-bold">
-            Description
-          </label>
-          <textarea
-            id="description"
-            name="description"
-            placeholder="Write some details about this event about"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-          />
-        </div>
-        <button
-          type="submit"
-          className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
-          disabled={loading}
-        >
-          {loading ? (
-            <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-          ) : (
-            <>
-              Submit
-              <FontAwesomeIcon icon={faChevronRight} />
-            </>
-          )}
-        </button>
+        <EventForm handleChange={handleChange} loading={loading} formData={formData}/>
         {successMessage && (
           <p
             className={`font-bold ${

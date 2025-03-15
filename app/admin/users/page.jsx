@@ -115,6 +115,16 @@ const AdminUsers = () => {
       <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
         Manage Members
       </h1>
+      <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
+        <li className="transition-all hover:pl-2">
+          <Link
+            href="/admin"
+            className="underline hover:text-ayicc-light-green"
+          >
+            Admin Home
+          </Link>
+        </li>
+      </ul>
       <p className="my-6 font-bold italic">
         Unverified members are not able to login to the Innovation Hub. Click on
         the red cross to authorize a member and the green tick to unauthorize.
