@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
 import IHHeader from "../../public/images/innovation-hub-header.jpg";
