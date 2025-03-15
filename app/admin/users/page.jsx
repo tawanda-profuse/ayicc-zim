@@ -115,7 +115,10 @@ const AdminUsers = () => {
       <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
         Manage Members
       </h1>
-      <p className="my-6 font-bold italic">Unverified members are not able to login to the Innovation Hub.</p>
+      <p className="my-6 font-bold italic">
+        Unverified members are not able to login to the Innovation Hub. Click on
+        the red cross to authorize a member and the green tick to unauthorize.
+      </p>
       {loading && (
         <div className="min-h-[20vh] flex flex-col items-center justify-center">
           <FontAwesomeIcon
@@ -172,15 +175,21 @@ const AdminUsers = () => {
                           {!authorizationPending && (
                             <>
                               {item.isVerified ? (
+                                <>
+                                <span className="font-semibold">(Authorized)</span>{" "}
                                 <FontAwesomeIcon
                                   icon={faCheckCircle}
                                   className="text-green-600 text-xl"
                                 />
+                                </>
                               ) : (
+                                <>
+                                <span className="font-semibold">(Unauthorized)</span>{" "}
                                 <FontAwesomeIcon
                                   icon={faTimes}
                                   className="text-red-600 text-xl"
                                 />
+                                </>
                               )}
                             </>
                           )}

@@ -99,26 +99,26 @@ const InnovationHub = () => {
 
     if (!session) {
       redirect("/");
-    } 
+    }
   }, [session, status]);
 
   return (
     <main>
       <header
-        className="min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat p-4"
+        className="min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IHHeader.src})`,
           backgroundPosition: "top",
           backgroundSize: "cover",
         }}
       >
-        <div className="w-full flex flex-col px-4 gap-4">
+        <div className="w-full flex flex-col items-center md:items-start px-4 gap-4">
           <h1
-            className={`text-white bg-[#00000099] py-4 uppercase text-6xl no-underline md:underline slide-in text-center order-2 md:order-1 ${poppinsBlack.className}`}
+            className={`text-white md:bg-[#00000099] py-4 uppercase text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
           >
             Climate, Finance and Innovation Hub
           </h1>
-          <span className="text-white order-1 md:order-2">
+          <span className="text-white">
             {session?.user.email}
             {session?.user.role === "admin" && " (Administrator)"}
             {session?.user.role !== "admin" && ` (${session?.user.userType})`}
@@ -196,30 +196,47 @@ const InnovationHub = () => {
         </ul>
       </header>
       <section
-        className="px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+        className="flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
         ref={descriptionRef}
       >
-        <div className="flex flex-col w-full md:w-2/4">
+        <div className="flex flex-col items-center w-full md:w-2/4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Description
           </h2>
+          <p className="text-xl text-center p-4">
+            Welcome to the Innovation Hub. This is a platform that gives members
+            access to different tools, upcoming trainings, opportunities, and a
+            place to share your comments with us.
+          </p>
         </div>
-        <Image
-          src={IH}
-          alt="Meeting"
-          className="w-full md:w-2/4 h-auto"
-          height={500}
-        />
+        <div
+          className="w-full md:w-2/4 h-full"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH.src})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
       </section>
       <section
-        className="px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+        className="flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
         ref={toolsRef}
       >
-        <div className="flex flex-col w-full md:w-2/4">
+        <div
+          className="w-full md:w-2/4 h-full"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
+        <div className="flex flex-col items-center w-full md:w-2/4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Tools
           </h2>
-          <ul className="list-disc text-xl">
+          <ul className="list-disc text-xl pl-8">
             <li>Climate Finance</li>
             <li>Business Development and Management</li>
             <li>IPCC Sectors</li>
@@ -227,34 +244,31 @@ const InnovationHub = () => {
             <li>Business Registration</li>
           </ul>
         </div>
-        <Image
-          src={IH1}
-          alt="Meeting"
-          className="w-full md:w-2/4 h-auto"
-          height={500}
-        />
       </section>
       <section
-        className="px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+        className="flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
         ref={trainingsRef}
       >
-        <div className="flex flex-col w-full md:w-2/4">
+        <div className="flex flex-col items-center w-full md:w-2/4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Upcoming Trainings
           </h2>
-          <ol className="list-decimal text-xl pl-8">
+          <ul className="list-disc text-xl pl-8">
             <li>Training 1</li>
             <li>Training 2</li>
             <li>Training 3</li>
             <li>Training 4</li>
-          </ol>
+          </ul>
         </div>
-        <Image
-          src={IH2}
-          alt="Meeting"
-          className="w-full md:w-2/4 h-auto"
-          height={500}
-        />
+        <div
+          className="w-full md:w-2/4 h-full"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH2.src})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
       </section>
       <section
         className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
