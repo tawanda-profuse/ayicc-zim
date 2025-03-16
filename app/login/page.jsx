@@ -49,14 +49,17 @@ const Login = () => {
       const response = await signIn("credentials", {
         email: formData.email,
         password: formData.password,
-        callbackUrl: "/innovation-hub", // Auto-redirect here
+        redirect: false, // Prevents automatic redirection on failure
+        callbackUrl: "/innovation-hub", // Sets the desired post-login redirection
       });
-
+  
       if (response?.error) {
         setIsError(true);
         setSuccessMessage(response.error);
-      } else {
-        alert("Login successful");
+      } else if (response?.url) {
+        alert("Login successful")
+        // Redirect manually on successful login
+        window.location.href = response.url;
       }
     } catch (error) {
       setIsError(true);
@@ -115,6 +118,15 @@ const Login = () => {
             </button>
           </div>
         </div>
+        {successMessage && (
+          <p
+            className={`mt-6 font-bold ${
+              isError ? "text-red-500" : "text-green-600"
+            }`}
+          >
+            {successMessage}
+          </p>
+        )}
         <button
           type="submit"
           className="my-6 flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
@@ -135,15 +147,6 @@ const Login = () => {
             Sign up
           </Link>
         </p>
-        {successMessage && (
-          <p
-            className={`font-bold ${
-              isError ? "text-red-500" : "text-green-600"
-            }`}
-          >
-            {successMessage}
-          </p>
-        )}
       </form>
     </main>
   );

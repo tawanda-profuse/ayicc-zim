@@ -1,4 +1,4 @@
-import Event from '@/app/(models)/events'
+import User from '@/app/(models)/user'
 import { NextResponse } from 'next/server'
 
 export async function GET (
@@ -10,24 +10,24 @@ export async function GET (
   try {
     if (!id) {
       return NextResponse.json(
-        { message: 'Event ID is required' },
+        { message: 'User ID is required' },
         { status: 400 }
       )
     }
 
-    const event = await Event.findById(id)
+    const user = await User.findById(id)
 
-    if (!event) {
+    if (!user) {
       return NextResponse.json(
-        { message: 'Event details not found' },
+        { message: 'User details not found' },
         { status: 404 }
       )
     }
 
-    return NextResponse.json({ event }, { status: 200 })
+    return NextResponse.json({ user }, { status: 200 })
   } catch (error) {
     return NextResponse.json(
-      { message: `Error fetching event details: ${error}` },
+      { message: `Error fetching user details: ${error}` },
       { status: 500 }
     )
   }
@@ -41,27 +41,27 @@ export async function PUT (
   try {
     if (!id) {
       return NextResponse.json(
-        { message: 'Event ID is required' },
+        { message: 'User ID is required' },
         { status: 400 }
       )
     }
-    const event = await Event.findById(id)
+    const user = await User.findById(id)
 
-    if (!event) {
+    if (!user) {
       return NextResponse.json(
-        { message: 'Event not found' },
+        { message: 'User not found' },
         { status: 404 }
       )
     }
 
     const body = await request.json()
 
-    Object.assign(event, body)
+    Object.assign(user, body)
 
-    await event.save()
+    await user.save()
 
     return NextResponse.json(
-      { message: 'Event details updated successfully', event },
+      { message: 'User details updated successfully', user },
       { status: 200 }
     )
   } catch (error) {
@@ -78,21 +78,21 @@ export async function DELETE (
   try {
     if (!id) {
       return NextResponse.json(
-        { message: 'Event ID is required' },
+        { message: 'User ID is required' },
         { status: 400 }
       )
     }
-    const event = await Event.findByIdAndDelete(id)
+    const user = await User.findByIdAndDelete(id)
 
-    if (!event) {
+    if (!user) {
       return NextResponse.json(
-        { message: 'Event not found' },
+        { message: 'User not found' },
         { status: 404 }
       )
     }
 
     return NextResponse.json(
-      { message: 'Event deleted successfully' },
+      { message: 'User deleted successfully' },
       { status: 200 }
     )
   } catch (error) {

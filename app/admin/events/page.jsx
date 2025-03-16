@@ -66,9 +66,7 @@ const AdminEvents = () => {
       });
 
       if (response.ok) {
-        const result = await response.json();
-        alert(result.message);
-        window.location.reload();
+        await response.json();
       } else {
         alert("Failed to delete event.");
       }
@@ -150,7 +148,10 @@ const AdminEvents = () => {
                       </td>
                       <td className="p-2 border-r-2 border-r-black">
                         <button
-                          onClick={() => handleDelete(item._id)}
+                          onClick={() => {
+                            handleDelete(item._id)
+                            setEvents((prev) => prev.filter(event => event._id !== item._id));
+                            }}
                           disabled={pending}
                           title="Delete this event"
                         >

@@ -54,7 +54,7 @@ const EventDetails = () => {
         document.title = `Editing ${eventData?.event.title}`;
       } catch (error) {
         console.error("Error: ", error);
-        alert("Error fetching product details");
+        alert("Error fetching event details");
       } finally {
         setLoadingData(false);
       }

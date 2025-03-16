@@ -72,8 +72,7 @@ const AdminUsers = () => {
       });
 
       if (response.ok) {
-        const result = await response.json();
-        alert(result.message);
+        await response.json();
       } else {
         alert("Failed to delete user.");
       }
@@ -157,7 +156,7 @@ const AdminUsers = () => {
                     <tr key={index} className="border-b-2 border-b-black">
                       <td className="p-2 border-l-2 border-r-2 border-black">
                         <Link
-                          href={`/users/${item._id}`}
+                          href={`/admin/users/${item._id}`}
                           className="text-ayicc-dark-green underline"
                           title="Click to edit user details"
                         >
@@ -206,7 +205,10 @@ const AdminUsers = () => {
                         </button>
                       </td>
                       <td className="p-2 border-l-2 border-r-2 border-black">
-                        <button onClick={() => handleDelete(item._id)}>
+                        <button onClick={() => {
+                          handleDelete(item._id);
+                          setUsers((prev) => prev.filter(user => user._id !== item._id))
+                          }}>
                           {pending ? (
                             <FontAwesomeIcon
                               icon={faSpinner}

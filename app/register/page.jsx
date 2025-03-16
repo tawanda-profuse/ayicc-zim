@@ -10,6 +10,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import UserForm from "../(components)/UserForm";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +23,11 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState(false);
-  const [togglePassword, setTogglePassword] = useState(false);
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const password2Ref = useRef();
   const userTypeRef = useRef();
   const { data: session, status } = useSession();
 
@@ -74,6 +75,20 @@ const Register = () => {
       passwordRef.current.style.borderColor = "red";
       setTimeout(() => {
         passwordRef.current.style.borderColor = "transparent";
+      }, 3000);
+      setLoading(false);
+      return;
+    }
+    if (formData.password !== password2Ref.current.value) {
+      setIsError(true);
+      setSuccessMessage("Both passwords should match");
+      passwordRef.current.style.borderColor = "red";
+      setTimeout(() => {
+        passwordRef.current.style.borderColor = "transparent";
+      }, 3000);
+      password2Ref.current.style.borderColor = "red";
+      setTimeout(() => {
+        password2Ref.current.style.borderColor = "transparent";
       }, 3000);
       setLoading(false);
       return;
@@ -147,108 +162,18 @@ const Register = () => {
         className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col gap-2">
-          <label htmlFor="firstName" className="text-lg font-bold">
-            First Name
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="Write the name of the user"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-            ref={firstNameRef}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="lastName" className="text-lg font-bold">
-            Last Name
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-            placeholder="Write your last name"
-            ref={lastNameRef}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-lg font-bold">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-            placeholder="Enter your email address"
-            ref={emailRef}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="userType" className="text-lg font-bold">
-            Registration Type
-          </label>
-          <select
-            id="userType"
-            name="userType"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-            ref={userTypeRef}
-          >
-            <option value="">-- Select a value below --</option>
-            <option value="Innovator">As an innovator</option>
-            <option value="Funding Partner">Funding Partner</option>
-            <option value="Expert">Expert</option>
-            <option value="Private Sector">Private Sector</option>
-            <option value="NGO">NGO</option>
-            <option value="Community Group">Community Group</option>
-          </select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="password" className="text-lg font-bold">
-            Password
-          </label>
-          <div className="relative">
-            <input
-              type={togglePassword ? "text" : "password"}
-              id="password"
-              name="password"
-              placeholder="Type a secure password"
-              className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400 w-full"
-              onChange={handleChange}
-              ref={passwordRef}
-            />
-            <button
-              type="button"
-              className="absolute right-2 top-2/4 -translate-y-2/4"
-              title={togglePassword ? "Hide password" : "Show password"}
-            >
-              <FontAwesomeIcon
-                icon={togglePassword ? faEyeSlash : faEye}
-                onClick={() => setTogglePassword(!togglePassword)}
-              />
-            </button>
-          </div>
-        </div>
-        <button
-          type="submit"
-          className="my-6 flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
-          disabled={loading}
-        >
-          {loading ? (
-            <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-          ) : (
-            <>
-              Submit
-              <FontAwesomeIcon icon={faChevronRight} className="w-2" />
-            </>
-          )}
-        </button>
+        <UserForm
+          isNew={true}
+          loading={loading}
+          handleChange={handleChange}
+          firstNameRef={firstNameRef}
+          lastNameRef={lastNameRef}
+          emailRef={emailRef}
+          passwordRef={passwordRef}
+          password2Ref={password2Ref}
+          userTypeRef={userTypeRef}
+          formData={formData}
+        />
         <p className="mb-6">
           Already have an account?{" "}
           <Link href="/login" className="text-ayicc-dark-green underline">
