@@ -73,7 +73,7 @@ const Events = () => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-2/4"
+                    className="w-full md:w-2/4 h-2/4"
                     width={200}
                     height={200}
                   />

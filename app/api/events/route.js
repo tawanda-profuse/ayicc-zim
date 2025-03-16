@@ -18,6 +18,9 @@ export async function GET() {
 export async function POST(req) {
   try {
     const body = await req.json();
+    if(!body.image){
+      body.image = "https://i.ibb.co/wrPKQBC7/ayicc-logo.png"
+    }
     const newEvent = new Event(body);
 
     await newEvent.save();

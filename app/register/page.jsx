@@ -29,6 +29,7 @@ const Register = () => {
   const passwordRef = useRef();
   const password2Ref = useRef();
   const userTypeRef = useRef();
+  const errorMessageRef = useRef();
   const { data: session, status } = useSession();
 
   const handleChange = (e) => {
@@ -45,7 +46,9 @@ const Register = () => {
       firstNameRef.current.style.borderColor = "red";
       setTimeout(() => {
         firstNameRef.current.style.borderColor = "transparent";
+        firstNameRef.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
       return;
     }
@@ -55,7 +58,9 @@ const Register = () => {
       lastNameRef.current.style.borderColor = "red";
       setTimeout(() => {
         lastNameRef.current.style.borderColor = "transparent";
+        lastNameRef.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
       return;
     }
@@ -65,7 +70,9 @@ const Register = () => {
       emailRef.current.style.borderColor = "red";
       setTimeout(() => {
         emailRef.current.style.borderColor = "transparent";
+        emailRef.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
       return;
     }
@@ -75,7 +82,9 @@ const Register = () => {
       passwordRef.current.style.borderColor = "red";
       setTimeout(() => {
         passwordRef.current.style.borderColor = "transparent";
+        passwordRef.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
       return;
     }
@@ -85,11 +94,15 @@ const Register = () => {
       passwordRef.current.style.borderColor = "red";
       setTimeout(() => {
         passwordRef.current.style.borderColor = "transparent";
+        passwordRef.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       password2Ref.current.style.borderColor = "red";
       setTimeout(() => {
         password2Ref.current.style.borderColor = "transparent";
+        password2Ref.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
       return;
     }
@@ -99,7 +112,9 @@ const Register = () => {
       userTypeRef.current.style.borderColor = "red";
       setTimeout(() => {
         userTypeRef.current.style.borderColor = "transparent";
+        userTypeRef.current.style.backgroundColor = "#ccc";
       }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
       return;
     }
@@ -134,13 +149,13 @@ const Register = () => {
         userTypeRef.current.value = "";
         setIsError(false);
       } else {
-        setSuccessMessage(data.message);
-        setIsError(true);
+        alert(data.message);
       }
     } catch (error) {
       setSuccessMessage("Failed to create the user. Try again later.");
       setIsError(true);
     } finally {
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
     }
   };
@@ -182,6 +197,7 @@ const Register = () => {
         </p>
         {successMessage && (
           <p
+            ref={errorMessageRef}
             className={`font-bold ${
               isError ? "text-red-500" : "text-green-600"
             }`}

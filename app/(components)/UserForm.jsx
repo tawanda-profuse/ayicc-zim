@@ -130,7 +130,6 @@ const UserForm = ({
                 name="password"
                 placeholder="Confirm your password"
                 className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400 w-full"
-                onChange={handleChange}
                 ref={password2Ref}
               />
               <button
