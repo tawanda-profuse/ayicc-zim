@@ -190,7 +190,7 @@ const page = () => {
           towards a better climate and social equity’.
         </p>
       </section>
-      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={staffRef}>
+      <section className="py-[2rem] px-[2rem] md:px-[4rem]" id="staff" ref={staffRef}>
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
         >
