@@ -243,16 +243,10 @@ const InnovationHub = () => {
         className="pt-12 md:pt-0 flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
         ref={trainingsRef}
       >
-        <div className="flex flex-col items-center w-full md:w-2/4">
+        <div className="pt-12 md:pt-0 flex flex-col items-center w-full md:w-2/4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Upcoming Trainings
           </h2>
-          <ul className="list-disc text-xl pl-8">
-            <li>Training 1</li>
-            <li>Training 2</li>
-            <li>Training 3</li>
-            <li>Training 4</li>
-          </ul>
         </div>
         <div
           className="w-full md:w-2/4 h-full"

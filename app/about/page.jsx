@@ -2,8 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import waterHourGlass from "../../public/images/water-hour-glass.png";
-import profile from "../../public/images/profile.jpg";
-import profile2 from "../../public/images/profile-2.jpg";
+import mhandu from "../../public/images/mhandu-3.jpg";
+import panashe from "../../public/images/panashe.jpg";
+import tashinga from "../../public/images/tashinga-chikomba.jpg";
 import meeting from "../../public/images/meeting.jpg";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
 import trash from "../../public/images/trash.jpg";
@@ -22,7 +23,6 @@ const page = () => {
   const missionRef = useRef(null);
   const historyRef = useRef(null);
   const provincesRef = useRef(null);
-  const boardRef = useRef(null);
   const staffRef = useRef(null);
 
   useEffect(() => {
@@ -30,17 +30,15 @@ const page = () => {
 
     if (window.location.href.includes("vision")) {
       visionRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if(window.location.href.includes("goals")){
+    } else if (window.location.href.includes("goals")) {
       goalsRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if(window.location.href.includes("mission")){
+    } else if (window.location.href.includes("mission")) {
       missionRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if(window.location.href.includes("history")){
+    } else if (window.location.href.includes("history")) {
       historyRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if(window.location.href.includes("provinces")){
+    } else if (window.location.href.includes("provinces")) {
       provincesRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if(window.location.href.includes("board")){
-      boardRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if(window.location.href.includes("staff")){
+    } else if (window.location.href.includes("staff")) {
       staffRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   });
@@ -76,7 +74,10 @@ const page = () => {
           increase sustainability, promote energy and water efficiency.
         </p>
       </section>
-      <section className="py-[1rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4" ref={goalsRef}>
+      <section
+        className="py-[1rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4"
+        ref={goalsRef}
+      >
         <div className="grid w-full md:w-2/4 gap-y-4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Our Goal
@@ -113,7 +114,10 @@ const page = () => {
           </p>
         </div>
       </section>
-      <section className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4" ref={missionRef}>
+      <section
+        className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4"
+        ref={missionRef}
+      >
         <div className="grid w-full md:w-2/4 gap-y-4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Our Mission
@@ -189,103 +193,35 @@ const page = () => {
           accusantium!
         </p>
       </section>
-      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={boardRef}>
-        <h2
-          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
-        >
-          Board
-        </h2>
-        <h3 className="text-center text-color-2">AYICC Board Members</h3>
-        <div className="my-[4rem] grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-          {[
-            {
-              name: "John Doe",
-              role: "Secretary General",
-              image: profile,
-            },
-            {
-              name: "Peter Dube",
-              role: "Investments",
-              image: profile,
-            },
-            {
-              name: "John Moshoeu",
-              role: "Investments",
-              image: profile,
-            },
-            {
-              name: "Reuben Pedro",
-              role: "Trade Specialist",
-              image: profile,
-            },
-            {
-              name: "Mary Dos Santos",
-              role: "Administrator",
-              image: profile,
-            },
-            {
-              name: "Fernando Torres",
-              role: "Consultant",
-              image: profile,
-            },
-          ].map((item, index) => (
-            <div className="flex flex-col items-center gap-2" key={index}>
-              <Image
-                src={item.image}
-                className="w-[7rem] md:w-[15rem] h-[7rem] md:h-[20rem] mx-auto rounded-lg mb-[1rem] object-cover"
-                height={200}
-                alt={item.name}
-              />
-              <h3 className="font-bold text-[#002E5B]">{item.name}</h3>
-              <h4 className="text-color-2">{item.role}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
       <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={staffRef}>
         <h2
           className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
         >
-          Staff
+          Team
         </h2>
         <h3 className="text-center text-color-2">AYICC Zimbabwe Team</h3>
         <div className="my-[4rem] grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
           {[
             {
-              name: "John Doe",
-              role: "Secretary General",
-              image: profile2,
+              name: "Jean Betrand Mhandu",
+              role: "National Coordinator",
+              image: mhandu,
             },
             {
-              name: "Peter Dube",
-              role: "Investments",
-              image: profile2,
+              name: "Panashe Sakupwanya",
+              role: "Operations Manager",
+              image: panashe,
             },
             {
-              name: "John Moshoeu",
-              role: "Investments",
-              image: profile2,
-            },
-            {
-              name: "Reuben Pedro",
-              role: "Trade Specialist",
-              image: profile2,
-            },
-            {
-              name: "Mary Dos Santos",
-              role: "Administrator",
-              image: profile2,
-            },
-            {
-              name: "Fernando Torres",
-              role: "Consultant",
-              image: profile2,
+              name: "Tashinga Chikomba",
+              role: "Environmental Scientist",
+              image: tashinga,
             },
           ].map((item, index) => (
             <div className="flex flex-col items-center gap-2" key={index}>
               <Image
                 src={item.image}
-                className="w-[7rem] md:w-[15rem] h-[7rem] md:h-[20rem] mx-auto rounded-lg mb-[1rem] object-cover"
+                className="w-[20rem] md:w-[15rem] h-[20rem] mx-auto rounded-lg mb-[1rem] md:object-cover"
                 height={200}
                 alt={item.name}
               />

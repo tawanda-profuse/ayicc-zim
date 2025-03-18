@@ -31,8 +31,8 @@ const InfoRibbon = () => {
       </a>
       <span className="flex items-center gap-3">
         <FontAwesomeIcon icon={faPhone} className="text-[white] w-[0.8rem]" />
-        <a href="tel:+263785757022" className="hover:underline">
-          +263 78 575 7022
+        <a href="tel:+263736622454" className="hover:underline">
+          +263 736 622 454
         </a>
       </span>
       <button

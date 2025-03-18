@@ -67,12 +67,8 @@ const Navbar = () => {
       text: "National Provinces",
     },
     {
-      url: "board",
-      text: "Board",
-    },
-    {
       url: "staff",
-      text: "Staff",
+      text: "Team",
     },
   ];
 
@@ -118,15 +114,6 @@ const Navbar = () => {
             styles={getLinkClass("/initiatives")}
             setShowNavbar={setShowNavbar}
           />
-          <Link
-            href="/campaigns"
-            className={`${getLinkClass(
-              "/campaigns"
-            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
-            onClick={() => setShowNavbar(false)}
-          >
-            Campaigns
-          </Link>
           <Link
             href="/innovation-hub"
             className={`${getLinkClass(

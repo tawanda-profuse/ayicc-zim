@@ -107,8 +107,8 @@ const Contact = () => {
               icon={faPhone}
               className="text-ayicc-light-green"
             />
-            <a href="tel:+263785757022" className="text-color-1 underline">
-              +263 78 575 7022
+            <a href="tel:+263736622454" className="text-color-1 underline">
+            +263 736 622 454
             </a>
           </div>
           <div className="flex gap-3 items-center">
