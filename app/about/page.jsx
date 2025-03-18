@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import waterHourGlass from "../../public/images/water-hour-glass.png";
-import mhandu from "../../public/images/mhandu-3.jpg";
+import mhandu from "../../public/images/mhandu.jpg";
 import panashe from "../../public/images/panashe.jpg";
 import tashinga from "../../public/images/tashinga-chikomba.jpg";
 import meeting from "../../public/images/meeting.jpg";
