@@ -9,6 +9,7 @@ import meeting from "../../public/images/meeting.jpg";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
 import trash from "../../public/images/trash.jpg";
 import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
+import chiveroChallenge from "../../public/images/chivero-challenge.jpg";
 import { Poppins } from "next/font/google";
 
 const poppinsBlack = Poppins({
@@ -163,34 +164,30 @@ const page = () => {
           alt="Dry land and overcast weather"
         />
       </section>
-      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={historyRef}>
+      <section
+        className="py-[2rem] px-[2rem] md:px-[4rem] h-screen"
+        ref={historyRef}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${chiveroChallenge.src})`,
+          backgroundPosition: "top",
+          backgroundSize: "cover",
+        }}
+      >
         <h2
-          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+          className={`text-center text-white font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
         >
           History
         </h2>
-        <p className="list-disc text-xl">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
-          excepturi ab optio aliquid dicta modi amet numquam quo ducimus rem ex
-          officiis, blanditiis repellat accusamus ipsam deserunt labore et velit
-          eveniet, expedita, eum alias quisquam? Corrupti, atque molestias
-          tempore illo quibusdam non voluptate illum facilis vel a minus velit
-          accusantium!
-        </p>
-      </section>
-      <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={provincesRef}>
-        <h2
-          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
-        >
-          National Provinces
-        </h2>
-        <p className="list-disc text-xl">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
-          excepturi ab optio aliquid dicta modi amet numquam quo ducimus rem ex
-          officiis, blanditiis repellat accusamus ipsam deserunt labore et velit
-          eveniet, expedita, eum alias quisquam? Corrupti, atque molestias
-          tempore illo quibusdam non voluptate illum facilis vel a minus velit
-          accusantium!
+        <p className="text-xl text-white">
+          AYICC is the umbrella network of all youth organizations in Africa
+          working on climate change. It was launched during the International
+          Conference of Youth prior to the UNFCCC, COP 12 in 2006. Currently it
+          has a membership of over 500,000 youth from 51 African countries. It
+          comprises and continues to welcome of all youth organizations who
+          consent with the shared AYICC vision of ‘An African continent with an
+          empowered and united youth movement, proactively involved in the
+          decision making process and the adoption of sustainable options
+          towards a better climate and social equity’.
         </p>
       </section>
       <section className="py-[2rem] px-[2rem] md:px-[4rem]" ref={staffRef}>
