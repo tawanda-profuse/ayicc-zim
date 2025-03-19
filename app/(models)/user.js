@@ -26,6 +26,8 @@ const userSchema = new Schema(
         "Community Group",
       ],
     },
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
   },
   {
     timestamps: true,

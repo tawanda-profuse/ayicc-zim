@@ -77,7 +77,7 @@ const Contact = () => {
 
   return (
     <main>
-      <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row justify-center gap-10">
+      <article className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row justify-center gap-10">
         <div className="w-full md:w-2/4 flex flex-col gap-4 order-2 md:order-1">
           <p className="pb-[1rem] border-b-4 border-b-color-2">
             Please let us know if you have a question, want to leave a comment,
@@ -234,7 +234,7 @@ const Contact = () => {
           </div>
           <div ref={messageRef}></div>
         </form>
-      </section>
+      </article>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.2675254791416!2d31.050202015215053!3d-17.826089588804248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e3dd900005%3A0x6662bdf052355d57!2sBard%20House!5e0!3m2!1sen!2szw!4v1741221974709!5m2!1sen!2szw"
         style={{ border: 0 }}

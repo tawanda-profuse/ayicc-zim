@@ -73,7 +73,7 @@ const Login = () => {
 
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-      <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
+      <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
         Login to Your Account
       </h1>
       <form
@@ -145,6 +145,12 @@ const Login = () => {
           Don't have an account?{" "}
           <Link href="/register" className="text-ayicc-dark-green underline">
             Sign up
+          </Link>
+        </p>
+        <p className="mb-6">
+          Have you forgotten your password?{" "}
+          <Link href="/forgot-password" className="text-ayicc-dark-green underline">
+            Reset it here.
           </Link>
         </p>
       </form>

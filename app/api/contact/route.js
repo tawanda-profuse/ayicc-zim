@@ -44,7 +44,7 @@ export async function POST(req) {
     );
   } catch (error) {
     return NextResponse.json(
-      { message: `Email sending failed - ${error}` },
+      { message: "An error has occurred preventing the successful delivery of your message. Please try again later." },
       { status: 500 }
     );
   }

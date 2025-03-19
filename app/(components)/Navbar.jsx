@@ -115,15 +115,6 @@ const Navbar = () => {
             setShowNavbar={setShowNavbar}
           />
           <Link
-            href="/innovation-hub"
-            className={`${getLinkClass(
-              "/innovation-hub"
-            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
-            onClick={() => setShowNavbar(false)}
-          >
-            Innovation Hub
-          </Link>
-          <Link
             href="/events"
             className={`${getLinkClass(
               "/events"
@@ -131,6 +122,15 @@ const Navbar = () => {
             onClick={() => setShowNavbar(false)}
           >
             Upcoming Events
+          </Link>
+          <Link
+            href="/innovation-hub"
+            className={`${getLinkClass(
+              "/innovation-hub"
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
+          >
+            Innovation Hub
           </Link>
           <Link
             href="/contact"

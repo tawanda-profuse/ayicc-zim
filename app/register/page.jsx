@@ -96,11 +96,22 @@ const Register = () => {
         passwordRef.current.style.borderColor = "transparent";
         passwordRef.current.style.backgroundColor = "#ccc";
       }, 3000);
-      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       password2Ref.current.style.borderColor = "red";
       setTimeout(() => {
         password2Ref.current.style.borderColor = "transparent";
         password2Ref.current.style.backgroundColor = "#ccc";
+      }, 3000);
+      errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+      setLoading(false);
+      return;
+    }
+    if (formData.password.length < 8) {
+      setIsError(true);
+      setSuccessMessage("Password should be more than 8 letters.");
+      passwordRef.current.style.borderColor = "red";
+      setTimeout(() => {
+        passwordRef.current.style.borderColor = "transparent";
+        passwordRef.current.style.backgroundColor = "#ccc";
       }, 3000);
       errorMessageRef.current?.scrollIntoView({ behavior: "smooth" });
       setLoading(false);
@@ -170,7 +181,7 @@ const Register = () => {
 
   return (
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-      <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
+      <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
         Register Your Details
       </h1>
       <form

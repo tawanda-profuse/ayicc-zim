@@ -48,8 +48,8 @@ body{
 
 .animate-scroll {
   display: flex;
-  min-width: 200%;
-  animation: scroll 100s linear infinite;
+  min-width: 100%;
+  animation: scroll 150s linear infinite;
 }
 
 .required-field::after{

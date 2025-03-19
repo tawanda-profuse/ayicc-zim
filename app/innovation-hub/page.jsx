@@ -103,11 +103,11 @@ const InnovationHub = () => {
       >
         <div className="w-full flex flex-col items-center md:items-start px-4 gap-4">
           <h1
-            className={`text-white md:bg-[#00000099] py-4 uppercase text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
+            className={`text-white md:bg-[#00000099] py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
           >
             Climate, Finance and Innovation Hub
           </h1>
-          <span className="text-white">
+          <span className="text-white text-center">
             {session?.user && (
               <>
                 {session.user.email}
@@ -118,7 +118,7 @@ const InnovationHub = () => {
             )}
           </span>
         </div>
-        <ul className="w-2/4 list-disc underline text-white text-xl flex flex-col gap-2">
+        <ul className="md:w-2/4 list-disc underline text-white text-xl flex flex-col gap-2">
           <li className="hover:pl-2 transition-all">
             <button
               className="underline"
@@ -189,11 +189,11 @@ const InnovationHub = () => {
           </li>
         </ul>
       </header>
-      <section
-        className="pt-12 md:pt-0 flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+      <article
+        className="md:pt-0 flex flex-col md:flex-row items-start justify-center gap-4"
         ref={descriptionRef}
       >
-        <div className="flex flex-col items-center w-full md:w-2/4">
+        <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
           <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             Description
           </h2>
@@ -204,7 +204,7 @@ const InnovationHub = () => {
           </p>
         </div>
         <div
-          className="w-full md:w-2/4 h-full"
+          className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH.src})`,
             backgroundPosition: "center",
@@ -212,22 +212,13 @@ const InnovationHub = () => {
             backgroundSize: "cover",
           }}
         ></div>
-      </section>
-      <section
-        className="flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+      </article>
+      <article
+        className="flex flex-col md:flex-row items-start justify-center gap-4 h-screen"
         ref={toolsRef}
       >
-        <div
-          className="w-full md:w-2/4 h-full"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
-        <div className="pt-12 md:pt-0 flex flex-col items-center w-full md:w-2/4">
-          <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+      <div className="md:pt-0 flex flex-col items-center w-full md:w-2/4">
+          <h2 className={`pt-12 heading-special text-4xl ${poppinsBlack.className}`}>
             Tools
           </h2>
           <ul className="list-disc text-xl pl-8">
@@ -238,18 +229,27 @@ const InnovationHub = () => {
             <li>Business Registration</li>
           </ul>
         </div>
-      </section>
-      <section
-        className="pt-12 md:pt-0 flex flex-col md:flex-row items-center justify-center gap-4 h-screen"
+        <div
+          className="w-full md:w-2/4 min-h-[50vh] md:h-full"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
+      </article>
+      <article
+        className="flex flex-col md:flex-row items-start justify-center gap-4 h-screen"
         ref={trainingsRef}
       >
-        <div className="pt-12 md:pt-0 flex flex-col items-center w-full md:w-2/4">
-          <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+        <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
+          <h2 className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}>
             Upcoming Trainings
           </h2>
         </div>
         <div
-          className="w-full md:w-2/4 h-full"
+          className="w-full md:w-2/4 h-screen"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH2.src})`,
             backgroundPosition: "center",
@@ -257,8 +257,8 @@ const InnovationHub = () => {
             backgroundSize: "cover",
           }}
         ></div>
-      </section>
-      <section
+      </article>
+      <article
         className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH3.src})`,
@@ -273,9 +273,9 @@ const InnovationHub = () => {
         >
           Opportunities
         </h2>
-      </section>
-      <section
-        className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
+      </article>
+      <article
+        className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH4.src})`,
           backgroundPosition: "center",
@@ -364,7 +364,7 @@ const InnovationHub = () => {
           </div>
           <div ref={messageRef}></div>
         </form>
-      </section>
+      </article>
     </main>
   );
 };
