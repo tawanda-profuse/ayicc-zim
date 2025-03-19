@@ -44,8 +44,8 @@ const ResetPassword = () => {
 
     const data = await res.json();
     if (res.ok) {
-      setMessage("Password reset successfully.");
-      setTimeout(() => router.push("/"), 2000);
+      alert("Password reset successfully.");
+      router.push("/");
     } else {
       setMessage(data.message || "Error resetting password.");
       setPending(false);

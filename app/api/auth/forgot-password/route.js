@@ -16,11 +16,19 @@ const sendEmail = async (to, subject, text) => {
     from: `"Password Reset" <${process.env.EMAIL_USER}>`,
     to,
     subject,
-    text,
+    text: `Good day, You are receiving this email because a request to reset your password has been made using this email address. Click here to reset your password: ${text}. If you wish not to change your password, simply ignore this email.`,
     html: `
-    <p>You are receiving this message because a request to reset your password has been made using this email address.</p>
+    <p>Good day,</p>
     </br/>
-    <p>${text}</p>
+    <p>You are receiving this email because a request to reset your password has been made using this email address.</p>
+    </br/>
+    <strong>Click here to reset your password: ${text}</strong>
+    </br/>
+    <p>If you wish not to change your password, simply ignore this email.</p>
+    </br/>
+    </br/>
+    <p>Best Regards,</p>
+    <p>African Youth Initiative on Climate Change</p>
     <img src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png" alt="African Youth Initiative on Climate Change Logo" style="width: 50%; height: auto; display: block;"/>
     `,
   });
@@ -44,7 +52,7 @@ export async function POST(req) {
     await sendEmail(
       user.email,
       "Password Reset",
-      `Click here to reset your password: ${resetURL}`
+      `${resetURL}`
     );
 
     return NextResponse.json(
