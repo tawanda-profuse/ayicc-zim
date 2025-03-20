@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
+import Accordion from "../(components)/Accordion";
 const poppinsBlack = Poppins({
   weight: "900",
   subsets: ["latin"],
@@ -194,13 +195,13 @@ const InnovationHub = () => {
         ref={descriptionRef}
       >
         <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
-          <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
-            Description
-          </h2>
           <p className="text-xl text-center p-4">
-            Welcome to the Innovation Hub. This is a platform that gives members
-            access to different tools, upcoming trainings, opportunities, and a
-            place to share your comments with us.
+            Welcome to the Innovation Hub. This is a platform that is aimed at
+            bridging the gap between the young innovators for climate action and
+            their access to climate finance. This platform will also develop the
+            skills and bankability of the innovations by connecting them with
+            funding opportunities, training and excerpts to encourage innovation
+            and improve access to climate change finance in Zimbabwe.
           </p>
         </div>
         <div
@@ -214,23 +215,46 @@ const InnovationHub = () => {
         ></div>
       </article>
       <article
-        className="flex flex-col md:flex-row items-start justify-center gap-4 h-screen"
+        className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
         ref={toolsRef}
       >
-      <div className="md:pt-0 flex flex-col items-center w-full md:w-2/4">
-          <h2 className={`pt-12 heading-special text-4xl ${poppinsBlack.className}`}>
+        <div className="md:pt-0 flex flex-col items-center w-full md:w-2/4">
+          <h2
+            className={`pt-12 heading-special text-4xl ${poppinsBlack.className}`}
+          >
             Tools
           </h2>
-          <ul className="list-disc text-xl pl-8">
-            <li>Climate Finance</li>
-            <li>Business Development and Management</li>
-            <li>IPCC Sectors</li>
-            <li>Intellectual Property Rights</li>
-            <li>Business Registration</li>
-          </ul>
+          <div className="flex flex-col gap-3 my-4 w-[90%]">
+            <Accordion
+              data={[
+                {
+                  text: "IPCC Sectors",
+                  link: "https://unfccc.int/files/essential_background/background_publications_htmlpdf/application/pdf/conveng.pdf",
+                  details: [
+                    "Agriculture Food and Other Land Use (AFOLU)",
+                    "Waste",
+                    "Industry Processes and Product Use (IPPU)",
+                    "Energy ",
+                  ],
+                },
+                {
+                  text: "Climate Finance",
+                },
+                {
+                  text: "Business Development and Management",
+                },
+                {
+                  text: "Intellectual Property Rights",
+                },
+                {
+                  text: "Business Registration",
+                },
+              ]}
+            />
+          </div>
         </div>
         <div
-          className="w-full md:w-2/4 min-h-[50vh] md:h-full"
+          className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
             backgroundPosition: "center",
@@ -244,7 +268,9 @@ const InnovationHub = () => {
         ref={trainingsRef}
       >
         <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
-          <h2 className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}>
+          <h2
+            className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
+          >
             Upcoming Trainings
           </h2>
         </div>

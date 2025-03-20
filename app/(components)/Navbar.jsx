@@ -68,7 +68,7 @@ const Navbar = () => {
     },
     {
       url: "staff",
-      text: "Team",
+      text: "Staff",
     },
   ];
 

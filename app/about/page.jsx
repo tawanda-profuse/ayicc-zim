@@ -2,15 +2,14 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import waterHourGlass from "../../public/images/water-hour-glass.png";
-import mhandu from "../../public/images/mhandu.jpg";
-import panashe from "../../public/images/panashe.jpg";
-import tashinga from "../../public/images/tashinga-chikomba.jpg";
 import meeting from "../../public/images/meeting.jpg";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
 import trash from "../../public/images/trash.jpg";
 import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
 import chiveroChallenge from "../../public/images/chivero-challenge.jpg";
 import { Poppins } from "next/font/google";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 
 const poppinsBlack = Poppins({
   weight: "900",
@@ -200,48 +199,23 @@ const page = () => {
             towards a better climate and social equity’.
           </p>
         </article>
-        <section
-          className="py-[2rem] px-[2rem] md:px-[4rem]"
-          id="staff"
+        <article
+          className="py-[2rem] px-[1rem] md:px-[4rem] h-screen md:max-h-[80vh] flex flex-col items-center gap-8 text-black"
           ref={staffRef}
         >
           <h2
             className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
           >
-            Team
+            Staff
           </h2>
-          <h3 className="text-center text-color-2">AYICC Zimbabwe Team</h3>
-          <div className="my-[4rem] grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-            {[
-              {
-                name: "Jean-Betrand Mhandu",
-                role: "National Coordinator",
-                image: mhandu,
-              },
-              {
-                name: "Panashe Sakupwanya",
-                role: "Operations Manager",
-                image: panashe,
-              },
-              {
-                name: "Tashinga Chikomba",
-                role: "Environmental Scientist",
-                image: tashinga,
-              },
-            ].map((item, index) => (
-              <div className="flex flex-col items-center gap-2" key={index}>
-                <Image
-                  src={item.image}
-                  className="w-[20rem] md:w-[15rem] md:h-[15rem] mx-auto rounded-lg mb-[1rem] md:object-cover"
-                  height={200}
-                  alt={item.name}
-                />
-                <h3 className="font-bold text-[#002E5B]">{item.name}</h3>
-                <h4 className="text-color-2">{item.role}</h4>
-              </div>
-            ))}
-          </div>
-        </section>
+          <a
+            href="https://drive.google.com/file/d/1M2J_UcfJvUmtHOQA9Z0cyLOrd_XUE4NE/view?usp=sharing"
+            target="_blank"
+            className="text-xl font-semibold text-center transition-all underline p-2 text-ayicc-dark-green"
+          >
+            View Our Organogram{" "}<FontAwesomeIcon icon={faExternalLink} className="w-[1rem]"/>
+          </a>
+        </article>
         <article
           className="pt-[2rem] pb-[3rem]"
           style={{

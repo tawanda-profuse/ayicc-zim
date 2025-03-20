@@ -71,11 +71,11 @@ const Initiatives = () => {
             >
               Awareness
             </h2>
-            <ul className="my-[1rem] list-disc pl-6 text-xl">
-              <li>Radio</li>
-              <li>TV</li>
-              <li>Press Release</li>
-            </ul>
+            <p className="my-[1rem] text-xl">
+              AYICC Zimbabwe has hosted and participated in a lot of radio, and
+              TV programs with major broadcasters locally, Nationally and
+              internationally.{" "}
+            </p>
           </div>
           <Image
             src={conference4}
@@ -84,10 +84,10 @@ const Initiatives = () => {
             height={500}
           />
         </section>
-        <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
+        <article
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${catchThemYoung.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${catchThemYoung.src})`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -95,11 +95,63 @@ const Initiatives = () => {
           ref={advocacyRef}
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl mb-12 ${poppinsBlack.className} text-white`}
           >
             Advocacy
           </h2>
-        </section>
+          <p className="text-white text-xl my-4 font-semibold">
+            Zimbabwean children and youth have been actively engaged in the
+            development of Country’s NDCs, NAPs, and LEDs while also being
+            actively involved in the revision processes of environmental
+            legislation such as the Forestry Act and the Environmental
+            Management Act. Having played a huge part in formulating the above
+            strategies, plans, policy briefs and legislation, youths throughout
+            the country have a sense of ownership and responsibility to ensure
+            their implementation and accountability. And, this has been evident
+            in the gradual increase of youth participants at COPs since COP21.
+          </p>
+          <p className="text-white text-xl my-4 font-semibold">
+            However, there is still a long way until we achieve our climate
+            ambitions and goals as a country, continent and globe. Young people
+            particularly from rural and non-urban communities are still
+            vulnerable to the effects of climate change in their day-to-day
+            lives as water sources keep drying up, and loss of biodiversity
+            especially deforestation has caused an ecosystem shift which has
+            negative impacts on their homes, soil, agriculture and other forms
+            of livelihoods. While children and youth in Zimbabwe have shown an
+            improved understanding of climate change, there is a need to enhance
+            their capacity to advocate for reductions in emissions, better
+            access to climate finance, and ensure that our leaders are adhering
+            to the Paris Agreement by actively participating in the Global
+            Stocktake process.
+          </p>
+          <p className="text-white text-xl my-4 font-semibold">
+            Has been leading Climate Change Advocacy for Young People in
+            Zimbabwe and Africa. Ensuring that their voices and ideas are
+            well-represented and implemented. Adding on to National, Regional
+            and International Position Papers AYICCZim developed Policy Briefs,
+            Statements and Dialogue to contribute to the decision making.
+          </p>
+          <ul className="text-white text-xl my-4 list-disc pl-6 font-semibold underline">
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1N7WWpLSwFo_rjpUcoa365FzLGIWrKfyR/view?usp=drivesdk"
+                target="_blank"
+              >
+                Children and Youth Policy Brief on the Zimbabwe Climate Change
+                Management Bill.pdf
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1OJIMA4eLS1Pa-8UBwRdO0eKv7mlg8Jpz/view?usp=drivesdk"
+                target="_blank"
+              >
+                Final Zimbabwe Youth Position Paper.pdf
+              </a>
+            </li>
+          </ul>
+        </article>
         <section
           className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
           style={{
