@@ -2,7 +2,7 @@
 import EventForm from "@/app/(components)/EventForm";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +17,7 @@ const CreateEvent = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const { data: session, status } = useSession();
+  const messageRef = useRef(null);
 
   useEffect(() => {
     if (status === "loading") return;
@@ -33,6 +34,7 @@ const CreateEvent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.title) {
       setIsError(true);
@@ -100,6 +102,14 @@ const CreateEvent = () => {
       <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
         <li className="transition-all hover:pl-2">
           <Link
+            href="/admin"
+            className="underline hover:text-ayicc-light-green"
+          >
+            Admin Home
+          </Link>
+        </li>
+        <li className="transition-all hover:pl-2">
+          <Link
             href="/admin/events"
             className="underline hover:text-ayicc-light-green"
           >
@@ -121,13 +131,14 @@ const CreateEvent = () => {
         />
         {successMessage && (
           <p
-            className={`font-bold ${
+            className={`mt-4 font-bold ${
               isError ? "text-red-500" : "text-green-600"
             }`}
           >
             {successMessage}
           </p>
         )}
+        <div ref={messageRef}></div>
       </form>
     </main>
   );

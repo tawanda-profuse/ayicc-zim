@@ -39,8 +39,7 @@ const Accordion = ({ data }) => {
                 {item.link && (
                   <li>
                     <a href={item.link} target="_blank" className="underline">
-                      (View Details <FontAwesomeIcon icon={faExternalLink} />
-                      )
+                      (View Details <FontAwesomeIcon icon={faExternalLink} />)
                     </a>
                   </li>
                 )}

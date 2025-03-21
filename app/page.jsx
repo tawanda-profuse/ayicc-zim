@@ -9,6 +9,7 @@ import {
   faFish,
   faTrash,
   faVolumeHigh,
+  faExternalLink,
 } from "@fortawesome/free-solid-svg-icons";
 import dryGround from "../public/images/dry-ground.png";
 import donate2 from "../public/images/donate-2.jpg";
@@ -178,17 +179,20 @@ export default function Home() {
           </h2>
           <ul className="list-disc text-xl font-semibold">
             <li>
-              <Link href="/innovation-hub">
-                Launch of the Climate Finance and Innovation Hub
+              <Link href="/innovation-hub" className="underline">
+                Launch of the Climate Finance and Innovation Hub{" "}
+                <FontAwesomeIcon icon={faExternalLink} />
               </Link>
             </li>
             <li>
               <a
                 href="https://drive.google.com/open?id=1N7WWpLSwFo_rjpUcoa365FzLGIWrKfyR"
                 target="_blank"
+                className="underline"
               >
                 Launch of the Children and Youth Policy Brief on the Zimbabwe
-                Climate Change Management Bill
+                Climate Change Management Bill{" "}
+                <FontAwesomeIcon icon={faExternalLink} />
               </a>
             </li>
             <li>COP29 Feedback</li>
@@ -196,8 +200,10 @@ export default function Home() {
               <a
                 href="https://www.ramsar.org/meeting/15th-meeting-conference-contracting-parties"
                 target="_blank"
+                className="underline"
               >
-                RAMSAR COP16 - Victoria Falls
+                RAMSAR COP16 - Victoria Falls{" "}
+                <FontAwesomeIcon icon={faExternalLink} />
               </a>
             </li>
           </ul>

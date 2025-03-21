@@ -131,6 +131,11 @@ const InnovationHub = () => {
             </button>
           </li>
           <li className="hover:pl-2 transition-all">
+            <Link href="/innovation-hub/profiles" className="underline">
+              Profiles
+            </Link>
+          </li>
+          <li className="hover:pl-2 transition-all">
             <button
               className="underline"
               onClick={() =>
@@ -231,7 +236,7 @@ const InnovationHub = () => {
                   text: "IPCC Sectors",
                   link: "https://unfccc.int/files/essential_background/background_publications_htmlpdf/application/pdf/conveng.pdf",
                   details: [
-                    "Agriculture Food and Other Land Use (AFOLU)",
+                    "Agriculture Forestry and Other Land Use (AFOLU)",
                     "Waste",
                     "Industry Processes and Product Use (IPPU)",
                     "Energy ",

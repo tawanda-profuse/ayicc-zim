@@ -4,7 +4,7 @@ import { getToken } from "next-auth/jwt";
 export async function middleware(req) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-  const protectedPaths = ["/innovation-hub", "/events/create", "/admin", "/admin/events", "/admin/users"];
+  const protectedPaths = ["/innovation-hub", "/innovation-hub/profiles", "/events/create", "/admin", "/admin/events", "/admin/users"];
   const isProtectedRoute = protectedPaths.some((path) =>
     req.nextUrl.pathname.startsWith(path)
   );
@@ -21,5 +21,5 @@ export async function middleware(req) {
 
 // ✅ Apply middleware only to protected routes
 export const config = {
-  matcher: ["/innovation-hub", "/events/create","/admin", "/admin/events", "/admin/users"],
+  matcher: ["/innovation-hub", "/innovation-hub/profiles", "/events/create","/admin", "/admin/events", "/admin/users"],
 };

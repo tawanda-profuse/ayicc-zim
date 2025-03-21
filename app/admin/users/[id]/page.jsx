@@ -1,5 +1,4 @@
 "use client";
-import EventForm from "@/app/(components)/EventForm";
 import UserForm from "@/app/(components)/UserForm";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,6 +37,7 @@ const EventDetails = () => {
   const lastNameRef = useRef();
   const emailRef = useRef();
   const userTypeRef = useRef();
+  const messageRef = useRef(null);
 
   useEffect(() => {
     if (status === "loading") return;
@@ -78,6 +78,7 @@ const EventDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.firstName) {
       setIsError(true);
@@ -123,23 +124,23 @@ const EventDetails = () => {
     setSuccessMessage("");
 
     try {
-        const response = await fetch(`/api/Users/${user?._id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+      const response = await fetch(`/api/Users/${user?._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (response.ok) {
-          alert(data.message);
-          router.push("/admin/users");
-        } else {
-          setSuccessMessage(data.message);
-          setIsError(true);
-        }
+      if (response.ok) {
+        alert(data.message);
+        router.push("/admin/users");
+      } else {
+        setSuccessMessage(data.message);
+        setIsError(true);
+      }
     } catch (error) {
       setSuccessMessage("Failed to update the user details. Try again later.");
       setIsError(true);
@@ -196,6 +197,7 @@ const EventDetails = () => {
                 {successMessage}
               </p>
             )}
+            <div ref={messageRef}></div>
           </form>
         )}
       </main>

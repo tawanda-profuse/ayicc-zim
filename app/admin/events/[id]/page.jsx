@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const fetchEventDetails = async (id) => {
   try {
@@ -35,6 +35,7 @@ const EventDetails = () => {
   const [isError, setIsError] = useState(false);
   const { data: session, status } = useSession();
   const [event, setEvent] = useState({});
+  const messageRef = useRef(null);
 
   useEffect(() => {
     if (status === "loading") return;
@@ -70,6 +71,7 @@ const EventDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.title) {
       setIsError(true);
@@ -130,6 +132,14 @@ const EventDetails = () => {
         <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
           <li className="transition-all hover:pl-2">
             <Link
+              href="/admin"
+              className="underline hover:text-ayicc-light-green"
+            >
+              Admin Home
+            </Link>
+          </li>
+          <li className="transition-all hover:pl-2">
+            <Link
               href="/admin/events"
               className="underline hover:text-ayicc-light-green"
             >
@@ -141,13 +151,13 @@ const EventDetails = () => {
           Edit Event Details
         </h1>
         {loadingData && (
-        <div className="min-h-[50vh] flex flex-col items-center justify-center">
-          <FontAwesomeIcon
-            icon={faSpinner}
-            className="animate-spin text-ayicc-dark-green text-6xl w-[3rem]"
-          />
-        </div>
-      )}
+          <div className="min-h-[50vh] flex flex-col items-center justify-center">
+            <FontAwesomeIcon
+              icon={faSpinner}
+              className="animate-spin text-ayicc-dark-green text-6xl w-[3rem]"
+            />
+          </div>
+        )}
         {!loadingData && (
           <form
             className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
@@ -160,13 +170,14 @@ const EventDetails = () => {
             />
             {successMessage && (
               <p
-                className={`font-bold ${
+                className={`mt-4 font-bold ${
                   isError ? "text-red-500" : "text-green-600"
                 }`}
               >
                 {successMessage}
               </p>
             )}
+            <div ref={messageRef}></div>
           </form>
         )}
       </main>

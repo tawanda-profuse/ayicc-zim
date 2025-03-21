@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { signIn } from "next-auth/react";
 
 const Login = () => {
@@ -21,6 +21,7 @@ const Login = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const [togglePassword, setTogglePassword] = useState(false);
+    const messageRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,6 +30,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.email) {
       setIsError(true);
@@ -118,15 +120,6 @@ const Login = () => {
             </button>
           </div>
         </div>
-        {successMessage && (
-          <p
-            className={`mt-6 font-bold ${
-              isError ? "text-red-500" : "text-green-600"
-            }`}
-          >
-            {successMessage}
-          </p>
-        )}
         <button
           type="submit"
           className="my-6 flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
@@ -153,6 +146,16 @@ const Login = () => {
             Reset it here.
           </Link>
         </p>
+        {successMessage && (
+          <p
+            className={`font-bold ${
+              isError ? "text-red-500" : "text-green-600"
+            }`}
+          >
+            {successMessage}
+          </p>
+        )}
+        <div ref={messageRef}></div>
       </form>
     </main>
   );

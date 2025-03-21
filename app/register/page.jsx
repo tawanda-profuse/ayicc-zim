@@ -31,6 +31,7 @@ const Register = () => {
   const userTypeRef = useRef();
   const errorMessageRef = useRef();
   const { data: session, status } = useSession();
+  const messageRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,6 +40,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.firstName) {
       setIsError(true);
@@ -216,6 +218,7 @@ const Register = () => {
             {successMessage}
           </p>
         )}
+        <div ref={messageRef}></div>
       </form>
     </main>
   );
