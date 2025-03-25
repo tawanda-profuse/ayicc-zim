@@ -3,11 +3,35 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 
-export async function GET() {
+export async function GET(req) {
   try {
-    const users = await User.find().sort({ lastName: "asc" });
+    const { searchParams } = new URL(req.url);
+    const firstName = searchParams.get("firstName") || "";
+    const lastName = searchParams.get("lastName") || "";
+    const userType = searchParams.get("userType") || "";
+    const page = parseInt(searchParams.get("page")) || 1;
+    const limit = parseInt(searchParams.get("limit")) || 10;
 
-    return NextResponse.json({ users }, { status: 200 });
+    const query = {};
+    if (firstName) query.firstName = { $regex: firstName, $options: "i" };
+    if (lastName) query.lastName = { $regex: lastName, $options: "i" };
+    if (userType) query.userType = { $regex: userType, $options: "i" };
+
+    const users = await User.find(query)
+      .sort({ lastName: "asc" })
+      .skip((page - 1) * limit)
+      .limit(Number(limit));
+
+    const totalCount = await User.countDocuments(query); // Count total matching records
+
+    return NextResponse.json(
+      {
+        data: users,
+        totalPages: Math.ceil(totalCount / limit),
+        currentPage: Number(page),
+      },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error: ", error);
     return NextResponse.json(

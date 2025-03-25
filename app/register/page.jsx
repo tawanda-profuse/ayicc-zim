@@ -147,8 +147,9 @@ const Register = () => {
 
       if (response.ok) {
         setSuccessMessage(
-          "User created successfully! Please wait to be given access by the administrator."
+          "Account created successfully! Please wait to be given access by the administrator."
         );
+        messageRef.current?.scrollIntoView({ behavior: "smooth" });
         setFormData({
           firstName: "",
           lastName: "",
