@@ -40,6 +40,7 @@ const AdminUsers = () => {
       setTotalPages(totalPages);
     } catch (error) {
       console.error("Error fetching users:", error);
+      console.error("Error fetching user data");
     } finally {
       setLoading(false);
     }

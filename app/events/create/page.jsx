@@ -34,7 +34,6 @@ const CreateEvent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.title) {
       setIsError(true);
@@ -76,6 +75,8 @@ const CreateEvent = () => {
 
       if (response.ok) {
         setSuccessMessage("Event created successfully!");
+        messageRef.current?.scrollIntoView({ behavior: "smooth" });
+
         setFormData({
           title: "",
           date: "",
@@ -94,6 +95,7 @@ const CreateEvent = () => {
       setIsError(true);
     } finally {
       setLoading(false);
+      messageRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
 

@@ -15,44 +15,41 @@ const poppinsBlack = Poppins({
   variable: "--font-poppins",
 });
 
-const fetchAllEvents = async () => {
-  try {
-    const res = await fetch("/api/AllEvents", {
-      cache: "no-store",
-    });
-
-    return res.json();
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState([]);
+  const [location, setLocation] = useState("");
+  const [totalPages, setTotalPages] = useState(1);
+  const [page, setPage] = useState(1);
+
+  const fetchEvents = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `/api/AllEvents?location=${location}&page=${page}&limit=10`
+      );
+      const { data, totalPages } = await res.json();
+      setEvents(data);
+      setTotalPages(totalPages);
+    } catch (error) {
+      console.error("Error: ", error);
+      alert("Error fetching events");
+      setEvents([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const getEvents = async () => {
-      try {
-        const eventsData = await fetchAllEvents();
-        setEvents(eventsData.events);
-      } catch (error) {
-        console.error("Error: ", error);
-        alert("An error has occurred");
-        setEvents([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getEvents();
-  }, []);
+    fetchEvents();
+  }, [page]);
 
   return (
     <main className="py-10 px-[1rem] md:px-[10rem] grid grid-cols-1 justify-center gap-8">
       <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
-        Upcoming Events:
+        Upcoming Events
       </h2>
+      <p>Showing {events.length} result(s)</p>
       {loading && (
         <div className="min-h-[50vh] flex flex-col items-center justify-center">
           <FontAwesomeIcon
@@ -63,6 +60,33 @@ const Events = () => {
       )}
       {!loading && (
         <>
+          {/* Search Inputs */}
+          <div className="flex flex-col md:flex-row gap-4 my-4">
+            <input
+              value={location}
+              type="text"
+              placeholder="Enter a location e.g. Harare"
+              onChange={(e) => setLocation(e.target.value)}
+              className="border-2 border-black focus:border-ayicc-light-green outline-none p-2 w-full md:w-1/3 rounded"
+            />
+            <button
+              onClick={() => {
+                setPage(1); // Reset to first page on new search
+                fetchEvents();
+              }}
+              className="bg-ayicc-dark-green text-white px-4 py-2 rounded"
+            >
+              Search
+            </button>
+            <button
+            className="bg-[#444] text-white px-4 py-2 rounded"
+              onClick={() => {
+                setLocation("");
+              }}
+            >
+              Clear
+            </button>
+          </div>
           {events?.length > 0 ? (
             <>
               {events?.map((item, index) => (
@@ -110,6 +134,34 @@ const Events = () => {
                   </div>
                 </article>
               ))}
+              {/* Pagination */}
+              <div className="flex justify-center items-center gap-4 mt-4">
+                <button
+                  disabled={page === 1}
+                  onClick={() => setPage(page - 1)}
+                  className={`${
+                    page === 1
+                      ? "bg-[#ccc]"
+                      : "bg-ayicc-dark-green hover:opacity-90"
+                  } text-white px-4 py-2 rounded`}
+                >
+                  Previous
+                </button>
+                <span>
+                  Page {page} of {totalPages}
+                </span>
+                <button
+                  disabled={page === totalPages}
+                  onClick={() => setPage(page + 1)}
+                  className={`${
+                    page === totalPages
+                      ? "bg-[#ccc]"
+                      : "bg-ayicc-dark-green hover:opacity-90"
+                  } text-white px-4 py-2 rounded`}
+                >
+                  Next
+                </button>
+              </div>
             </>
           ) : (
             <div className="min-h-[40vh] flex flex-col items-center justify-center">

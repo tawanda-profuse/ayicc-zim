@@ -61,9 +61,10 @@ export default function Home() {
     const getEvents = async () => {
       try {
         const eventsData = await fetchSomeEvents();
-        const allEventsData = await fetchAllEvents();
+        const allEventsData = await fetch(`/api/AllEvents?limit=${Infinity}`);
+        const { data } = await allEventsData.json();
         setEvents(eventsData.events);
-        setAllEvents(allEventsData.events);
+        setAllEvents(data);
       } catch (error) {
         console.error("Error: ", error);
         setEvents([]);
@@ -76,10 +77,10 @@ export default function Home() {
     getEvents();
   }, []);
 
-  const submitNewsLetter = async(e) => {
+  const submitNewsLetter = async (e) => {
     e.preventDefault();
     alert("This feature is not yet ready. Please check back later.");
-  }
+  };
 
   return (
     <>
@@ -335,7 +336,10 @@ export default function Home() {
           <h2 className={`text-5xl text-center ${poppinsBlack.className}`}>
             Sign Up for Newsletter
           </h2>
-          <form className="flex flex-col md:flex-row gap-4 items-center justify-center" onSubmit={submitNewsLetter}>
+          <form
+            className="flex flex-col md:flex-row gap-4 items-center justify-center"
+            onSubmit={submitNewsLetter}
+          >
             <input
               type="email"
               className="w-full md:w-2/4 p-2 rounded-md outline-none text-xl focus:border focus:border-black"
