@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import waterHourGlass from "../../public/images/water-hour-glass.png";
-import meeting from "../../public/images/meeting.jpg";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
 import trash from "../../public/images/trash.jpg";
 import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
@@ -45,14 +44,7 @@ const page = () => {
 
   return (
     <>
-      <header
-        className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${meeting.src})`,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-        }}
-      >
+      <header className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-about">
         <h1
           className={`text-white uppercase text-6xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
         >
@@ -213,7 +205,8 @@ const page = () => {
             target="_blank"
             className="text-xl font-semibold text-center transition-all underline p-2 text-ayicc-dark-green"
           >
-            View Our Organogram{" "}<FontAwesomeIcon icon={faExternalLink} className="w-[1rem]"/>
+            View Our Organogram{" "}
+            <FontAwesomeIcon icon={faExternalLink} className="w-[1rem]" />
           </a>
         </article>
         <article

@@ -1,20 +1,22 @@
 "use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const ScrollUp = () => {
+  const scrollUpButtonRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scrollUpButton = document.getElementById("scroll-up-btn");
 
       if (scrollY > 1) {
-        scrollUpButton?.classList.add("block");
-        scrollUpButton?.classList.remove("hidden");
+        scrollUpButtonRef.current?.classList.add("block");
+        scrollUpButtonRef.current?.classList.remove("hidden");
       } else {
-        scrollUpButton?.classList.add("hidden");
-        scrollUpButton?.classList.remove("block");
+        scrollUpButtonRef.current?.classList.add("hidden");
+        scrollUpButtonRef.current?.classList.remove("block");
       }
     };
 
@@ -26,9 +28,10 @@ const ScrollUp = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <button
-      id="scroll-up-btn"
+      ref={scrollUpButtonRef}
       className="hidden fixed bottom-2 right-2 md:bottom-6 md:right-6 bg-ayicc-light-green text-white p-2 md:p-3 rounded-md shadow-sm shadow-[#ddd] flex-col items-center justify-center transition-all hover:scale-[1.1] hover:opacity-90"
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });

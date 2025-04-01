@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const FontAwesomeIcon = dynamic(() =>
+  import("@fortawesome/react-fontawesome").then((mod) => mod.FontAwesomeIcon)
+);
 import {
   faClockFour,
   faLocationPin,
@@ -11,12 +13,12 @@ import {
   faVolumeHigh,
   faExternalLink,
 } from "@fortawesome/free-solid-svg-icons";
-import dryGround from "../public/images/dry-ground.png";
 import donate2 from "../public/images/donate-2.jpg";
 import { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 
 const poppinsBlack = Poppins({
   weight: "900",
@@ -35,13 +37,24 @@ const fetchAllEvents = async () => {
     console.error(error);
   }
 };
+// Format dates during data fetching
 const fetchSomeEvents = async () => {
   try {
     const res = await fetch("/api/events", {
       cache: "no-store",
     });
-
-    return res.json();
+    const data = await res.json();
+    return data.events.map((event) => ({
+      ...event,
+      formattedDate: new Date(event.date).toLocaleDateString("en-US", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      }),
+      formattedTime: new Date(event.date).toLocaleTimeString("en-US", {
+        timeStyle: "short",
+      }),
+    }));
   } catch (error) {
     console.error(error);
   }
@@ -63,7 +76,7 @@ export default function Home() {
         const eventsData = await fetchSomeEvents();
         const allEventsData = await fetch(`/api/AllEvents?limit=${Infinity}`);
         const { data } = await allEventsData.json();
-        setEvents(eventsData.events);
+        setEvents(eventsData);
         setAllEvents(data);
       } catch (error) {
         console.error("Error: ", error);
@@ -86,15 +99,10 @@ export default function Home() {
     <>
       <header
         className={`min-h-[80vh] ${
-          events.length > 0 ? "pb-6" : "py-6"
-        } w-full flex flex-col gap-12 items-center justify-center select-none`}
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${dryGround.src})`,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-        }}
+          allEvents.length > 0 ? "pb-6" : "py-6"
+        } w-full flex flex-col gap-12 items-center justify-center select-none bg-dry-ground`}
       >
-        {events.length > 0 && (
+        {allEvents.length > 0 && (
           <>
             <div
               className="text-ayicc-dark-green font-bold py-4 w-full overflow-hidden hover:animate-none bg-yellow-200 relative"
@@ -128,14 +136,7 @@ export default function Home() {
           >
             AYICC
           </h1>
-          <span
-            className="hidden md:block absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 text-[1rem] md:text-2xl w-full text-center font-[700] font-sans bg-[#000000d2]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${dryGround.src})`,
-              backgroundPosition: "top",
-              backgroundSize: "cover",
-            }}
-          >
+          <span className="hidden md:block absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 text-[1rem] md:text-2xl w-full text-center font-[700] font-sans bg-[#000]">
             African Youth Initiative on Climate Change
           </span>
         </div>
@@ -302,14 +303,7 @@ export default function Home() {
                           </h3>
                           <span className="text-color-2 flex gap-1 items-center">
                             <FontAwesomeIcon icon={faClockFour} />
-                            {new Date(item.date).toLocaleDateString("en-US", {
-                              day: "2-digit",
-                              month: "2-digit",
-                              year: "numeric",
-                            })}{" "}
-                            {new Date(item.date).toLocaleTimeString("en-US", {
-                              timeStyle: "short",
-                            })}
+                            {item.formattedDate} {item.formattedTime}
                           </span>
                           <span className="text-color-2 flex gap-1 items-center">
                             <FontAwesomeIcon icon={faLocationPin} />
@@ -332,7 +326,7 @@ export default function Home() {
             </>
           )}
         </section>
-        <article className="min-h-[50vh] py-[2rem] px-[1rem] md:px-[4rem] flex flex-col gap-8 bg-yellow-300">
+        <div className="min-h-[50vh] py-[2rem] px-[1rem] md:px-[4rem] flex flex-col gap-8 bg-yellow-300">
           <h2 className={`text-5xl text-center ${poppinsBlack.className}`}>
             Sign Up for Newsletter
           </h2>
@@ -345,11 +339,14 @@ export default function Home() {
               className="w-full md:w-2/4 p-2 rounded-md outline-none text-xl focus:border focus:border-black"
               placeholder="Enter email address"
             />
-            <button className="w-full md:w-2/4 bg-ayicc-dark-green text-white rounded-md hover:bg-black py-3 font-bold">
+            <button
+              className="w-full md:w-2/4 bg-ayicc-dark-green text-white rounded-md hover:bg-black py-3 font-bold"
+              type="submit"
+            >
               Sign Up
             </button>
           </form>
-        </article>
+        </div>
       </main>
     </>
   );

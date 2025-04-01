@@ -18,6 +18,26 @@ body{
   scroll-behavior: smooth;
 }
 
+.bg-dry-ground {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url('/images/dry-ground.png');
+  background-position: bottom;
+  background-size: cover;
+}
+
+.bg-about {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url('/images/meeting.jpg');
+  background-position: bottom;
+  background-size: cover;
+}
+
 .heading-special {
   color: #000;
   font-weight: bold;

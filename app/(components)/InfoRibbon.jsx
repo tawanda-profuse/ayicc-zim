@@ -4,7 +4,10 @@ import {
   faLocationPin,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import dynamic from "next/dynamic";
+const FontAwesomeIcon = dynamic(() =>
+  import("@fortawesome/react-fontawesome").then((mod) => mod.FontAwesomeIcon)
+);
 import { useRouter } from "next/navigation";
 import React from "react";
 
