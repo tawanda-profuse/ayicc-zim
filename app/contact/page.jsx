@@ -128,15 +128,7 @@ const Contact = () => {
               {
                 icon: <FaFacebookF />,
                 link: "https://www.facebook.com/AYICCZimbabwe/",
-              },
-              {
-                icon: <FaTwitter />,
-                link: "https://x.com/ayicc",
-              },
-              {
-                icon: <FaInstagram />,
-                link: "https://www.instagram.com/ayiccafrica",
-              },
+              }
             ].map((item, index) => (
               <a
                 href={item.link}

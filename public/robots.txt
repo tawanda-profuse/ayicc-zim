@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ayicczimbabwe.org.zw
+
+# Sitemaps
+Sitemap: https://ayicczimbabwe.org.zw/sitemap.xml

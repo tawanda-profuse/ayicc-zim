@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 import {
-  FaInstagram,
   FaFacebookF,
-  FaTwitter,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -13,12 +11,6 @@ const Footer = () => {
       <div className="flex gap-2">
         <a href="https://www.facebook.com/AYICCZimbabwe/" target="_blank" className="bg-white p-2 rounded-full hover:bg-[#00aced]">
           <FaFacebookF className="text-color-3 hover:text-white" />
-        </a>
-        <a href="https://x.com/ayicc" target="_blank" className="bg-white p-2 rounded-full hover:bg-[#00aced]">
-          <FaTwitter className="text-color-3 hover:text-white" />
-        </a>
-        <a href="https://www.instagram.com/ayiccafrica" target="_blank" className="bg-white p-2 rounded-full hover:bg-[#00aced]">
-          <FaInstagram className="text-color-3 hover:text-white" />
         </a>
       </div>
     </footer>

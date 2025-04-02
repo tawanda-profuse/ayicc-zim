@@ -180,8 +180,8 @@ const Initiatives = () => {
             </h2>
             <ul className="my-[1rem] list-disc pl-6 text-xl font-semibold">
               <li>Wetland Protection and Management </li>
-              <li>Tree planting </li>
-              <li>Work Camps </li>
+              <li>Tree planting</li>
+              <li>Work Camps</li>
             </ul>
           </div>
           <div
