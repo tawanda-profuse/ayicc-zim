@@ -59,6 +59,10 @@ const Navbar = () => {
       text: "Mission",
     },
     {
+      url: "history",
+      text: "History",
+    },
+    {
       url: "staff",
       text: "Staff",
     },
@@ -70,7 +74,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white flex items-center justify-between py-[1rem] md:py-0 px-8 font-bold md:text-[1rem] border-b border-b-color-2">
+      <nav className="bg-white flex items-center justify-between px-8 font-bold md:text-[1rem] border-b border-b-color-2">
         <Link href="/">
           <Image src={logo} alt="Company logo" width={120} height={40} />
         </Link>

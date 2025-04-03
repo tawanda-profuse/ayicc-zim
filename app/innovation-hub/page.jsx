@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightFromBracket,
   faChevronRight,
+  faExternalLink,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -95,7 +96,7 @@ const InnovationHub = () => {
   return (
     <>
       <header
-        className="min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4"
+        className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IHHeader.src})`,
           backgroundPosition: "top",
@@ -221,7 +222,7 @@ const InnovationHub = () => {
             }}
           ></div>
         </section>
-        <article
+        <section
           className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
           ref={toolsRef}
         >
@@ -238,7 +239,7 @@ const InnovationHub = () => {
                     text: "IPCC Sectors",
                     link: "https://unfccc.int/files/essential_background/background_publications_htmlpdf/application/pdf/conveng.pdf",
                     details: [
-                      "Agriculture Forestry and Other Land Use (AFOLU)",
+                      "Agriculture, Forestry and Other Land Use (AFOLU)",
                       "Waste",
                       "Industry Processes and Product Use (IPPU)",
                       "Energy ",
@@ -246,15 +247,19 @@ const InnovationHub = () => {
                   },
                   {
                     text: "Climate Finance",
+                    details: ["No details at the moment"],
                   },
                   {
                     text: "Business Development and Management",
+                    details: ["No details at the moment"],
                   },
                   {
                     text: "Intellectual Property Rights",
+                    details: ["No details at the moment"],
                   },
                   {
                     text: "Business Registration",
+                    details: ["No details at the moment"],
                   },
                 ]}
               />
@@ -269,17 +274,20 @@ const InnovationHub = () => {
               backgroundSize: "cover",
             }}
           ></div>
-        </article>
-        <article
-          className="flex flex-col md:flex-row items-start justify-center gap-4 h-screen"
+        </section>
+        <section
+          className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
           ref={trainingsRef}
         >
-          <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
+          <div className="pt-12 flex flex-col gap-8 items-center w-full md:w-2/4">
             <h2
               className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
             >
               Upcoming Trainings
             </h2>
+            <p className="text-xl text-center p-4">
+              We currently do not have any upcoming trainings
+            </p>
           </div>
           <div
             className="w-full md:w-2/4 h-screen"
@@ -290,9 +298,9 @@ const InnovationHub = () => {
               backgroundSize: "cover",
             }}
           ></div>
-        </article>
-        <article
-          className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
+        </section>
+        <section
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-8"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH3.src})`,
             backgroundPosition: "center",
@@ -306,8 +314,30 @@ const InnovationHub = () => {
           >
             Opportunities
           </h2>
-        </article>
-        <article
+          <ul className="md:w-2/4 list-disc text-white text-xl flex flex-col gap-2 pl-[2rem] mt-[1rem]">
+            <li className="hover:pl-2 transition-all">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSd04nSNn1l7NzLvljJxxJ47-YL7MykIt6fxttYZ5cBmSP3hFw/viewform?vc=0&c=0&w=1&flr=0&fbclid=IwY2xjawJbTrNleHRuA2FlbQIxMAABHYdjyMygqbJxjmoQkXlLTIMnCeU1yyUED7tAUF8aWVFpOI5dM3XbD1Boiw_aem_KtKLe94nE2QPRdcQBc8YqQ"
+                target="_blank"
+                className="hover:underline"
+              >
+                Youth and Children on the draft Zimbabwe Climate Change
+                Management Bill form{" "}<FontAwesomeIcon icon={faExternalLink}/>
+              </a>
+            </li>
+            <li className="hover:pl-2 transition-all">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdFeA0reekZD1-qL8fJKBHRFxwG5yVUJzuHlN_da0v6iLzt8A/closedform"
+                target="_blank"
+                className="hover:underline"
+              >
+                Application for the Zimbabwean Youth Climate Innovation Hub 2024
+                {" "}<FontAwesomeIcon icon={faExternalLink}/>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section
           className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH4.src})`,
@@ -397,7 +427,7 @@ const InnovationHub = () => {
             </div>
             <div ref={messageRef}></div>
           </form>
-        </article>
+        </section>
       </main>
     </>
   );

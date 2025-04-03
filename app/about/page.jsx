@@ -159,15 +159,7 @@ const page = () => {
             History
           </h2>
           <p className="text-xl text-white font-semibold">
-            AYICC is the umbrella network of all youth organizations in Africa
-            working on climate change. It was launched during the International
-            Conference of Youth prior to the UNFCCC, COP 12 in 2006. Currently
-            it has a membership of over 500,000 youth from 51 African countries.
-            It comprises and continues to welcome of all youth organizations who
-            consent with the shared AYICC vision of ‘An African continent with
-            an empowered and united youth movement, proactively involved in the
-            decision making process and the adoption of sustainable options
-            towards a better climate and social equity’.
+          Against the background of promoting vigorous climate change mitigation and adaptation through education which is an essential element in building climate change resilience Thursday Climate Talk #TCT was launched in June 2019. This program runs on a weekly basis where experts, organizations among other stakeholders are hosted as guests. The program has a broader scope hosting a plethora of topics ranging from gender and climate, entrepreneurial adventures, Climate Smart Agriculture amongst other issues. The main goal behind this is to help young people understand and address the impacts of climate change, encourage changes in their attitude and behavior whilst helping them adapt to climate change-related trends. 
           </p>
         </section>
         <section
