@@ -11,6 +11,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import UserForm from "../(components)/UserForm";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -163,7 +164,7 @@ const Register = () => {
         userTypeRef.current.value = "";
         setIsError(false);
       } else {
-        alert(data.message);
+        toast.success(data.message);
       }
     } catch (error) {
       setSuccessMessage("Failed to create the user. Try again later.");

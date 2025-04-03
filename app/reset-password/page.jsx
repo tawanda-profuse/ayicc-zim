@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
   const [newPassword, setNewPassword] = useState("");
@@ -44,7 +45,7 @@ const ResetPassword = () => {
 
     const data = await res.json();
     if (res.ok) {
-      alert("Password reset successfully.");
+      toast.success("Password reset successfully.");
       router.push("/");
     } else {
       setMessage(data.message || "Error resetting password.");

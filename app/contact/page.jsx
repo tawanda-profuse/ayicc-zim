@@ -9,6 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,9 +19,6 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [isError, setIsError] = useState(false);
-  const messageRef = useRef(null);
 
   useEffect(() => {
     document.title = "Contact Us - AYICC Zim";
@@ -33,16 +31,12 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.message) {
-      setIsError(true);
-      setSuccessMessage("Message is required");
+      toast.warn("Please enter a message.");
       setLoading(false);
       return;
     }
-
-    setSuccessMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -56,7 +50,7 @@ const Contact = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setSuccessMessage("Your message has been sent successfully!");
+        toast.success("Your message has been sent successfully!");
         setFormData({
           name: "",
           email: "",
@@ -64,12 +58,10 @@ const Contact = () => {
           message: "",
         });
       } else {
-        setSuccessMessage(data.message);
-        setIsError(true);
+        toast.error(data.message);
       }
     } catch (error) {
-      setSuccessMessage("Failed to send message. Try again later.");
-      setIsError(true);
+      toast.error("Failed to send message. Try again later.");
     } finally {
       setLoading(false);
     }
@@ -214,17 +206,7 @@ const Contact = () => {
                 </>
               )}
             </button>
-            {successMessage && (
-              <p
-                className={`font-bold ${
-                  isError ? "text-red-500" : "text-green-600"
-                }`}
-              >
-                {successMessage}
-              </p>
-            )}
           </div>
-          <div ref={messageRef}></div>
         </form>
       </article>
       <iframe

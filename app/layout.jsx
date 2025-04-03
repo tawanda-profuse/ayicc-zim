@@ -6,6 +6,8 @@ import Footer from "./(components)/Footer";
 import ScrollUp from "./(components)/ScrollUp";
 import AuthProvider from "./(components)/AuthProvider";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const openSans = Open_Sans({
   variable: "--font-geist-mono",
@@ -38,6 +40,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const currentYear = new Date().getFullYear(); // Pre-render the year
   return (
     <html lang="en">
       <Head>
@@ -57,15 +60,27 @@ export default function RootLayout({ children }) {
           }}
         />
       </Head>
-      <AuthProvider>
-        <body className={`${openSans.variable} antialiased`}>
+      <body className={`${openSans.variable} antialiased`}>
+        <AuthProvider>
           <InfoRibbon />
           <Navbar />
           {children}
-          <Footer />
+          <Footer year={currentYear} />
           <ScrollUp />
-        </body>
-      </AuthProvider>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000} // Close after 3 seconds
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+        </AuthProvider>
+      </body>
     </html>
   );
 }

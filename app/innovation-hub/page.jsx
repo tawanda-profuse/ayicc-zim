@@ -188,7 +188,6 @@ const InnovationHub = () => {
               className="underline"
               onClick={() => {
                 signOut({ callbackUrl: "/" });
-                alert("You have been signed out.");
               }}
             >
               Logout <FontAwesomeIcon icon={faArrowRightFromBracket} />
@@ -322,7 +321,7 @@ const InnovationHub = () => {
                 className="hover:underline"
               >
                 Youth and Children on the draft Zimbabwe Climate Change
-                Management Bill form{" "}<FontAwesomeIcon icon={faExternalLink}/>
+                Management Bill form <FontAwesomeIcon icon={faExternalLink} />
               </a>
             </li>
             <li className="hover:pl-2 transition-all">
@@ -331,8 +330,8 @@ const InnovationHub = () => {
                 target="_blank"
                 className="hover:underline"
               >
-                Application for the Zimbabwean Youth Climate Innovation Hub 2024
-                {" "}<FontAwesomeIcon icon={faExternalLink}/>
+                Application for the Zimbabwean Youth Climate Innovation Hub 2024{" "}
+                <FontAwesomeIcon icon={faExternalLink} />
               </a>
             </li>
           </ul>

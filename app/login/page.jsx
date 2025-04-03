@@ -7,12 +7,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import { signIn } from "next-auth/react";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,7 +20,7 @@ const Login = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const [togglePassword, setTogglePassword] = useState(false);
-    const messageRef = useRef(null);
+  const messageRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,17 +29,16 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    messageRef.current?.scrollIntoView({ behavior: "smooth" });
 
     if (!formData.email) {
       setIsError(true);
-      setSuccessMessage("Email is required");
+      toast.warn("An email address is required");
       setLoading(false);
       return;
     }
     if (!formData.password) {
       setIsError(true);
-      setSuccessMessage("Password is required");
+      toast.warn("Password is required");
       setLoading(false);
       return;
     }
@@ -54,20 +52,20 @@ const Login = () => {
         redirect: false, // Prevents automatic redirection on failure
         callbackUrl: "/innovation-hub", // Sets the desired post-login redirection
       });
-  
+
       if (response?.error) {
         setIsError(true);
-        setSuccessMessage(response.error);
+        toast.error(response.error);
       } else if (response?.url) {
-        alert("Login successful")
         // Redirect manually on successful login
         window.location.href = response.url;
       }
     } catch (error) {
       setIsError(true);
-      setSuccessMessage(
+      toast.error(
         "An error has occurred while trying to login. Please try again later."
       );
+      toast.error("An error occurred. Please try again later."); // Show error notification
     } finally {
       setLoading(false);
     }
@@ -142,7 +140,10 @@ const Login = () => {
         </p>
         <p className="mb-6">
           Have you forgotten your password?{" "}
-          <Link href="/forgot-password" className="text-ayicc-dark-green underline">
+          <Link
+            href="/forgot-password"
+            className="text-ayicc-dark-green underline"
+          >
             Reset it here.
           </Link>
         </p>

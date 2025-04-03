@@ -159,7 +159,17 @@ const page = () => {
             History
           </h2>
           <p className="text-xl text-white font-semibold">
-          Against the background of promoting vigorous climate change mitigation and adaptation through education which is an essential element in building climate change resilience Thursday Climate Talk #TCT was launched in June 2019. This program runs on a weekly basis where experts, organizations among other stakeholders are hosted as guests. The program has a broader scope hosting a plethora of topics ranging from gender and climate, entrepreneurial adventures, Climate Smart Agriculture amongst other issues. The main goal behind this is to help young people understand and address the impacts of climate change, encourage changes in their attitude and behavior whilst helping them adapt to climate change-related trends. 
+            Against the background of promoting vigorous climate change
+            mitigation and adaptation through education which is an essential
+            element in building climate change resilience Thursday Climate Talk
+            #TCT was launched in June 2019. This program runs on a weekly basis
+            where experts, organizations among other stakeholders are hosted as
+            guests. The program has a broader scope hosting a plethora of topics
+            ranging from gender and climate, entrepreneurial adventures, Climate
+            Smart Agriculture amongst other issues. The main goal behind this is
+            to help young people understand and address the impacts of climate
+            change, encourage changes in their attitude and behavior whilst
+            helping them adapt to climate change-related trends.
           </p>
         </section>
         <section

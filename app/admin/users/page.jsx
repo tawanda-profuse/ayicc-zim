@@ -10,6 +10,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Poppins } from "next/font/google";
+import { toast } from "react-toastify";
 
 const poppinsBlack = Poppins({
   weight: "900",
@@ -71,11 +72,11 @@ const AdminUsers = () => {
       if (response.ok) {
         setUsers((prev) => prev.filter((user) => user._id !== userId));
       } else {
-        alert("Failed to delete user.");
+        toast.error("Failed to delete user.");
       }
     } catch (error) {
       console.error("Error: ", error);
-      alert("An error has occurred. The user was not deleted.");
+      toast.error("An error has occurred. The user was not deleted.");
     } finally {
       setPending(false);
     }
@@ -94,11 +95,11 @@ const AdminUsers = () => {
       if (response.ok) {
         fetchUsers();
       } else {
-        alert("Failed to update user details.");
+        toast.error("Failed to update user details.");
       }
     } catch (error) {
       console.error("Error: ", error);
-      alert("An error has occurred. The user was not deleted.");
+      toast.error("An error has occurred. The user was not deleted.");
     } finally {
       setAuthorizationPending(false);
     }

@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
 
 const fetchUserDetails = async (id) => {
   try {
@@ -62,7 +63,7 @@ const EventDetails = () => {
         document.title = "Editing User Details";
       } catch (error) {
         console.error("Error: ", error);
-        alert("Error fetching user details");
+        toast.error("Error fetching user details");
       } finally {
         setLoadingData(false);
       }
@@ -135,7 +136,7 @@ const EventDetails = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message);
+        toast.success(data.message);
         router.push("/admin/users");
       } else {
         setSuccessMessage(data.message);

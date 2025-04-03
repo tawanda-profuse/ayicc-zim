@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Poppins } from "next/font/google";
+import { toast } from "react-toastify";
 
 const poppinsBlack = Poppins({
   weight: "900",
@@ -33,7 +34,7 @@ const Events = () => {
       setTotalPages(totalPages);
     } catch (error) {
       console.error("Error: ", error);
-      alert("Error fetching events");
+      toast.error("Error fetching events");
       setEvents([]);
     } finally {
       setLoading(false);

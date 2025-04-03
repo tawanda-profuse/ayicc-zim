@@ -19,6 +19,7 @@ import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import { toast } from "react-toastify";
 
 const poppinsBlack = Poppins({
   weight: "900",
@@ -62,15 +63,15 @@ const fetchSomeEvents = async () => {
 
 export default function Home() {
   const eventsRef = useRef(null);
-  const handleEventsScroll = () => {
-    eventsRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [isHydrated, setIsHydrated] = useState(false);
   const [events, setEvents] = useState([]);
   const [allEvents, setAllEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
+    setIsHydrated(true); // Ensure hydration is complete
+
     const getEvents = async () => {
       try {
         const eventsData = await fetchSomeEvents();
@@ -90,9 +91,15 @@ export default function Home() {
     getEvents();
   }, []);
 
+  const handleEventsScroll = () => {
+    if (isHydrated) {
+      eventsRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const submitNewsLetter = async (e) => {
     e.preventDefault();
-    alert("This feature is not yet ready. Please check back later.");
+    toast.info("This feature is not yet ready. Please check back later.");
   };
 
   return (
@@ -103,32 +110,30 @@ export default function Home() {
         } w-full flex flex-col gap-12 items-center justify-center select-none bg-dry-ground`}
       >
         {allEvents.length > 0 && (
-          <>
-            <div
-              className="text-ayicc-dark-green font-bold py-4 w-full overflow-hidden hover:animate-none bg-yellow-200 relative"
-              role="button"
-              onClick={handleEventsScroll}
-              title="Click to view more events"
-            >
-              <span className="bg-ayicc-dark-green h-full absolute left-0 top-0 text-white flex flex-col justify-center px-2 z-50">
-                Events:
-              </span>
-              <div className="flex whitespace-nowrap animate-scroll">
-                <div className="flex gap-12">
-                  {allEvents.map((item, index) => (
-                    <span key={index}>
-                      <FontAwesomeIcon icon={faTree} />{" "}
-                      {new Date(item.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                      })}{" "}
-                      - {item.title} ({item.location})
-                    </span>
-                  ))}
-                </div>
+          <div
+            className="text-ayicc-dark-green font-bold py-4 w-full overflow-hidden hover:animate-none bg-yellow-200 relative"
+            role="button"
+            onClick={handleEventsScroll}
+            title="Click to view more events"
+          >
+            <span className="bg-ayicc-dark-green h-full absolute left-0 top-0 text-white flex flex-col justify-center px-2 z-50">
+              Events:
+            </span>
+            <div className="flex whitespace-nowrap animate-scroll">
+              <div className="flex gap-12">
+                {allEvents.map((item, index) => (
+                  <span key={index}>
+                    <FontAwesomeIcon icon={faTree} />{" "}
+                    {new Date(item.date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    })}{" "}
+                    - {item.title} ({item.location})
+                  </span>
+                ))}
               </div>
             </div>
-          </>
+          </div>
         )}
         <div className="relative w-[90vw] md:w-[30rem] text-white slide-in">
           <h1
