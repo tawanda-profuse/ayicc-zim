@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import waterHourGlass from "../../public/images/water-hour-glass.png";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
@@ -17,34 +17,13 @@ const poppinsBlack = Poppins({
 });
 
 const page = () => {
-  const visionRef = useRef(null);
-  const goalsRef = useRef(null);
-  const missionRef = useRef(null);
-  const historyRef = useRef(null);
-  const provincesRef = useRef(null);
-  const staffRef = useRef(null);
-
   useEffect(() => {
-    document.title = "About Us - AYICC Zim";
-
-    if (window.location.href.includes("vision")) {
-      visionRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (window.location.href.includes("goals")) {
-      goalsRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (window.location.href.includes("mission")) {
-      missionRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (window.location.href.includes("history")) {
-      historyRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (window.location.href.includes("provinces")) {
-      provincesRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (window.location.href.includes("staff")) {
-      staffRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
+    document.title = "About Us - AYICC Zimbabwe";
   }, []);
 
   return (
     <>
-      <header className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-about">
+      <header className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-about">
         <h1
           className={`text-white uppercase text-6xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
         >
@@ -69,9 +48,9 @@ const page = () => {
             water efficiency.
           </p>
         </section>
-        <article
+        <section
           className="py-[1rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4"
-          ref={goalsRef}
+          id="goals"
         >
           <div className="grid w-full md:w-2/4 gap-y-4">
             <h2
@@ -91,10 +70,10 @@ const page = () => {
             className="w-full md:w-2/4 h-auto"
             alt="People cleaning"
           />
-        </article>
+        </section>
         <section
           className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4"
-          ref={visionRef}
+          id="vision"
         >
           <Image
             src={catchThemYoung2}
@@ -116,7 +95,7 @@ const page = () => {
         </section>
         <section
           className="py-[3rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row items-center justify-center gap-4"
-          ref={missionRef}
+          id="mission"
         >
           <div className="grid w-full md:w-2/4 gap-y-4">
             <h2
@@ -165,9 +144,9 @@ const page = () => {
             alt="Dry land and overcast weather"
           />
         </section>
-        <article
+        <section
           className="py-[2rem] px-[1rem] md:px-[4rem] md:h-screen flex flex-col items-center justify-center gap-8"
-          ref={historyRef}
+          id="history"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${chiveroChallenge.src})`,
             backgroundPosition: "top",
@@ -190,10 +169,10 @@ const page = () => {
             decision making process and the adoption of sustainable options
             towards a better climate and social equity’.
           </p>
-        </article>
-        <article
-          className="py-[2rem] px-[1rem] md:px-[4rem] h-screen md:max-h-[80vh] flex flex-col items-center gap-8 text-black"
-          ref={staffRef}
+        </section>
+        <section
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[80vh] flex flex-col items-center gap-8 text-black"
+          id="staff"
         >
           <h2
             className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
@@ -208,14 +187,15 @@ const page = () => {
             View Our Organogram{" "}
             <FontAwesomeIcon icon={faExternalLink} className="w-[1rem]" />
           </a>
-        </article>
-        <article
+        </section>
+        <section
           className="pt-[2rem] pb-[3rem]"
           style={{
             background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${waterHourGlass.src})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
+          id="thematic-areas"
         >
           <h3
             className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
@@ -269,7 +249,7 @@ const page = () => {
               </div>
             ))}
           </div>
-        </article>
+        </section>
       </main>
     </>
   );

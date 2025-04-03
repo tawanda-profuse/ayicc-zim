@@ -59,16 +59,12 @@ const Navbar = () => {
       text: "Mission",
     },
     {
-      url: "history",
-      text: "History",
-    },
-    {
-      url: "national-provinces",
-      text: "National Provinces",
-    },
-    {
       url: "staff",
       text: "Staff",
+    },
+    {
+      url: "thematic-areas",
+      text: "Key Areas",
     },
   ];
 

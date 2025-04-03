@@ -93,7 +93,7 @@ const InnovationHub = () => {
   };
 
   return (
-    <main>
+    <>
       <header
         className="min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4"
         style={{
@@ -195,208 +195,211 @@ const InnovationHub = () => {
           </li>
         </ul>
       </header>
-      <article
-        className="md:pt-0 flex flex-col md:flex-row items-start justify-center gap-4"
-        ref={descriptionRef}
-      >
-        <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
-          <p className="text-xl text-center p-4">
-            Welcome to the Innovation Hub. This is a platform that is aimed at
-            bridging the gap between the young innovators for climate action and
-            their access to climate finance. This platform will also develop the
-            skills and bankability of the innovations by connecting them with
-            funding opportunities, training and excerpts to encourage innovation
-            and improve access to climate change finance in Zimbabwe.
-          </p>
-        </div>
-        <div
-          className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
-      </article>
-      <article
-        className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
-        ref={toolsRef}
-      >
-        <div className="md:pt-0 flex flex-col items-center w-full md:w-2/4">
-          <h2
-            className={`pt-12 heading-special text-4xl ${poppinsBlack.className}`}
-          >
-            Tools
-          </h2>
-          <div className="flex flex-col gap-3 my-4 w-[90%]">
-            <Accordion
-              data={[
-                {
-                  text: "IPCC Sectors",
-                  link: "https://unfccc.int/files/essential_background/background_publications_htmlpdf/application/pdf/conveng.pdf",
-                  details: [
-                    "Agriculture Forestry and Other Land Use (AFOLU)",
-                    "Waste",
-                    "Industry Processes and Product Use (IPPU)",
-                    "Energy ",
-                  ],
-                },
-                {
-                  text: "Climate Finance",
-                },
-                {
-                  text: "Business Development and Management",
-                },
-                {
-                  text: "Intellectual Property Rights",
-                },
-                {
-                  text: "Business Registration",
-                },
-              ]}
-            />
+      <main>
+        <section
+          className="md:pt-0 flex flex-col md:flex-row items-start justify-center gap-4"
+          ref={descriptionRef}
+        >
+          <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
+            <p className="text-xl text-center p-4">
+              Welcome to the Innovation Hub. This is a platform that is aimed at
+              bridging the gap between the young innovators for climate action
+              and their access to climate finance. This platform will also
+              develop the skills and bankability of the innovations by
+              connecting them with funding opportunities, training and excerpts
+              to encourage innovation and improve access to climate change
+              finance in Zimbabwe.
+            </p>
           </div>
-        </div>
-        <div
-          className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
+          <div
+            className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH.src})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        </section>
+        <article
+          className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
+          ref={toolsRef}
+        >
+          <div className="md:pt-0 flex flex-col items-center w-full md:w-2/4">
+            <h2
+              className={`pt-12 heading-special text-4xl ${poppinsBlack.className}`}
+            >
+              Tools
+            </h2>
+            <div className="flex flex-col gap-3 my-4 w-[90%]">
+              <Accordion
+                data={[
+                  {
+                    text: "IPCC Sectors",
+                    link: "https://unfccc.int/files/essential_background/background_publications_htmlpdf/application/pdf/conveng.pdf",
+                    details: [
+                      "Agriculture Forestry and Other Land Use (AFOLU)",
+                      "Waste",
+                      "Industry Processes and Product Use (IPPU)",
+                      "Energy ",
+                    ],
+                  },
+                  {
+                    text: "Climate Finance",
+                  },
+                  {
+                    text: "Business Development and Management",
+                  },
+                  {
+                    text: "Intellectual Property Rights",
+                  },
+                  {
+                    text: "Business Registration",
+                  },
+                ]}
+              />
+            </div>
+          </div>
+          <div
+            className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        </article>
+        <article
+          className="flex flex-col md:flex-row items-start justify-center gap-4 h-screen"
+          ref={trainingsRef}
+        >
+          <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
+            <h2
+              className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
+            >
+              Upcoming Trainings
+            </h2>
+          </div>
+          <div
+            className="w-full md:w-2/4 h-screen"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH2.src})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        </article>
+        <article
+          className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH3.src})`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-        ></div>
-      </article>
-      <article
-        className="flex flex-col md:flex-row items-start justify-center gap-4 h-screen"
-        ref={trainingsRef}
-      >
-        <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
+          ref={opportunitiesRef}
+        >
           <h2
-            className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
           >
-            Upcoming Trainings
+            Opportunities
           </h2>
-        </div>
-        <div
-          className="w-full md:w-2/4 h-screen"
+        </article>
+        <article
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH2.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH4.src})`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-        ></div>
-      </article>
-      <article
-        className="py-[2rem] px-[1rem] md:px-[4rem] h-screen"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH3.src})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-        ref={opportunitiesRef}
-      >
-        <h2
-          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+          ref={commentsRef}
         >
-          Opportunities
-        </h2>
-      </article>
-      <article
-        className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH4.src})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-        ref={commentsRef}
-      >
-        <h2
-          className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
-        >
-          Comment
-        </h2>
-        <form
-          className=" my-12 mx-auto w-full md:w-2/4 order order-1 md:order-2"
-          onSubmit={handleSubmit}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
+          <h2
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+          >
+            Comment
+          </h2>
+          <form
+            className=" my-12 mx-auto w-full md:w-2/4 order order-1 md:order-2"
+            onSubmit={handleSubmit}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="first-name"
+                  className="text-lg font-bold text-white"
+                >
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="name"
+                  placeholder="Write your name e.g. John Doe"
+                  className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-lg font-bold text-white">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email address"
+                  className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-6 my-6">
               <label
-                htmlFor="first-name"
-                className="text-lg font-bold text-white"
+                htmlFor="message"
+                className="text-lg font-bold required-field text-white"
               >
-                First Name
+                Message
               </label>
-              <input
-                type="text"
-                id="first-name"
-                name="name"
-                placeholder="Write your name e.g. John Doe"
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message to us"
                 className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
                 onChange={handleChange}
               />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-lg font-bold text-white">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email address"
-                className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-6 my-6">
-            <label
-              htmlFor="message"
-              className="text-lg font-bold required-field text-white"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Write your message to us"
-              className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-              onChange={handleChange}
-            />
-            <button
-              type="submit"
-              className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
-              disabled={loading}
-            >
-              {loading ? (
-                <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-              ) : (
-                <>
-                  Submit
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </>
+              <button
+                type="submit"
+                className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
+                disabled={loading}
+              >
+                {loading ? (
+                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                ) : (
+                  <>
+                    Submit
+                    <FontAwesomeIcon icon={faChevronRight} />
+                  </>
+                )}
+              </button>
+              {successMessage && (
+                <p
+                  className={`bg-black p-2 font-bold ${
+                    isError ? "text-red-500" : "text-green-600"
+                  }`}
+                >
+                  {successMessage}
+                </p>
               )}
-            </button>
-            {successMessage && (
-              <p
-                className={`bg-black p-2 font-bold ${
-                  isError ? "text-red-500" : "text-green-600"
-                }`}
-              >
-                {successMessage}
-              </p>
-            )}
-          </div>
-          <div ref={messageRef}></div>
-        </form>
-      </article>
-    </main>
+            </div>
+            <div ref={messageRef}></div>
+          </form>
+        </article>
+      </main>
+    </>
   );
 };
 

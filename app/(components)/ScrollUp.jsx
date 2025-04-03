@@ -32,7 +32,7 @@ const ScrollUp = () => {
   return (
     <button
       ref={scrollUpButtonRef}
-      className="hidden fixed bottom-2 right-2 md:bottom-6 md:right-6 bg-ayicc-light-green text-white p-2 md:p-3 rounded-md shadow-sm shadow-[#ddd] flex-col items-center justify-center transition-all hover:scale-[1.1] hover:opacity-90"
+      className="hidden fixed bottom-2 right-2 md:bottom-16 md:right-6 bg-ayicc-light-green text-white p-2 md:p-3 rounded-md shadow-sm shadow-[#ddd] flex-col items-center justify-center transition-all hover:scale-[1.1] hover:opacity-90"
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}

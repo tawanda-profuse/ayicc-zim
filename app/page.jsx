@@ -224,7 +224,7 @@ export default function Home() {
               these activities.
             </p>
           </div>
-          <div className="w-full md:w-2/4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 items-center justify-center">
+          <div className="w-full md:w-2/4 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-4 md:gap-y-8 items-center justify-center">
             {[
               {
                 icon: faTree,

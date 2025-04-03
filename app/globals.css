@@ -105,12 +105,12 @@ body{
   animation: appear 0.5s ease-in 0s 1;
 }
 
-section{
+.section-class{
   min-height: 50vh;
 }
 
 @media (prefers-reduced-motion: no-preference){
-  section {
+  .section-class {
     opacity: 0;
     animation: slide-in linear forwards;
     animation-timeline: view();
