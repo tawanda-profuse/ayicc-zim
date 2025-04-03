@@ -57,8 +57,10 @@ const Login = () => {
         setIsError(true);
         toast.error(response.error);
       } else if (response?.url) {
-        // Redirect manually on successful login
-        window.location.href = response.url;
+        toast.success("Login successful!")
+        setTimeout(() => {
+          window.location.href = response.url;
+        }, 2000);
       }
     } catch (error) {
       setIsError(true);

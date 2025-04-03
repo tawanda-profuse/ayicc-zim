@@ -9,6 +9,7 @@ import chiveroChallenge from "../../public/images/chivero-challenge.jpg";
 import { Poppins } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import Staff from "../(components)/Staff";
 
 const poppinsBlack = Poppins({
   weight: "900",
@@ -177,14 +178,15 @@ const page = () => {
           id="staff"
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
           >
             Staff
           </h2>
+          {/* <Staff/> */}
           <a
             href="https://drive.google.com/file/d/1M2J_UcfJvUmtHOQA9Z0cyLOrd_XUE4NE/view?usp=sharing"
             target="_blank"
-            className="text-xl font-semibold text-center transition-all underline p-2 text-ayicc-dark-green"
+            className="text-xl font-semibold text-center transition-all hover:underline text-ayicc-dark-green"
           >
             View Our Organogram{" "}
             <FontAwesomeIcon icon={faExternalLink} className="w-[1rem]" />

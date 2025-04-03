@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import catchThemYoung from "../../public/images/catch-them-young.jpg";
 import conference3 from "../../public/images/conference-3.jpg";
 import conference4 from "../../public/images/conference-4.jpg";
-import unConference from "../../public/images/un-conference.jpg";
 import environment from "../../public/images/environment.jpg";
 import biodiversity from "../../public/images/biodiversity.jpg";
 import research from "../../public/images/research.jpg";
@@ -23,11 +22,7 @@ const Initiatives = () => {
   return (
     <>
       <header
-        className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${unConference.src})`,
-          backgroundSize: "cover",
-        }}
+        className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top bg-initiatives"
       >
         <h1
           className={`text-white uppercase text-5xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}

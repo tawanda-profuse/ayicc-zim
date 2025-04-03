@@ -14,27 +14,39 @@
   }
 }
 
-body{
+body {
   scroll-behavior: smooth;
 }
 
 .bg-dry-ground {
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.1)
-    ),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
     url('/images/dry-ground.png');
   background-position: bottom;
   background-size: cover;
 }
 
 .bg-about {
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.1)
-    ),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
     url('/images/meeting.jpg');
   background-position: bottom;
+  background-size: cover;
+}
+
+.bg-initiatives {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/un-conference.jpg');
+  background-position: bottom;
+  background-size: cover;
+}
+
+.bg-innovation-hub {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/innovation-hub-header.jpg');
+  background-position: top;
   background-size: cover;
 }
 
@@ -72,44 +84,47 @@ body{
   animation: scroll 150s linear infinite;
 }
 
-.required-field::after{
+.required-field::after {
   content: "*";
   color: red;
   font-weight: bold;
 }
 
-@keyframes slide-in{
+@keyframes slide-in {
   from {
     translate: 0 50%;
     opacity: 0;
   }
-  to{
+
+  to {
     translate: 0 0;
     opacity: 1;
   }
 }
 
-@keyframes appear{
+@keyframes appear {
   from {
     opacity: 0.2;
   }
-  to{
+
+  to {
     opacity: 1;
   }
 }
 
-.slide-in{
+.slide-in {
   animation: slide-in 1s ease-in 0s 1;
 }
-.appear{
+
+.appear {
   animation: appear 0.5s ease-in 0s 1;
 }
 
-.section-class{
+.section-class {
   min-height: 50vh;
 }
 
-@media (prefers-reduced-motion: no-preference){
+@media (prefers-reduced-motion: no-preference) {
   .section-class {
     opacity: 0;
     animation: slide-in linear forwards;
