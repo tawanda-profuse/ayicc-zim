@@ -18,6 +18,11 @@ body {
   scroll-behavior: smooth;
 }
 
+.nav-image {
+  width: 200px;
+  height: 150px;
+}
+
 .bg-dry-ground {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
@@ -130,5 +135,12 @@ body {
     animation: slide-in linear forwards;
     animation-timeline: view();
     animation-range: 250px 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-image {
+    width: 100px;
+    height: 100px;
   }
 }

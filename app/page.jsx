@@ -106,7 +106,7 @@ export default function Home() {
   return (
     <>
       <header
-        className={`min-h-[80vh] ${
+        className={`min-h-[50vh] md:min-h-[80vh] ${
           allEvents.length > 0 ? "pb-6" : "py-6"
         } w-full flex flex-col gap-12 items-center justify-center select-none bg-dry-ground`}
       >
@@ -142,9 +142,9 @@ export default function Home() {
           >
             AYICC
           </h1>
-          <span className="hidden md:block absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 text-[1rem] md:text-2xl w-full text-center font-[700] font-sans bg-[#000]">
+          {/* <span className="hidden md:block absolute top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 text-[1rem] md:text-2xl w-full text-center font-[700] font-sans bg-[#000]">
             African Youth Initiative on Climate Change
-          </span>
+          </span> */}
         </div>
         <p className="w-[90vw] md:w-[30rem] text-white font-semibold text-lg slide-in">
           African Youth Initiative on Climate Change Zimbabwe engages young
@@ -160,7 +160,7 @@ export default function Home() {
       </header>
       <main>
         <main>
-        {/* Staff section */}
+          {/* Staff section */}
           {/* <section
             className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[80vh] flex flex-col items-center gap-8 text-black"
             id="staff"

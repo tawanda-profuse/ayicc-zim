@@ -76,7 +76,7 @@ const Navbar = () => {
     <>
       <nav className="bg-white flex items-center justify-between px-8 font-bold md:text-[1rem] border-b border-b-color-2">
         <Link href="/">
-          <Image src={logo} alt="Company logo" width={120} height={40} />
+          <Image src={logo} alt="Company logo" className="nav-image" />
         </Link>
         <div
           className={`text-xl md:text-lg flex items-center transition-all duration-500 ease-in-out fixed md:relative ${

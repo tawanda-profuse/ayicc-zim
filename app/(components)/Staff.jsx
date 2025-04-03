@@ -2,6 +2,7 @@ import React from "react";
 import mhandu from "../../public/images/mhandu.jpg";
 import tashinga from "../../public/images/tashinga-chikomba.jpg";
 import panashe from "../../public/images/panashe.jpg";
+import lovemore from "../../public/images/lovemore.jpg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +18,11 @@ const Staff = () => {
           phone: "0736622454",
         },
         {
+          name: "Lovemore Dhobha",
+          image: lovemore,
+          title: "Director Climate Change Management Department",
+        },
+        {
           name: "Tashinga Chikomba",
           image: tashinga,
           title: "Environmental Scientist",
@@ -28,17 +34,21 @@ const Staff = () => {
         },
       ].map((staff, index) => (
         <div className="flex flex-col gap-4 text-lg" key={index}>
-          <Image src={staff.image} />
-          <div className="flex flex-col gap-2 p-2">
+          <Image
+            src={staff.image}
+            alt={staff.name}
+            className="mx-auto h-[50vh] md:h-[70vh] w-full object-contain"
+          />
+          <div className="flex flex-col items-center md:items-start gap-2 p-2">
             <h3>
               {staff.name} - <strong>{staff.title}</strong>
             </h3>
             {staff.phone && (
               <span className="flex gap-2 items-center">
-              <FontAwesomeIcon icon={faPhone} className="w-[2rem]"/>
-              <a href={`mailto:${staff.phone}`} className="underline">
-                {staff.phone}
-              </a>
+                <FontAwesomeIcon icon={faPhone} className="w-[2rem]" />
+                <a href={`mailto:${staff.phone}`} className="underline">
+                  {staff.phone}
+                </a>
               </span>
             )}
           </div>
