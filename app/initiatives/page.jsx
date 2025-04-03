@@ -1,11 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-import catchThemYoung from "../../public/images/catch-them-young.jpg";
-import conference3 from "../../public/images/conference-3.jpg";
-import conference4 from "../../public/images/conference-4.jpg";
-import environment from "../../public/images/environment.jpg";
-import biodiversity from "../../public/images/biodiversity.jpg";
-import research from "../../public/images/research.jpg";
 import { Poppins } from "next/font/google";
 
 const poppinsBlack = Poppins({
@@ -21,9 +15,7 @@ const Initiatives = () => {
 
   return (
     <>
-      <header
-        className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top bg-initiatives"
-      >
+      <header className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top bg-initiatives">
         <h1
           className={`text-white uppercase text-5xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
         >
@@ -47,24 +39,10 @@ const Initiatives = () => {
               internationally.{" "}
             </p>
           </div>
-          <div
-            className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${conference4.src})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          <div className="w-full md:w-2/4 min-h-[50vh] md:h-screen bg-initiatives-awareness"></div>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${catchThemYoung.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen bg-initiatives-advocacy"
           id="advocacy"
         >
           <h2
@@ -126,13 +104,7 @@ const Initiatives = () => {
           </ul>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${conference4.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4 bg-initiatives-awareness"
           id="climate-education"
         >
           <h2
@@ -168,24 +140,10 @@ const Initiatives = () => {
               <li>Work Camps</li>
             </ul>
           </div>
-          <div
-            className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)), url(${biodiversity.src})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          <div className="w-full md:w-2/4 min-h-[50vh] md:h-screen bg-initiatives-biodiversity"></div>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${environment.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4 bg-initiatives-waste"
           id="waste-management"
         >
           <h2
@@ -206,13 +164,7 @@ const Initiatives = () => {
           </p>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${conference3.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4 bg-initiatives-food"
           id="food-security"
         >
           <h2
@@ -233,33 +185,30 @@ const Initiatives = () => {
           </p>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-4"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(${research.src})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "top right",
-          }}
+          className="py-8 md:py-0 flex flex-col md:flex-row items-center justify-center gap-4 min-h-screen bg-white"
           id="research"
         >
-          <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
-          >
-            Research
-          </h2>
-          <p className="text-white text-xl my-4 font-semibold">
-            Research is a fundamental pillar of AYICC Zimbabwe's efforts to
-            address climate change and promote sustainable development. By
-            conducting participatory action research, we aim to understand the
-            impacts of climate change on youth and communities, as well as
-            identify effective adaptation and mitigation strategies. Our
-            research initiatives focus on areas such as renewable energy,
-            biodiversity conservation, climate-smart agriculture, and waste
-            management. Through collaboration with academic institutions,
-            government agencies, and international organizations, we strive to
-            generate data-driven solutions that empower communities and inform
-            policy decisions for a sustainable future.
-          </p>
+          <div className="flex flex-col items-center gap-8 w-full md:w-2/4 px-4">
+            <h2
+              className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-black`}
+            >
+              Research
+            </h2>
+            <p className="text-black text-xl my-4 font-semibold">
+              Research is a fundamental pillar of AYICC Zimbabwe's efforts to
+              address climate change and promote sustainable development. By
+              conducting participatory action research, we aim to understand the
+              impacts of climate change on youth and communities, as well as
+              identify effective adaptation and mitigation strategies. Our
+              research initiatives focus on areas such as renewable energy,
+              biodiversity conservation, climate-smart agriculture, and waste
+              management. Through collaboration with academic institutions,
+              government agencies, and international organizations, we strive to
+              generate data-driven solutions that empower communities and inform
+              policy decisions for a sustainable future.
+            </p>
+          </div>
+          <div className="w-full md:w-2/4 min-h-[80vh] bg-initiatives-research"></div>
         </section>
       </main>
     </>

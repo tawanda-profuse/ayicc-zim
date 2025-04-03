@@ -9,6 +9,7 @@ import IH4 from "../../public/images/innovation-hub-4.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightFromBracket,
+  faAsterisk,
   faChevronRight,
   faExternalLink,
   faSpinner,
@@ -207,15 +208,7 @@ const InnovationHub = () => {
               finance in Zimbabwe.
             </p>
           </div>
-          <div
-            className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH.src})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          <div className="w-full md:w-2/4 min-h-[50vh] md:h-screen bg-hub-description"></div>
         </section>
         <section
           className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
@@ -260,15 +253,7 @@ const InnovationHub = () => {
               />
             </div>
           </div>
-          <div
-            className="w-full md:w-2/4 min-h-[50vh] md:h-screen"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH1.src})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          <div className="w-full md:w-2/4 min-h-[50vh] md:h-screen bg-hub-tools"></div>
         </section>
         <section
           className="flex flex-col md:flex-row items-start justify-center gap-4 min-h-screen"
@@ -281,27 +266,14 @@ const InnovationHub = () => {
               Upcoming Trainings
             </h2>
             <p className="text-xl text-center p-4">
-              We currently do not have any upcoming trainings
+              We currently do not have any upcoming trainings. Stay tuned for
+              future updates.
             </p>
           </div>
-          <div
-            className="w-full md:w-2/4 h-screen"
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH2.src})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          <div className="w-full md:w-2/4 h-screen bg-hub-training"></div>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-8"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH3.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen flex flex-col items-center gap-8 bg-hub-opportunities"
           ref={opportunitiesRef}
         >
           <h2
@@ -333,95 +305,101 @@ const InnovationHub = () => {
           </ul>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-screen"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${IH4.src})`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          className="flex flex-col md:flex-row items-center justify-center gap-4 min-h-screen"
           ref={commentsRef}
         >
-          <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
-          >
-            Comment
-          </h2>
-          <form
-            className=" my-12 mx-auto w-full md:w-2/4 order order-1 md:order-2"
-            onSubmit={handleSubmit}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="first-name"
-                  className="text-lg font-bold text-white"
-                >
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="first-name"
-                  name="name"
-                  placeholder="Write your name e.g. John Doe"
-                  className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-                  onChange={handleChange}
-                />
+          <div className="pt-12 flex flex-col gap-8 items-center w-full md:w-2/4">
+            <h2
+              className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-black`}
+            >
+              Comment
+            </h2>
+            <form
+              className="mx-auto w-full px-[1rem] order order-1 md:order-2"
+              onSubmit={handleSubmit}
+            >
+              <div className="grid grid-cols-1 gap-4">
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="first-name"
+                    className="text-lg font-bold text-black"
+                  >
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="name"
+                    placeholder="Write your name e.g. John Doe"
+                    className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="email"
+                    className="text-lg font-bold text-black"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your email address"
+                    className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <label
+                    htmlFor="message"
+                    className="text-lg font-bold text-black"
+                  >
+                    Message
+                  </label>
+                  <FontAwesomeIcon icon={faAsterisk} className="text-sm text-red-500"/>
+                </div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message to us"
+                    className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400 mb-4"
+                    onChange={handleChange}
+                  />
+                  <button
+                    type="submit"
+                    className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <FontAwesomeIcon
+                        icon={faSpinner}
+                        className="animate-spin"
+                      />
+                    ) : (
+                      <>
+                        Submit
+                        <FontAwesomeIcon icon={faChevronRight} />
+                      </>
+                    )}
+                  </button>
+                  {successMessage && (
+                    <p
+                      className={`bg-black p-2 font-bold ${
+                        isError ? "text-red-500" : "text-green-600"
+                      }`}
+                    >
+                      {successMessage}
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-lg font-bold text-white">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your email address"
-                  className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-6 my-6">
-              <label
-                htmlFor="message"
-                className="text-lg font-bold required-field text-white"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Write your message to us"
-                className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-                onChange={handleChange}
-              />
-              <button
-                type="submit"
-                className="flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
-                disabled={loading}
-              >
-                {loading ? (
-                  <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-                ) : (
-                  <>
-                    Submit
-                    <FontAwesomeIcon icon={faChevronRight} />
-                  </>
-                )}
-              </button>
-              {successMessage && (
-                <p
-                  className={`bg-black p-2 font-bold ${
-                    isError ? "text-red-500" : "text-green-600"
-                  }`}
-                >
-                  {successMessage}
-                </p>
-              )}
-            </div>
-            <div ref={messageRef}></div>
-          </form>
+              <div ref={messageRef}></div>
+            </form>
+          </div>
+          <div className="w-full md:w-2/4 min-h-[50vh] md:min-h-screen bg-hub-comment"></div>
         </section>
       </main>
     </>

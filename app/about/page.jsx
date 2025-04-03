@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import waterHourGlass from "../../public/images/water-hour-glass.png";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
 import trash from "../../public/images/trash.jpg";
 import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
-import chiveroChallenge from "../../public/images/chivero-challenge.jpg";
 import { Poppins } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
@@ -146,13 +144,8 @@ const page = () => {
           />
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] md:h-screen flex flex-col items-center justify-center gap-8"
+          className="py-[2rem] px-[1rem] md:px-[4rem] md:h-screen flex flex-col items-center justify-center gap-8 bg-about-history"
           id="history"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${chiveroChallenge.src})`,
-            backgroundPosition: "top",
-            backgroundSize: "cover",
-          }}
         >
           <h2
             className={`text-center text-white font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
@@ -174,7 +167,7 @@ const page = () => {
           </p>
         </section>
         <section
-          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[80vh] flex flex-col items-center gap-8 text-black"
+          className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[80vh] flex flex-col items-center justify-evenly gap-8 text-black"
           id="staff"
         >
           <h2
@@ -193,12 +186,7 @@ const page = () => {
           </a>
         </section>
         <section
-          className="pt-[2rem] pb-[3rem]"
-          style={{
-            background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${waterHourGlass.src})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
+          className="pt-[2rem] pb-[3rem] bg-about-key-areas"
           id="thematic-areas"
         >
           <h3

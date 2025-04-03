@@ -39,6 +39,22 @@ body {
   background-size: cover;
 }
 
+.bg-about-history {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)),
+    url('/images/chivero-challenge.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.bg-about-key-areas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/water-hour-glass.png');
+  background-position: center;
+  background-size: cover;
+}
+
 .bg-initiatives {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
@@ -52,6 +68,112 @@ body {
       rgba(0, 0, 0, 0.1)),
     url('/images/innovation-hub-header.jpg');
   background-position: top;
+  background-size: cover;
+}
+
+.bg-initiatives-awareness{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/conference-4.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-initiatives-advocacy{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)),
+    url('/images/catch-them-young.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-initiatives-biodiversity{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/biodiversity.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-initiatives-waste{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/environment.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-initiatives-food{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/conference-3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-initiatives-research{
+  background-image: url('/images/research.jpg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-initiatives-food{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/conference-3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-hub-description{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/innovation-hub.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-hub-tools{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/innovation-hub-1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-hub-training{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/innovation-hub-2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-hub-opportunities{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/innovation-hub-3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-hub-comment{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)),
+    url('/images/IMG_9029.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -142,5 +264,10 @@ body {
   .nav-image {
     width: 100px;
     height: 100px;
+  }
+
+  .bg-hub-comment{
+    background-position: top;
+    background-size: cover;
   }
 }
