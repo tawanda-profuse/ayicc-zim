@@ -53,9 +53,6 @@ const fetchSomeEvents = async () => {
         month: "short",
         year: "numeric",
       }),
-      formattedTime: new Date(event.date).toLocaleTimeString("en-US", {
-        timeStyle: "short",
-      }),
     }));
   } catch (error) {
     console.error(error);
@@ -322,7 +319,7 @@ export default function Home() {
                             </h3>
                             <span className="text-color-2 flex gap-1 items-center">
                               <FontAwesomeIcon icon={faClockFour} />
-                              {item.formattedDate} {item.formattedTime}
+                              {item.formattedDate} {item.time || "08:00"}
                             </span>
                             <span className="text-color-2 flex gap-1 items-center">
                               <FontAwesomeIcon icon={faLocationPin} />

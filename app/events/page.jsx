@@ -18,7 +18,7 @@ const poppinsBlack = Poppins({
 
 const Events = () => {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [location, setLocation] = useState("");
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
@@ -50,7 +50,6 @@ const Events = () => {
       <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
         Upcoming Events
       </h2>
-      <p>Showing {events.length} result(s)</p>
       {loading && (
         <div className="min-h-[50vh] flex flex-col items-center justify-center">
           <FontAwesomeIcon
@@ -61,6 +60,7 @@ const Events = () => {
       )}
       {!loading && (
         <>
+      <p>Showing {events.length} result(s)</p>
           {/* Search Inputs */}
           <div className="flex flex-col md:flex-row gap-4 my-4">
             <input
@@ -93,7 +93,7 @@ const Events = () => {
               {events?.map((item, index) => (
                 <article
                   key={index}
-                  className="relative shadow-sm shadow-color-2 rounded-sm md:max-h-[85vh]"
+                  className="relative shadow-sm shadow-color-2 rounded-sm pb-[1rem]"
                 >
                   <Image
                     src={item.image}
@@ -123,15 +123,13 @@ const Events = () => {
                         month: "2-digit",
                         year: "numeric",
                       })}{" "}
-                      {new Date(item.date).toLocaleTimeString("en-US", {
-                        timeStyle: "short",
-                      })}
+                      {item.time || "08:00"}
                     </span>
                     <span className="text-color-2 flex gap-1 items-center">
                       <FontAwesomeIcon icon={faLocationPin} />
                       {item.location}
                     </span>
-                    <p>{item.description}</p>
+                    <p className="text-lg">{item.description}</p>
                   </div>
                 </article>
               ))}
