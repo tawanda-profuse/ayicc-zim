@@ -1,11 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
-import IH from "../../public/images/innovation-hub.jpg";
-import IH1 from "../../public/images/innovation-hub-1.jpg";
-import IH2 from "../../public/images/innovation-hub-2.jpg";
-import IH3 from "../../public/images/innovation-hub-3.jpg";
-import IH4 from "../../public/images/innovation-hub-4.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightFromBracket,
@@ -96,8 +91,8 @@ const InnovationHub = () => {
 
   return (
     <>
-      <header className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4 bg-innovation-hub">
-        <div className="w-full flex flex-col items-center md:items-start px-4 gap-4">
+      <header className="min-h-screen w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4 bg-innovation-hub">
+        <div className="mt-[4rem] md:mt-0 w-full flex flex-col items-center md:items-start px-4 gap-4">
           <h1
             className={`text-white md:bg-[#00000099] py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
           >

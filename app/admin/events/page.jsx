@@ -76,6 +76,8 @@ const AdminEvents = () => {
   };
 
   return (
+    <>
+      <header className="min-h-[25vh] bg-ayicc-light-green"></header>
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
         Manage Events
@@ -239,6 +241,7 @@ const AdminEvents = () => {
         </>
       )}
     </main>
+    </>
   );
 };
 

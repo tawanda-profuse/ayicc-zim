@@ -1,6 +1,5 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import InfoRibbon from "./(components)/InfoRibbon";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
 import ScrollUp from "./(components)/ScrollUp";
@@ -18,7 +17,6 @@ export const metadata = {
   title: "AYICC Zimbabwe - African Youth Initiative on Climate Change Zimbabwe",
   description:
     "The African Youth Initiative on Climate Change Zimbabwe (AYICC) is a platform for African youths led by youths in influencing climate action through areas such as engaging young people and creating resilient communities through climate change awareness programs. AYICC is a group of young volunteers who are dedicated and passionate about the environment. Over the years, it has been working with governments on the implementation of national and international commitments on climate change mitigation and adaptation so as to increase sustainability, promote energy and water efficiency.",
-  canonical: "https://ayicczimbabwe.org.zw",
   keywords:
     "Climate Change, Climate Action, Environmental Awareness, Youth, Zimbabwe, Jean-betrand Mhandu, Waste Management, Non-Profit, Environmental Awareness, Environmental Science, Climate Advocacy, Climate Education, Bio Diversity Conservation, Wetland Protection, Tree planting, Food security, United Nations, Harare, Kuimba Shiri, Lake Chivero Recreational Park, Bard House, Harare, Samora Machel",
   openGraph: {
@@ -62,7 +60,6 @@ export default function RootLayout({ children }) {
       </Head>
       <body className={`${openSans.variable} antialiased`}>
         <AuthProvider>
-          <InfoRibbon />
           <Navbar />
           {children}
           <Footer year={currentYear} />

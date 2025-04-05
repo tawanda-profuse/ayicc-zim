@@ -15,7 +15,7 @@ const Initiatives = () => {
 
   return (
     <>
-      <header className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top bg-initiatives">
+      <header className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top bg-initiatives">
         <h1
           className={`text-white uppercase text-5xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
         >
@@ -208,7 +208,7 @@ const Initiatives = () => {
               policy decisions for a sustainable future.
             </p>
           </div>
-          <div className="w-full md:w-2/4 min-h-[80vh] bg-initiatives-research"></div>
+          <div className="hidden md:block w-full md:w-2/4 min-h-[80vh] bg-initiatives-research"></div>
         </section>
       </main>
     </>

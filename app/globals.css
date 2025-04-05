@@ -21,14 +21,49 @@ body {
 .nav-image {
   width: 200px;
   height: 150px;
+  background-color: white;
+}
+
+@keyframes home-animation {
+  20% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/animation-2.jpg');
+  }
+  30% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/animation-3.jpg');
+  }
+
+  40% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/chivero.jpg');
+    background-position: bottom;
+  }
+
+  50% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/animation-4.jpg');
+  }
+
+  60% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/animation-5.jpg');
+  }
+  70% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/animation-6.jpg');
+  }
+  80% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/animation-7.jpg');
+  }
+}
+
+.bg-home-header {
+  background-position: top;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/social.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bg-dry-ground {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.1)),
-    url('/images/dry-ground.png');
-  background-position: bottom;
+  background-position: top;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/dry-ground.png');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bg-about {
@@ -71,7 +106,7 @@ body {
   background-size: cover;
 }
 
-.bg-initiatives-awareness{
+.bg-initiatives-awareness {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/conference-4.jpg');
@@ -80,7 +115,7 @@ body {
   background-size: cover;
 }
 
-.bg-initiatives-advocacy{
+.bg-initiatives-advocacy {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.8)),
     url('/images/catch-them-young.jpg');
@@ -89,7 +124,7 @@ body {
   background-size: cover;
 }
 
-.bg-initiatives-biodiversity{
+.bg-initiatives-biodiversity {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)),
     url('/images/biodiversity.jpg');
@@ -98,7 +133,7 @@ body {
   background-size: cover;
 }
 
-.bg-initiatives-waste{
+.bg-initiatives-waste {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/environment.jpg');
@@ -107,7 +142,7 @@ body {
   background-size: cover;
 }
 
-.bg-initiatives-food{
+.bg-initiatives-food {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/conference-3.jpg');
@@ -116,14 +151,14 @@ body {
   background-size: cover;
 }
 
-.bg-initiatives-research{
+.bg-initiatives-research {
   background-image: url('/images/research.jpg');
   background-position: top right;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.bg-initiatives-food{
+.bg-initiatives-food {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/conference-3.jpg');
@@ -132,7 +167,7 @@ body {
   background-size: cover;
 }
 
-.bg-hub-description{
+.bg-hub-description {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/innovation-hub.jpg');
@@ -141,7 +176,7 @@ body {
   background-size: cover;
 }
 
-.bg-hub-tools{
+.bg-hub-tools {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/innovation-hub-1.jpg');
@@ -150,7 +185,7 @@ body {
   background-size: cover;
 }
 
-.bg-hub-training{
+.bg-hub-training {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/innovation-hub-2.jpg');
@@ -159,7 +194,7 @@ body {
   background-size: cover;
 }
 
-.bg-hub-opportunities{
+.bg-hub-opportunities {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.1)),
     url('/images/innovation-hub-3.jpg');
@@ -168,7 +203,7 @@ body {
   background-size: cover;
 }
 
-.bg-hub-comment{
+.bg-hub-comment {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)),
     url('/images/IMG_9029.jpg');
@@ -258,15 +293,23 @@ body {
     animation-timeline: view();
     animation-range: 250px 400px;
   }
+
+  .bg-home-header {
+    animation-name: home-animation;
+    animation-timing-function: ease-in-out;
+    animation-duration: 30s;
+    /* 5 seconds per image */
+    animation-iteration-count: infinite;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .nav-image {
-    width: 100px;
+    width: 150px;
     height: 100px;
   }
 
-  .bg-hub-comment{
+  .bg-hub-comment {
     background-position: top;
     background-size: cover;
   }

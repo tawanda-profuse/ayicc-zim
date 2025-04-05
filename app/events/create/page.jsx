@@ -100,49 +100,52 @@ const CreateEvent = () => {
   };
 
   return (
-    <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-      <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
-        <li className="transition-all hover:pl-2">
-          <Link
-            href="/admin"
-            className="underline hover:text-ayicc-light-green"
-          >
-            Admin Home
-          </Link>
-        </li>
-        <li className="transition-all hover:pl-2">
-          <Link
-            href="/admin/events"
-            className="underline hover:text-ayicc-light-green"
-          >
-            View All Events
-          </Link>
-        </li>
-      </ul>
-      <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl my-6">
-        Create an Event
-      </h1>
-      <form
-        className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
-        onSubmit={handleSubmit}
-      >
-        <EventForm
-          handleChange={handleChange}
-          loading={loading}
-          formData={formData}
-        />
-        {successMessage && (
-          <p
-            className={`mt-4 font-bold ${
-              isError ? "text-red-500" : "text-green-600"
-            }`}
-          >
-            {successMessage}
-          </p>
-        )}
-        <div ref={messageRef}></div>
-      </form>
-    </main>
+    <>
+      <header className="min-h-[25vh] bg-ayicc-light-green"></header>
+      <main className="py-[2rem] px-[1rem] md:px-[4rem]">
+        <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
+          <li className="transition-all hover:pl-2">
+            <Link
+              href="/admin"
+              className="underline hover:text-ayicc-light-green"
+            >
+              Admin Home
+            </Link>
+          </li>
+          <li className="transition-all hover:pl-2">
+            <Link
+              href="/admin/events"
+              className="underline hover:text-ayicc-light-green"
+            >
+              View All Events
+            </Link>
+          </li>
+        </ul>
+        <h1 className="text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl my-6">
+          Create an Event
+        </h1>
+        <form
+          className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
+          onSubmit={handleSubmit}
+        >
+          <EventForm
+            handleChange={handleChange}
+            loading={loading}
+            formData={formData}
+          />
+          {successMessage && (
+            <p
+              className={`mt-4 font-bold ${
+                isError ? "text-red-500" : "text-green-600"
+              }`}
+            >
+              {successMessage}
+            </p>
+          )}
+          <div ref={messageRef}></div>
+        </form>
+      </main>
+    </>
   );
 };
 

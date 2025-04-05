@@ -28,7 +28,7 @@ const Staff = () => {
           title: "Environmental Scientist",
         },
         {
-          name: "Panashe Zwarekwa Sakupwanya",
+          name: "Panashe Sakupwanya",
           image: panashe,
           title: "Projects Manager",
         },

@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname(); // Get current path
 
   const getLinkClass = (href) =>
-    pathname === href ? "text-ayicc-dark-green" : "text-[#002E5B]";
+    pathname === href ? "text-ayicc-dark-green" : "md:text-white";
 
   const links = [
     {
@@ -74,14 +74,19 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white flex items-center justify-between px-8 font-bold md:text-[1rem] border-b border-b-color-2">
+      <nav className="absolute z-[100] top-0 left-0 w-full bg-transparent flex items-center justify-between px-2 md:px-8 font-bold md:text-[1rem]">
         <Link href="/">
-          <Image src={logo} alt="Company logo" className="nav-image" />
+          <Image
+            src={logo}
+            alt="Company logo"
+            className="nav-image"
+            priority // Add this property
+          />
         </Link>
         <div
-          className={`text-xl md:text-lg flex items-center transition-all duration-500 ease-in-out fixed md:relative ${
+          className={`text-xl md:text-lg flex items-center transition-all duration-[1000ms] ease-in-out fixed md:relative flex-col md:flex-row ${
             showNavbar
-              ? "flex-col w-full min-h-[50vh] top-0 left-0 bg-white z-50 max-h-screen overflow-y-auto opacity-100 py-[2rem]"
+              ? "w-full min-h-screen top-0 left-0 bg-white z-50 max-h-screen overflow-y-auto opacity-100 py-[2rem] justify-center"
               : "-top-full -right-full opacity-0"
           } md:flex-row md:top-0 md:left-0 md:pt-0 md:opacity-100`}
         >
@@ -143,7 +148,7 @@ const Navbar = () => {
           </Link>
         </div>
         <button
-          className="block md:hidden text-color-1 text-4xl"
+          className="block md:hidden text-white text-4xl"
           onClick={() => setShowNavbar(true)}
         >
           <FontAwesomeIcon icon={faBars} />

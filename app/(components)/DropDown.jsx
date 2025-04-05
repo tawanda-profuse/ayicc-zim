@@ -7,7 +7,7 @@ const DropDown = ({ links, styles, setShowNavbar, mainLinkText, mainLink }) => {
 
   return (
     <>
-      <div className="hidden md:block relative bg-white py-[1.38rem] px-[0.99rem]">
+      <div className="hidden md:block relative bg-transparent py-[1.38rem] px-[0.99rem]">
         <Link
           href={mainLink}
           className={`${styles} hover:text-ayicc-dark-green transition-all duration-[0.3] py-[1.38rem]`}
@@ -18,7 +18,7 @@ const DropDown = ({ links, styles, setShowNavbar, mainLinkText, mainLink }) => {
           {mainLinkText}
         </Link>
         <div
-          className={`border-t-4 border-t-ayicc-dark-green absolute z-50 transition-all ease-in-out bottom-0 -left-2/4 bg-inherit w-[200%] translate-y-full rounded-md flex flex-col items-center justify-center hover:opacity-100 hover:visible text-color-1 ${
+          className={`bg-white border-t-4 border-t-ayicc-dark-green absolute z-50 transition-all ease-in-out bottom-0 -left-2/4 bg-inherit w-[200%] translate-y-full rounded-md flex flex-col items-center justify-center hover:opacity-100 hover:visible text-color-1 ${
             showLinks ? "opacity-100" : "opacity-0 invisible"
           }`}
         >

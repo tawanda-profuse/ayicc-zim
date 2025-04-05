@@ -22,7 +22,7 @@ const page = () => {
 
   return (
     <>
-      <header className="min-h-[50vh] md:min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-about">
+      <header className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-about">
         <h1
           className={`text-white uppercase text-6xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
         >

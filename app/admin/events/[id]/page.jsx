@@ -129,6 +129,7 @@ const EventDetails = () => {
 
   return (
     <>
+          <header className="min-h-[25vh] bg-ayicc-light-green"></header>
       <main className="py-[2rem] px-[1rem] md:px-[4rem]">
         <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">
           <li className="transition-all hover:pl-2">

@@ -37,16 +37,14 @@ const Accordion = ({ data }) => {
             {item.details && item.details.length > 0 && (
               <>
                 {item.link && (
-                  <li>
+                  <li key={`link-${index}`}>
                     <a href={item.link} target="_blank" className="underline">
                       (View Details <FontAwesomeIcon icon={faExternalLink} />)
                     </a>
                   </li>
                 )}
-                {item.details.map((answer, index) => (
-                  <>
-                    <li key={index}>{answer}</li>
-                  </>
+                {item.details.map((answer, detailIndex) => (
+                  <li key={`${index}-${detailIndex}`}>{answer}</li>
                 ))}
               </>
             )}
