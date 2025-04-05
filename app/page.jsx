@@ -102,7 +102,9 @@ export default function Home() {
 
   return (
     <>
-      <header className="min-h-screen w-full flex flex-col gap-12 items-center justify-center select-none bg-home-header">
+      <header
+        className="min-h-screen w-full flex flex-col gap-12 items-center justify-center select-none bg-home-header"
+      >
         <div className="w-[90vw] md:w-[30rem] text-white slide-in">
           <h1
             className={`text-6xl md:text-9xl  text-center underline ${poppinsBlack.className}`}
@@ -118,32 +120,32 @@ export default function Home() {
         </Link>
       </header>
       <main>
-        {allEvents.length > 0 && (
-          <div
-            className="text-ayicc-dark-green font-bold py-4 w-full overflow-hidden hover:animate-none bg-yellow-200 relative"
-            role="button"
-            onClick={handleEventsScroll}
-            title="Click to view more events"
-          >
-            <span className="bg-ayicc-dark-green h-full absolute left-0 top-0 text-white flex flex-col justify-center px-2 z-50">
-              Events:
-            </span>
-            <div className="flex whitespace-nowrap animate-scroll">
-              <div className="flex gap-12">
-                {allEvents.map((item, index) => (
-                  <span key={index}>
-                    <FontAwesomeIcon icon={faTree} />{" "}
-                    {new Date(item.date).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    })}{" "}
-                    - {item.title} ({item.location})
-                  </span>
-                ))}
-              </div>
+      {allEvents.length > 0 && (
+        <div
+          className="text-ayicc-dark-green font-bold py-4 w-full overflow-hidden hover:animate-none bg-yellow-200 relative"
+          role="button"
+          onClick={handleEventsScroll}
+          title="Click to view more events"
+        >
+          <span className="bg-ayicc-dark-green h-full absolute left-0 top-0 text-white flex flex-col justify-center px-2 z-50">
+            Events:
+          </span>
+          <div className="flex whitespace-nowrap animate-scroll">
+            <div className="flex gap-12">
+              {allEvents.map((item, index) => (
+                <span key={index}>
+                  <FontAwesomeIcon icon={faTree} />{" "}
+                  {new Date(item.date).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  })}{" "}
+                  - {item.title} ({item.location})
+                </span>
+              ))}
             </div>
           </div>
-        )}
+        </div>
+      )}
         {/* Staff section */}
         {/* <section
             className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[80vh] flex flex-col items-center gap-8 text-black"
@@ -156,26 +158,7 @@ export default function Home() {
             </h2>
             <Staff />
           </section> */}
-        <section className="min-h-[50vh] py-[2rem] md:min-h-screen w-full flex flex-col gap-12 items-center justify-center select-none bg-dry-ground">
-          <div className="relative w-[90vw] md:w-[30rem] text-white slide-in">
-            <h1
-              className={`text-6xl md:text-9xl  text-center underline ${poppinsBlack.className}`}
-            >
-              AYICC
-            </h1>
-          </div>
-          <q className="bg-black text-center p-1 rounded-md italic w-[90vw] md:w-[30rem] text-white font-semibold text-lg slide-in">
-            Engaging young people in Zimbabwe, Africa, and the world towards
-            environmental and climate action for a sustainable future and
-            planet.{" "}
-          </q>
-          <Link
-            href="/register"
-            className="rounded-2xl w-[15rem] text-xl transition-all hover:scale-[1.1] bg-ayicc-dark-green text-white p-4 appear text-center"
-          >
-            Join Us
-          </Link>
-        </section>
+          
         <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row justify-center items-center gap-[2rem]">
           <Image
             src={donate2}

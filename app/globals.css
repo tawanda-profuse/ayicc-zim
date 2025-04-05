@@ -53,8 +53,8 @@ body {
 }
 
 .bg-home-header {
-  background-position: top;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url('/images/social.jpg');
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 }
