@@ -108,7 +108,7 @@ const Home = ({ allEvents, events }) => {
               water efficiency.
             </p>
             <Link
-              className="py-2 px-4 rounded-2xl bg-yellow-300 font-bold opacity-90 transition-all hover:opacity-100 hover:scale-[1.2] min-w-[10rem] self-center text-3xl"
+              className="py-2 px-4 rounded-2xl bg-yellow-300 font-bold opacity-90 transition-all hover:opacity-100 hover:scale-[1.2] min-w-[10rem] self-center text-center text-3xl"
               href="/contact"
             >
               Support
