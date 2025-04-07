@@ -101,12 +101,12 @@ const Events = () => {
                 {events?.map((item, index) => (
                   <article
                     key={index}
-                    className="relative shadow-sm shadow-color-2 rounded-sm pb-[1rem]"
+                    className="relative shadow-sm shadow-color-2 rounded-sm"
                   >
                     <Image
                       src={item.image}
                       alt={item.title}
-                      className="w-full md:w-2/4 h-2/4"
+                      className="events-image"
                       width={200}
                       height={200}
                     />

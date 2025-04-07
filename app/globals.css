@@ -19,9 +19,9 @@ body {
 }
 
 .nav-image {
-  width: 200px;
+  width: 250px;
   height: 150px;
-  background-color: white;
+  background-color: #ddd;
 }
 
 @keyframes home-animation {
@@ -282,19 +282,13 @@ body {
   animation: appear 0.5s ease-in 0s 1;
 }
 
-.section-class {
-  min-height: 50vh;
+.events-image{
+  width: 300px;
+  height: 200px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .section-class {
-    opacity: 0;
-    animation: slide-in linear forwards;
-    animation-timeline: view();
-    animation-range: 250px 400px;
-  }
-
-  .bg-home-header {
+ .bg-home-header {
     animation-name: home-animation;
     animation-timing-function: ease-in-out;
     animation-duration: 30s;
@@ -312,5 +306,10 @@ body {
   .bg-hub-comment {
     background-position: top;
     background-size: cover;
+  }
+
+  .events-image{
+    width: 100%;
+    background-color: #ddd;
   }
 }

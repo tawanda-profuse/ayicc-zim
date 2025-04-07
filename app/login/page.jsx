@@ -57,7 +57,7 @@ const Login = () => {
         setIsError(true);
         toast.error(response.error);
       } else if (response?.url) {
-        toast.success("Login successful!")
+        toast.success("Login successful!");
         setTimeout(() => {
           window.location.href = response.url;
         }, 2000);
@@ -74,93 +74,96 @@ const Login = () => {
   };
 
   return (
-    <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-      <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
-        Login to Your Account
-      </h1>
-      <form
-        className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
-        onSubmit={handleSubmit}
-      >
-        <div className="flex flex-col gap-2">
-          <label htmlFor="email" className="text-lg font-bold">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
-            onChange={handleChange}
-            placeholder="Enter your email address"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="password" className="text-lg font-bold">
-            Password
-          </label>
-          <div className="relative">
-            <input
-              type={togglePassword ? "text" : "password"}
-              id="password"
-              name="password"
-              placeholder="Type a secure password"
-              className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400 w-full"
-              onChange={handleChange}
-            />
-            <button
-              type="button"
-              className="absolute right-2 top-2/4 -translate-y-2/4"
-              title={togglePassword ? "Hide password" : "Show password"}
-            >
-              <FontAwesomeIcon
-                icon={togglePassword ? faEyeSlash : faEye}
-                onClick={() => setTogglePassword(!togglePassword)}
-              />
-            </button>
-          </div>
-        </div>
-        <button
-          type="submit"
-          className="my-6 flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
-          disabled={loading}
+    <>
+      <header className="min-h-[25vh] w-full flex flex-col items-center justify-center bg-ayicc-light-green"></header>
+      <main className="py-[2rem] px-[1rem] md:px-[4rem]">
+        <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
+          Login to Your Account
+        </h1>
+        <form
+          className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
+          onSubmit={handleSubmit}
         >
-          {loading ? (
-            <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-          ) : (
-            <>
-              Login
-              <FontAwesomeIcon icon={faChevronRight} className="w-2" />
-            </>
-          )}
-        </button>
-        <p className="mb-6">
-          Don't have an account?{" "}
-          <Link href="/register" className="text-ayicc-dark-green underline">
-            Sign up
-          </Link>
-        </p>
-        <p className="mb-6">
-          Have you forgotten your password?{" "}
-          <Link
-            href="/forgot-password"
-            className="text-ayicc-dark-green underline"
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-lg font-bold">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400"
+              onChange={handleChange}
+              placeholder="Enter your email address"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="password" className="text-lg font-bold">
+              Password
+            </label>
+            <div className="relative">
+              <input
+                type={togglePassword ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="Type a secure password"
+                className="bg-[#ccc] p-2 text-black placeholder-[#444] outline-none focus:bg-white border-2 border-transparent focus:border-yellow-400 w-full"
+                onChange={handleChange}
+              />
+              <button
+                type="button"
+                className="absolute right-2 top-2/4 -translate-y-2/4"
+                title={togglePassword ? "Hide password" : "Show password"}
+              >
+                <FontAwesomeIcon
+                  icon={togglePassword ? faEyeSlash : faEye}
+                  onClick={() => setTogglePassword(!togglePassword)}
+                />
+              </button>
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="my-6 flex items-center justify-center gap-3 bg-ayicc-dark-green text-white hover:bg-ayicc-gold p-4 font-bold"
+            disabled={loading}
           >
-            Reset it here.
-          </Link>
-        </p>
-        {successMessage && (
-          <p
-            className={`font-bold ${
-              isError ? "text-red-500" : "text-green-600"
-            }`}
-          >
-            {successMessage}
+            {loading ? (
+              <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+            ) : (
+              <>
+                Login
+                <FontAwesomeIcon icon={faChevronRight} className="w-2" />
+              </>
+            )}
+          </button>
+          <p className="mb-6">
+            Don't have an account?{" "}
+            <Link href="/register" className="text-ayicc-dark-green underline">
+              Sign up
+            </Link>
           </p>
-        )}
-        <div ref={messageRef}></div>
-      </form>
-    </main>
+          <p className="mb-6">
+            Have you forgotten your password?{" "}
+            <Link
+              href="/forgot-password"
+              className="text-ayicc-dark-green underline"
+            >
+              Reset it here.
+            </Link>
+          </p>
+          {successMessage && (
+            <p
+              className={`font-bold ${
+                isError ? "text-red-500" : "text-green-600"
+              }`}
+            >
+              {successMessage}
+            </p>
+          )}
+          <div ref={messageRef}></div>
+        </form>
+      </main>
+    </>
   );
 };
 

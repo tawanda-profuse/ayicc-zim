@@ -184,6 +184,8 @@ const Register = () => {
   }, [session, status]);
 
   return (
+    <>
+    <header className="min-h-[25vh] w-full flex flex-col items-center justify-center bg-ayicc-light-green"></header>
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
         Register Your Details
@@ -223,6 +225,7 @@ const Register = () => {
         <div ref={messageRef}></div>
       </form>
     </main>
+    </>
   );
 };
 

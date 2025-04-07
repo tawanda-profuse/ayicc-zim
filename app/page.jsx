@@ -282,7 +282,7 @@ export default function Home() {
                     {events.map((item, index) => (
                       <div
                         key={index}
-                        className="relative shadow-sm shadow-color-2 rounded-sm md:max-h-[85vh]"
+                        className="relative shadow-sm shadow-color-2 rounded-sm"
                       >
                         <Image
                           src={item.image}
