@@ -232,18 +232,19 @@ body {
 
 @keyframes scroll {
   from {
-    transform: translateX(50%);
+    transform: translateX(90%);
   }
-
+  
   to {
-    transform: translateX(-100%);
+    transform: translateX(-30%);
   }
 }
 
 .animate-scroll {
   display: flex;
   min-width: 100%;
-  animation: scroll 150s linear infinite;
+  /* animation: scroll 150s linear infinite; */
+  animation: scroll 50s linear infinite;
 }
 
 .required-field::after {

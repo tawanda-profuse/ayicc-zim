@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://ayicczimbabwe.org.zw/about</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/admin/events</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/admin</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/admin/users</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/events</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/events/create</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/initiatives</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/innovation-hub/profiles</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/forgot-password</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/contact</loc><lastmod>2025-04-02T12:31:33.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/innovation-hub</loc><lastmod>2025-04-02T12:31:33.535Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/login</loc><lastmod>2025-04-02T12:31:33.535Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/register</loc><lastmod>2025-04-02T12:31:33.535Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw/reset-password</loc><lastmod>2025-04-02T12:31:33.535Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://ayicczimbabwe.org.zw</loc><lastmod>2025-04-02T12:31:33.535Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/about</loc><lastmod>2025-04-07T11:05:02.446Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/admin/events</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/admin/users</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/admin</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/contact</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/events/create</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/forgot-password</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/events</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/innovation-hub/profiles</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/initiatives</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/register</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/reset-password</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/login</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ayicczimbabwe.org.zw/innovation-hub</loc><lastmod>2025-04-07T11:05:02.447Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
