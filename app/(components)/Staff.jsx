@@ -1,5 +1,5 @@
 import React from "react";
-import mhandu from "../../public/images/mhandu.jpg";
+import mhandu from "../../public/images/IMG_9029.jpg";
 import tashinga from "../../public/images/tashinga-chikomba.jpg";
 import panashe from "../../public/images/panashe.jpg";
 import lovemore from "../../public/images/lovemore.jpg";
@@ -33,11 +33,11 @@ const Staff = () => {
           title: "Projects Manager",
         },
       ].map((staff, index) => (
-        <div className="flex flex-col gap-4 text-lg" key={index}>
+        <div className="flex flex-col gap-4 text-lg shadow-lg shadow-[#ccc] rounded-md" key={index}>
           <Image
             src={staff.image}
             alt={staff.name}
-            className="mx-auto h-[50vh] md:h-[70vh] w-full object-contain"
+            className="mx-auto max-h-[50vh] md:h-[70vh] w-full object-contain"
           />
           <div className="flex flex-col items-center md:items-start gap-2 p-2">
             <h3>
