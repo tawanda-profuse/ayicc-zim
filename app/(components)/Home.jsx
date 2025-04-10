@@ -41,7 +41,7 @@ const Home = ({ allEvents, events }) => {
       <header className="min-h-screen w-full flex flex-col gap-12 items-center justify-center select-none bg-home-header">
         <div className="w-[90vw] md:w-[30rem] text-white slide-in">
           <h1
-            className={`text-6xl md:text-9xl  text-center underline ${poppinsBlack.className}`}
+            className={`text-6xl text-center underline italic ${poppinsBlack.className}`}
           >
             AYICC
           </h1>

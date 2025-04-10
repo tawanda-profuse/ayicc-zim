@@ -80,7 +80,7 @@ const Navbar = () => {
             src={logo}
             alt="Company logo"
             className="nav-image"
-            priority // Add this property
+            priority
           />
         </Link>
         <div
