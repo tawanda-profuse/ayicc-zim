@@ -5,6 +5,8 @@ import grass from "../public/images/grass.png";
 
 const NotFound = () => {
   return (
+    <>
+    <header className="min-h-[35vh] bg-ayicc-light-green"></header>
     <main className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[70vh]">
       <section className="flex flex-col md:flex-row items-start justify-center gap-[2rem]">
         <div className="flex flex-col w-full md:w-2/4 gap-[1rem]">
@@ -27,6 +29,7 @@ const NotFound = () => {
         />
       </section>
     </main>
+    </>
   );
 };
 

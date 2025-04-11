@@ -23,7 +23,7 @@ const Admin = () => {
   
   return (
     <>
-      <header className="min-h-[25vh] bg-ayicc-light-green"></header>
+      <header className="min-h-[35vh] bg-ayicc-light-green"></header>
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
       <section className="min-h-[60vh]">
         <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
