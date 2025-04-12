@@ -175,7 +175,7 @@ const page = () => {
           >
             Staff
           </h2>
-          {/* <Staff/> */}
+          <Staff/>
           <a
             href="https://drive.google.com/file/d/1M2J_UcfJvUmtHOQA9Z0cyLOrd_XUE4NE/view?usp=sharing"
             target="_blank"

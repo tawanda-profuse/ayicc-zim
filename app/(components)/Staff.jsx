@@ -9,7 +9,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Staff = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 justify-center mx-auto gap-8 font-serif">
+    <div className="grid grid-cols-1 md:grid-cols-3 justify-center mx-auto gap-8 my-8 font-serif">
       {[
         {
           name: "Jean-Betrand Mhandu",
@@ -33,11 +33,11 @@ const Staff = () => {
           title: "Projects Manager",
         },
       ].map((staff, index) => (
-        <div className="flex flex-col gap-4 text-lg shadow-lg shadow-[#ccc] rounded-md" key={index}>
+        <div className="flex flex-col gap-4 text-lg shadow-lg shadow-[#ccc] border border-[#ccc] rounded-md" key={index}>
           <Image
             src={staff.image}
             alt={staff.name}
-            className="mx-auto max-h-[50vh] md:h-[70vh] w-full object-contain"
+            className="mx-auto w-full max-h-[70vh] object-contain"
           />
           <div className="flex flex-col items-center md:items-start gap-2 p-2">
             <h3>
@@ -46,7 +46,7 @@ const Staff = () => {
             {staff.phone && (
               <span className="flex gap-2 items-center">
                 <FontAwesomeIcon icon={faPhone} className="w-[2rem]" />
-                <a href={`mailto:${staff.phone}`} className="underline">
+                <a href={`tel:${staff.phone}`} className="underline">
                   {staff.phone}
                 </a>
               </span>

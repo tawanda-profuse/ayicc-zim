@@ -77,7 +77,7 @@ const Home = ({ allEvents, events }) => {
           </div>
         )}
         {/* Staff section */}
-        {/* <section
+        <section
           className="py-[2rem] px-[1rem] md:px-[4rem] min-h-[80vh] flex flex-col items-center gap-8 text-black"
           id="staff"
         >
@@ -87,14 +87,14 @@ const Home = ({ allEvents, events }) => {
             Leadership
           </h2>
           <Staff />
-        </section> */}
+        </section>
         <section className="py-[2rem] px-[1rem] md:px-[4rem] flex flex-col md:flex-row justify-center items-center gap-[2rem]">
           <Image
             src={donate2}
             alt="Connecting Global Trade, Investment, and Technology"
-            className="w-full md:w-2/4 h-auto max-h-screen"
+            className="w-full md:w-2/4 h-auto max-h-screen order-2 md:order-1"
           />
-          <div className="flex flex-col gap-8 w-full md:w-2/4">
+          <div className="flex flex-col gap-8 w-full md:w-2/4 order-1 md:order-2">
             <h2 className="heading-special text-3xl">Impact</h2>
             <p className="text-xl">
               A platform for African youths led by youths in influencing climate
