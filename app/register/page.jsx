@@ -1,11 +1,4 @@
 "use client";
-import {
-  faChevronRight,
-  faEye,
-  faEyeSlash,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -148,8 +141,9 @@ const Register = () => {
 
       if (response.ok) {
         setSuccessMessage(
-          "Account created successfully! Please wait to be given access by the administrator."
+          "Registration successful! Please wait for the administrator to grant you access. You’ll receive an email once your account is activated."
         );
+        toast.success("Registration successful");
         messageRef.current?.scrollIntoView({ behavior: "smooth" });
         setFormData({
           firstName: "",
@@ -185,46 +179,46 @@ const Register = () => {
 
   return (
     <>
-    <header className="min-h-[35vh] w-full flex flex-col items-center justify-center bg-ayicc-light-green"></header>
-    <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-      <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
-        Register Your Details
-      </h1>
-      <form
-        className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
-        onSubmit={handleSubmit}
-      >
-        <UserForm
-          isNew={true}
-          loading={loading}
-          handleChange={handleChange}
-          firstNameRef={firstNameRef}
-          lastNameRef={lastNameRef}
-          emailRef={emailRef}
-          passwordRef={passwordRef}
-          password2Ref={password2Ref}
-          userTypeRef={userTypeRef}
-          formData={formData}
-        />
-        <p className="mb-6">
-          Already have an account?{" "}
-          <Link href="/login" className="text-ayicc-dark-green underline">
-            Login
-          </Link>
-        </p>
-        {successMessage && (
-          <p
-            ref={errorMessageRef}
-            className={`font-bold ${
-              isError ? "text-red-500" : "text-green-600"
-            }`}
-          >
-            {successMessage}
+      <header className="min-h-[35vh] w-full flex flex-col items-center justify-center bg-ayicc-light-green"></header>
+      <main className="py-[2rem] px-[1rem] md:px-[4rem]">
+        <h1 className="text-center font-bold underline md:underline-offset-[1rem] decoration-ayicc-dark-green decoration-[0.4rem] text-3xl my-12">
+          Join the Innovation Hub
+        </h1>
+        <form
+          className="w-full md:w-[50vw] mx-auto flex flex-col gap-2"
+          onSubmit={handleSubmit}
+        >
+          <UserForm
+            isNew={true}
+            loading={loading}
+            handleChange={handleChange}
+            firstNameRef={firstNameRef}
+            lastNameRef={lastNameRef}
+            emailRef={emailRef}
+            passwordRef={passwordRef}
+            password2Ref={password2Ref}
+            userTypeRef={userTypeRef}
+            formData={formData}
+          />
+          <p className="mb-6">
+            Already have an account?{" "}
+            <Link href="/login" className="text-ayicc-dark-green underline">
+              Login
+            </Link>
           </p>
-        )}
-        <div ref={messageRef}></div>
-      </form>
-    </main>
+          {successMessage && (
+            <p
+              ref={errorMessageRef}
+              className={`font-bold ${
+                isError ? "text-red-500" : "text-green-600"
+              }`}
+            >
+              {successMessage}
+            </p>
+          )}
+          <div ref={messageRef}></div>
+        </form>
+      </main>
     </>
   );
 };

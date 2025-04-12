@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import { redirect } from "next/navigation";
 
 const fetchEventDetails = async (id) => {
   try {

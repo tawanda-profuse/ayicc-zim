@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { Poppins } from "next/font/google";
+import { redirect } from "next/navigation";
 
 const poppinsBlack = Poppins({
   weight: "900",

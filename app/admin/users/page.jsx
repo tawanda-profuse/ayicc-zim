@@ -11,6 +11,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Poppins } from "next/font/google";
 import { toast } from "react-toastify";
+import { redirect } from "next/navigation";
 
 const poppinsBlack = Poppins({
   weight: "900",

@@ -3,6 +3,7 @@ import EventForm from "@/app/(components)/EventForm";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { redirect } from "next/navigation";
 
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
