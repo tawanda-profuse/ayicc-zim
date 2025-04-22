@@ -98,7 +98,7 @@ const Events = () => {
             </div>
             <article className="relative shadow-sm shadow-color-2 rounded-sm">
               <Image
-                src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png"
+                src="https://i.ibb.co/KMBKtsx/ayicc-logo.png"
                 alt="AYICC logo"
                 className="events-image"
                 width={200}

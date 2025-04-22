@@ -101,7 +101,7 @@ export async function POST(req) {
           <p>The new member will not be able to login until you authorize them. You can authorize users by logging in and going to the Admin Portal.</p>
           </br/>
           <p>Regards,</p>
-          <img src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png" alt="African Youth Initiative on Climate Change Logo" style="width: 50%; height: auto; display: block;"/>
+          <img src="https://i.ibb.co/KMBKtsx/ayicc-logo.png" alt="African Youth Initiative on Climate Change Logo" style="width: 50%; height: auto; display: block;"/>
                   `,
     });
 

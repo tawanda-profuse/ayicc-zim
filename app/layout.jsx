@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "AYICC Zimbabwe",
               url: "https://ayicczimbabwe.org.zw",
-              logo: "https://i.ibb.co/wrPKQBC7/ayicc-logo.png",
+              logo: "https://i.ibb.co/KMBKtsx/ayicc-logo.png",
               description:
                 "The African Youth Initiative on Climate Change Zimbabwe (AYICC) is a platform for African youths led by youths in influencing climate action through areas such as engaging young people and creating resilient communities through climate change awareness programs.",
               sameAs: ["https://www.facebook.com/AYICCZimbabwe/"],

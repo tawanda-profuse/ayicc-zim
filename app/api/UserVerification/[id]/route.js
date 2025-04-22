@@ -49,7 +49,7 @@ export async function PUT(req, { params }) {
         <p>Sincerely,</p>
         </br/>
         <strong>AYICC</strong>
-        <img src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png" alt="African Youth Initiative on Climate Change Logo" style="width: 50%; height: auto; display: block;"/>
+        <img src="https://i.ibb.co/KMBKtsx/ayicc-logo.png" alt="African Youth Initiative on Climate Change Logo" style="width: 50%; height: auto; display: block;"/>
                       `,
     });
 

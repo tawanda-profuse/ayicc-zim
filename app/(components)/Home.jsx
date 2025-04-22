@@ -209,11 +209,9 @@ const Home = ({ allEvents, events }) => {
               {events.length > 0 ? (
                 <>
                   <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-8 py-6">
-                    <div
-                      className="relative shadow-sm shadow-color-2 rounded-sm"
-                    >
+                    <div className="relative shadow-sm shadow-color-2 rounded-sm">
                       <Image
-                        src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png"
+                        src="https://i.ibb.co/KMBKtsx/ayicc-logo.png"
                         alt="AYICC logo"
                         className="w-full h-2/4"
                         width={200}

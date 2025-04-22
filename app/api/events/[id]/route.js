@@ -56,7 +56,7 @@ export async function PUT (
 
     const body = await request.json()
     if(!body.image){
-      body.image = "https://i.ibb.co/wrPKQBC7/ayicc-logo.png"
+      body.image = "https://i.ibb.co/KMBKtsx/ayicc-logo.png"
     }
 
     Object.assign(event, body)

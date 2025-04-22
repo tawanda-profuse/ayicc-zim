@@ -23,7 +23,7 @@ const eventSchema = new Schema(
     location: String,
     image: {
       type: String,
-      default: "https://i.ibb.co/wrPKQBC7/ayicc-logo.png",
+      default: "https://i.ibb.co/KMBKtsx/ayicc-logo.png",
     },
     description: String,
   },
