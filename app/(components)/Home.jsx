@@ -209,6 +209,35 @@ const Home = ({ allEvents, events }) => {
               {events.length > 0 ? (
                 <>
                   <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-8 py-6">
+                    <div
+                      className="relative shadow-sm shadow-color-2 rounded-sm"
+                    >
+                      <Image
+                        src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png"
+                        alt="AYICC logo"
+                        className="w-full h-2/4"
+                        width={200}
+                        height={200}
+                      />
+                      <div className="absolute top-2 left-2 py-1 rounded-md flex flex-col items-center bg-white min-w-[5rem]">
+                        <span className="font-bold text-2xl">
+                          Every Thursday
+                        </span>
+                      </div>
+                      <div className="flex flex-col gap-2 mt-[2rem] p-4">
+                        <h3 className="heading-special text-2xl">
+                          Thursday Climate Talk
+                        </h3>
+                        <span className="text-color-2 flex gap-1 items-center">
+                          <FontAwesomeIcon icon={faClockFour} />
+                          Thursdays (All Day)
+                        </span>
+                        <span className="text-color-2 flex gap-1 items-center">
+                          <FontAwesomeIcon icon={faLocationPin} />
+                          Harare, Zimbabwe
+                        </span>
+                      </div>
+                    </div>
                     {events.map((item, index) => (
                       <div
                         key={index}

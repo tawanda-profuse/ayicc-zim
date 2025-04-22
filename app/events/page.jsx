@@ -96,6 +96,31 @@ const Events = () => {
                 Clear
               </button>
             </div>
+            <article className="relative shadow-sm shadow-color-2 rounded-sm">
+              <Image
+                src="https://i.ibb.co/wrPKQBC7/ayicc-logo.png"
+                alt="AYICC logo"
+                className="events-image"
+                width={200}
+                height={200}
+              />
+              <div className="flex flex-col gap-2 mt-[2rem] p-4">
+                <h3 className="heading-special text-2xl">
+                  Thursday Climate Talk
+                </h3>
+                <span className="text-color-2 flex gap-1 items-center">
+                  <FontAwesomeIcon icon={faClockFour} />
+                  Thursdays (All Day)
+                </span>
+                <span className="text-color-2 flex gap-1 items-center">
+                  <FontAwesomeIcon icon={faLocationPin} />
+                  Harare, Zimbabwe
+                </span>
+                <p className="text-lg">
+                A platform for young people to engage in meaningful discussions about the environment and climate change, fostering awareness and actionable solutions for a sustainable future.
+                </p>
+              </div>
+            </article>
             {events?.length > 0 ? (
               <>
                 {events?.map((item, index) => (
