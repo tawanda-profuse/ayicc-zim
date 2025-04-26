@@ -66,6 +66,14 @@ const Home = ({ allEvents, events }) => {
             </span>
             <div className="flex whitespace-nowrap animate-scroll">
               <div className="flex gap-12">
+                <span>
+                  <FontAwesomeIcon icon={faTree} /> April 22,{" "}
+                  {new Date().getFullYear()} - Earth Day (Worldwide)
+                </span>
+                <span>
+                  <FontAwesomeIcon icon={faTree} /> Every Thursday, - Thursday
+                  Climate Talks (Harare, Zimbabwe)
+                </span>
                 {allEvents.map((item, index) => (
                   <span key={index}>
                     <FontAwesomeIcon icon={faTree} /> {item.formattedDate} -{" "}

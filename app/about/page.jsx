@@ -179,7 +179,7 @@ const page = () => {
           <a
             href="https://drive.google.com/file/d/1M2J_UcfJvUmtHOQA9Z0cyLOrd_XUE4NE/view?usp=sharing"
             target="_blank"
-            className="text-xl font-semibold text-center transition-all hover:underline text-ayicc-dark-green"
+            className="py-2 px-4 rounded-2xl bg-ayicc-dark-green font-bold opacity-90 transition-all hover:opacity-100 hover:scale-[1.2] min-w-[10rem] self-center text-center text-3xl"
           >
             View Our Organogram{" "}
             <FontAwesomeIcon icon={faExternalLink} className="w-[1rem]" />

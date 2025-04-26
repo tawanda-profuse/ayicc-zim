@@ -117,7 +117,37 @@ const Events = () => {
                   Harare, Zimbabwe
                 </span>
                 <p className="text-lg">
-                A platform for young people to engage in meaningful discussions about the environment and climate change, fostering awareness and actionable solutions for a sustainable future.
+                  A platform for young people to engage in meaningful
+                  discussions about the environment and climate change,
+                  fostering awareness and actionable solutions for a sustainable
+                  future.
+                </p>
+              </div>
+            </article>
+            <article className="relative shadow-sm shadow-color-2 rounded-sm">
+              <Image
+                src="https://enablingdevices.com/wp-content/uploads/2024/04/EarthDay.jpg"
+                alt="Earth Day"
+                className="events-image"
+                width={200}
+                height={200}
+              />
+              <div className="flex flex-col gap-2 mt-[2rem] p-4">
+                <h3 className="heading-special text-2xl">Earth Day</h3>
+                <span className="text-color-2 flex gap-1 items-center">
+                  <FontAwesomeIcon icon={faClockFour} />
+                  April 22, {new Date().getFullYear()}
+                </span>
+                <span className="text-color-2 flex gap-1 items-center">
+                  <FontAwesomeIcon icon={faLocationPin} />
+                  Wordwide
+                </span>
+                <p className="text-lg">
+                  Earth Day is an annual event on April 22 to demonstrate
+                  support for environmental protection. First held on April 22,
+                  1970, it now includes a wide range of events coordinated
+                  globally through earthday.org including 1 billion people in
+                  more than 193 countries.
                 </p>
               </div>
             </article>
