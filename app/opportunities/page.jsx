@@ -26,7 +26,7 @@ const OpportunitiesPage = () => {
             <li>
               <Link
                 href="/opportunities/call-centre-agent"
-                className="hover:underline text-ayicc-dark-green"
+                className="hover:underline transition-all text-ayicc-dark-green hover:pl-2"
               >
                 Call Centre Agent
               </Link>
@@ -34,7 +34,7 @@ const OpportunitiesPage = () => {
             <li>
               <Link
                 href="/opportunities/sustainability-intern"
-                className="hover:underline text-ayicc-dark-green"
+                className="hover:underline transition-all text-ayicc-dark-green hover:pl-2"
               >
                 Sustainability Intern
               </Link>
