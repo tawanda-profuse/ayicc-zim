@@ -129,6 +129,15 @@ const Navbar = () => {
             Upcoming Events
           </Link>
           <Link
+            href="/opportunities"
+            className={`${getLinkClass(
+              "/innovation-hub"
+            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
+            onClick={() => setShowNavbar(false)}
+          >
+            Opportunities
+          </Link>
+          <Link
             href="/innovation-hub"
             className={`${getLinkClass(
               "/innovation-hub"

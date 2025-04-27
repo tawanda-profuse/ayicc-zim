@@ -47,7 +47,7 @@ const Home = ({ allEvents, events }) => {
           </h1>
         </div>
         <Link
-          href="/register"
+          href="/opportunities"
           className="rounded-2xl w-[15rem] text-xl transition-all hover:scale-[1.1] bg-ayicc-dark-green text-white p-4 appear text-center"
         >
           Join Us
