@@ -83,7 +83,7 @@ const Contact = () => {
               Please let us know if you have a question, want to leave a
               comment, or would like further information about AYICC.
             </p>
-            <h1 className="my-[1rem] font-bold text-2xl">Contact Details</h1>
+            <h1 className="my-[1rem] font-bold text-2xl font-[family-name:var(--font-poppins)]">Contact Details</h1>
             <div className="flex gap-3 items-center">
               <FontAwesomeIcon
                 icon={faLocationPin}
