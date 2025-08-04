@@ -146,7 +146,7 @@ const Home = ({ allEvents, events }) => {
             className="w-full md:w-2/4 h-auto max-h-screen order-2 md:order-1"
           />
           <div className="flex flex-col gap-8 w-full md:w-2/4 order-1 md:order-2">
-            <h2 className="heading-special text-3xl">Impact</h2>
+            <h2 className="heading-special text-3xl font-[family-name:var(--font-poppins)]">Impact</h2>
             <p className="text-xl">
               A platform for African youths led by youths in influencing climate
               action through areas such as engaging young people and creating
@@ -167,7 +167,7 @@ const Home = ({ allEvents, events }) => {
           </div>
         </section>
         <section className="pt-[4rem] px-[2rem] md:px-[4rem] pb-[3rem]">
-          <h2 className="text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl mb-[3rem]">
+          <h2 className="text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-3xl mb-[3rem] font-[family-name:var(--font-poppins)]">
             Top Stories
           </h2>
           <ul className="list-disc text-xl font-semibold">
@@ -245,7 +245,7 @@ const Home = ({ allEvents, events }) => {
           </div>
         </section>
         <section className="py-[4rem] px-[1rem] md:px-[4rem]" ref={eventsRef}>
-          <h2 className="heading-special text-3xl">Upcoming Events:</h2>
+          <h2 className="heading-special text-3xl font-[family-name:var(--font-poppins)]">Upcoming Events:</h2>
           <Suspense
             fallback={
               <div className="min-h-[20vh] flex flex-col items-center justify-center">
