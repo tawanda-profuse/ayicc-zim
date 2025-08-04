@@ -90,19 +90,17 @@ export async function POST(req) {
       html: `
           <p>Good day,</p>
           <p>A new member has been registered with the following details:</p>
-          </br/>
+          <br/>
           <ul>
           <li><strong>Name:</strong> ${userData.firstName} ${userData.lastName}</li>
           <li><strong>Email:</strong> ${userData.email}</li>
           <li><strong>Registration Type:</strong> ${userData.userType}</li>
           </ul>
-          </br/>
-          </br/>
+          <br/>
+          <br/>
           <p>The new member will not be able to login until you authorize them. You can authorize users by logging in and going to the Admin Portal.</p>
-          </br/>
-          <p>Regards,</p>
-          <img src="https://i.ibb.co/KMBKtsx/ayicc-logo.png" alt="African Youth Initiative on Climate Change Logo" style="width: 50%; height: auto; display: block;"/>
-                  `,
+          <br/>
+          <p>Regards,</p>`,
     });
 
     return NextResponse.json(

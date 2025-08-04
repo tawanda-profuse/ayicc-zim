@@ -1,7 +1,6 @@
 import React from "react";
 import mhandu from "../../public/images/IMG_9029.jpg";
 import tashinga from "../../public/images/tashinga-chikomba.jpg";
-import panashe from "../../public/images/panashe.jpg";
 import lovemore from "../../public/images/lovemore.jpg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,12 +25,7 @@ const Staff = () => {
           name: "Tashinga Chikomba",
           image: tashinga,
           title: "Environmental Scientist",
-        },
-        {
-          name: "Panashe Sakupwanya",
-          image: panashe,
-          title: "Projects Manager",
-        },
+        }
       ].map((staff, index) => (
         <div className="flex flex-col gap-4 text-lg shadow-lg shadow-[#ccc] border border-[#ccc] rounded-md" key={index}>
           <Image
