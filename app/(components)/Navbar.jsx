@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../../public/images/ayicc-logo.png";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -74,17 +72,15 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="absolute z-[100] top-0 left-0 w-full bg-transparent flex items-center justify-between px-2 md:px-8 font-bold md:text-[1rem]">
-        <Link href="/">
-          <Image
-            src={logo}
-            alt="Company logo"
-            className="nav-image"
-            priority
-          />
+      <nav className="absolute z-[100] top-0 left-0 w-full bg-transparent flex items-center justify-between p-2 md:px-8 font-bold md:text-[1rem]">
+        <Link
+          href="/"
+          className="text-ayicc-dark-green text-4xl font-extrabold bg-white py-1 px-2 rounded-lg transition-all hover:scale-110"
+        >
+          AYICC ZIM
         </Link>
         <div
-          className={`text-xl md:text-lg flex items-center transition-all duration-[1000ms] ease-in-out fixed md:relative flex-col md:flex-row ${
+          className={`text-xl md:text-[1rem] flex items-center transition-all duration-[1000ms] ease-in-out fixed md:relative flex-col md:flex-row ${
             showNavbar
               ? "w-full min-h-screen top-0 left-0 bg-white z-50 max-h-screen overflow-y-auto opacity-100 py-[2rem] justify-center"
               : "-top-full -right-full opacity-0"
@@ -96,15 +92,6 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={faTimes} />
           </button>
-          <Link
-            href="/"
-            className={`${getLinkClass(
-              "/"
-            )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
-            onClick={() => setShowNavbar(false)}
-          >
-            Home
-          </Link>
           <DropDown
             mainLink={"/about"}
             mainLinkText={"About"}
@@ -131,7 +118,7 @@ const Navbar = () => {
           <Link
             href="/opportunities"
             className={`${getLinkClass(
-              "/innovation-hub"
+              "/opportunities"
             )} hover:text-ayicc-dark-green py-[1.38rem] px-[0.99rem] transition-all duration-[0.3]`}
             onClick={() => setShowNavbar(false)}
           >

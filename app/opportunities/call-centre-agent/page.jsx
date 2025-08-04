@@ -62,10 +62,10 @@ const CallCentreAgent = () => {
         <p>
           To apply, send your updated CV and a brief cover letter to{" "}
           <a
-            href="mailto:panashesakupwanya@gmail.com"
+            href="mailto:ayicczim@gmail.com"
             className="text-ayicc-dark-green hover:underline"
           >
-            panashesakupwanya@gmail.com
+            ayicczim@gmail.com
           </a>
         </p>
       </section>

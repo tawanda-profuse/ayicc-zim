@@ -1,4 +1,4 @@
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Comme } from "next/font/google";
 import "./globals.css";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
@@ -10,6 +10,12 @@ import "react-toastify/dist/ReactToastify.css";
 const openSans = Open_Sans({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const aclonica = Comme({
+  variable: "--font-aclonica",
+  subsets: ["latin"],
+  weight: "400"
 });
 
 export const metadata = {
@@ -57,7 +63,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${openSans.variable} antialiased`}>
+      <body className={`${openSans.variable} ${aclonica.variable} antialiased`}>
         <AuthProvider>
           <Navbar />
           {children}

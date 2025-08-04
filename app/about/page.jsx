@@ -29,7 +29,7 @@ const page = () => {
           About Us
         </h1>
       </header>
-      <main>
+      <main className="font-[family-name:var(--font-geist-mono)] text-[#555]">
         <section className="py-[2rem] px-[1rem] md:px-[4rem]">
           <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
             AYICC Zimbabwe Overview
@@ -186,7 +186,7 @@ const page = () => {
           </a>
         </section>
         <section
-          className="pt-[2rem] pb-[3rem] bg-about-key-areas"
+          className="pt-[2rem] pb-[3rem] bg-about-key-areas text-black"
           id="thematic-areas"
         >
           <h3

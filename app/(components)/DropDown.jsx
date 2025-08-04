@@ -18,7 +18,7 @@ const DropDown = ({ links, styles, setShowNavbar, mainLinkText, mainLink }) => {
           {mainLinkText}
         </Link>
         <div
-          className={`bg-white border-t-4 border-t-ayicc-dark-green absolute z-50 transition-all ease-in-out bottom-0 -left-2/4 bg-inherit w-[200%] translate-y-full rounded-md flex flex-col items-center justify-center hover:opacity-100 hover:visible text-color-1 ${
+          className={`bg-white border-t-4 border-t-ayicc-dark-green absolute z-50 transition-all ease-in-out bottom-0 -left-2/4 bg-inherit w-[50vw] translate-y-full rounded-md flex flex-col items-center justify-center hover:opacity-100 hover:visible text-color-1 ${
             showLinks ? "opacity-100" : "opacity-0 invisible"
           }`}
         >

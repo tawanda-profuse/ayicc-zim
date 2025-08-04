@@ -25,6 +25,18 @@ import {
 import donate2 from "../../public/images/donate-2.jpg";
 import Staff from "./Staff";
 import Image from "next/image";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import headerImg1 from "../../public/images/social.jpg";
+import headerImg2 from "../../public/images/animation-2.jpg";
+import headerImg3 from "../../public/images/animation-3.jpg";
+import headerImg4 from "../../public/images/chivero.jpg";
+import headerImg5 from "../../public/images/animation-4.jpg";
+import headerImg6 from "../../public/images/animation-5.jpg";
+import headerImg7 from "../../public/images/animation-6.jpg";
+import headerImg8 from "../../public/images/animation-7.jpg";
 
 const Home = ({ allEvents, events }) => {
   const eventsRef = useRef(null);
@@ -38,21 +50,58 @@ const Home = ({ allEvents, events }) => {
   };
   return (
     <>
-      <header className="min-h-screen w-full flex flex-col gap-12 items-center justify-center select-none bg-home-header">
-        <div className="w-[90vw] md:w-[30rem] text-white slide-in">
-          <h1
-            className={`text-6xl text-center underline italic ${poppinsBlack.className}`}
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        slidesPerView={1}
+        className="h-[90dvh] w-full"
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        loop={true}
+        allowTouchMove={false}
+        speed={4000}
+        breakpoints={{
+              320: { slidesPerView: 1 },
+              640: { slidesPerView: 1 },
+              1024: { slidesPerView: 1 },
+            }}
+      >
+        {[
+          { image: headerImg1 },
+          { image: headerImg2 },
+          { image: headerImg3 },
+          { image: headerImg4 },
+          { image: headerImg5 },
+          { image: headerImg6 },
+          { image: headerImg7 },
+          { image: headerImg8 },
+        ].map((item, index) => (
+          <SwiperSlide
+            key={index}
+            className="relative"
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${item.image.src})`,
+              backgroundPosition: "top",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
           >
-            AYICC
-          </h1>
-        </div>
-        <Link
-          href="/opportunities"
-          className="rounded-2xl w-[15rem] text-xl transition-all hover:scale-[1.1] bg-ayicc-dark-green text-white p-4 appear text-center"
-        >
-          Join Us
-        </Link>
-      </header>
+            <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 slide-in flex flex-col gap-12 items-center justify-center">
+              <div className="w-[90%] md:w-[30rem] text-white">
+                <h1
+                  className={`text-6xl text-center underline italic ${poppinsBlack.className}`}
+                >
+                  AYICC
+                </h1>
+              </div>
+              <Link
+                href="/opportunities"
+                className="rounded-2xl w-[15rem] text-xl transition-all hover:scale-[1.1] bg-ayicc-dark-green text-white p-4 appear text-center"
+              >
+                Join Us
+              </Link>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <main>
         {allEvents.length > 0 && (
           <div
