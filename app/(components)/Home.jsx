@@ -1,12 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { Suspense, useRef } from "react";
-import { Poppins } from "next/font/google";
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 import { toast } from "react-toastify";
 import dynamic from "next/dynamic";
 const FontAwesomeIcon = dynamic(() =>
@@ -53,43 +47,43 @@ const Home = ({ allEvents, events }) => {
       <Swiper
         modules={[Autoplay, EffectFade]}
         slidesPerView={1}
-        className="h-[100dvh] w-full"
+        className="h-[100dvh] w-full relative"
         autoplay={{ delay: 1000, disableOnInteraction: false }}
         loop={true}
         allowTouchMove={false}
         speed={4000}
         breakpoints={{
-              320: { slidesPerView: 1 },
-              640: { slidesPerView: 1 },
-              1024: { slidesPerView: 1 },
-            }}
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 1 },
+          1024: { slidesPerView: 1 },
+        }}
       >
         {[
-          { image: headerImg1 },
-          { image: headerImg2 },
-          { image: headerImg3 },
-          { image: headerImg4 },
-          { image: headerImg5 },
-          { image: headerImg6 },
-          { image: headerImg7 },
-          { image: headerImg8 },
+          { image: headerImg1, position: "top", text: "AYICC" },
+          { image: headerImg2, position: "center", text: "African" },
+          { image: headerImg3, position: "center", text: "Youth" },
+          { image: headerImg4, position: "center", text: "Initiative" },
+          { image: headerImg5, position: "center", text: "On" },
+          { image: headerImg6, position: "center", text: "Climate" },
+          { image: headerImg7, position: "center", text: "Change" },
+          { image: headerImg8, position: "center", text: "Zimbabwe" },
         ].map((item, index) => (
           <SwiperSlide
             key={index}
             className="relative"
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${item.image.src})`,
-              backgroundPosition: "center",
+              backgroundPosition: item.position,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 slide-in flex flex-col gap-12 items-center justify-center">
+            <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 flex flex-col gap-12 items-center justify-center">
               <div className="w-[90%] md:w-[30rem] text-white">
                 <h1
-                  className={`text-6xl text-center underline italic ${poppinsBlack.className}`}
+                  className={`text-6xl md:text-9xl text-center uppercase font-bold font-[family-name:var(--font-poppins)]`}
                 >
-                  AYICC
+                  {item.text}
                 </h1>
               </div>
               <Link
@@ -139,7 +133,7 @@ const Home = ({ allEvents, events }) => {
           id="staff"
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)]`}
           >
             Leadership
           </h2>
@@ -347,7 +341,7 @@ const Home = ({ allEvents, events }) => {
           </Suspense>
         </section>
         <section className="min-h-[50vh] py-[2rem] px-[1rem] md:px-[4rem] flex flex-col gap-8 bg-yellow-300">
-          <h2 className={`text-5xl text-center ${poppinsBlack.className}`}>
+          <h2 className={`text-5xl text-center font-[family-name:var(--font-poppins)]`}>
             Sign Up for Newsletter
           </h2>
           <form

@@ -1,12 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Poppins } from "next/font/google";
 import Link from "next/link";
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const Profiles = () => {
   const userData = [
@@ -189,7 +183,7 @@ const Profiles = () => {
     <>
       <header className="min-h-[80vh] w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4 bg-innovation-hub">
         <h1
-          className={`text-white md:bg-[#00000099] py-4 uppercase text-3xl md:text-6xl no-underline md:underline slide-in text-center w-full ${poppinsBlack.className}`}
+          className={`text-white md:bg-[#00000099] py-4 uppercase text-3xl md:text-6xl no-underline md:underline slide-in text-center w-full font-[family-name:var(--font-poppins)]`}
         >
           Profiles
         </h1>

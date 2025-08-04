@@ -6,13 +6,6 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { faSpinner, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Poppins } from "next/font/google";
-
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const AdminEvents = ({ initialEvents, initialTotalPages }) => {
   const { data: session, status } = useSession();
@@ -85,7 +78,7 @@ const AdminEvents = ({ initialEvents, initialTotalPages }) => {
     <>
       <header className="min-h-[35vh] bg-ayicc-light-green"></header>
       <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-        <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+        <h1 className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}>
           Manage Events
         </h1>
         <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">

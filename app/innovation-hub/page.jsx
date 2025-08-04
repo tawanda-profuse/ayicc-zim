@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { Poppins } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightFromBracket,
@@ -13,11 +12,6 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import Accordion from "../(components)/Accordion";
 import { toast } from "react-toastify";
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const InnovationHub = () => {
   useEffect(() => {
@@ -94,7 +88,7 @@ const InnovationHub = () => {
       <header className="min-h-screen w-full flex flex-col md:flex-row gap-12 items-center justify-center select-none bg-no-repeat py-12 md:py-4 md:px-4 bg-innovation-hub">
         <div className="mt-[4rem] md:mt-0 w-full flex flex-col items-center md:items-start px-4 gap-4">
           <h1
-            className={`text-white md:bg-[#00000099] py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
+            className={`text-white md:bg-[#00000099] py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center font-[family-name:var(--font-poppins)]`}
           >
             Climate, Finance and Innovation Hub
           </h1>
@@ -211,7 +205,7 @@ const InnovationHub = () => {
         >
           <div className="md:pt-0 flex flex-col items-center w-full md:w-2/4">
             <h2
-              className={`pt-12 heading-special text-4xl ${poppinsBlack.className}`}
+              className={`pt-12 heading-special text-4xl font-[family-name:var(--font-poppins)]`}
             >
               Tools
             </h2>
@@ -256,7 +250,7 @@ const InnovationHub = () => {
         >
           <div className="pt-12 flex flex-col gap-8 items-center w-full md:w-2/4">
             <h2
-              className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
+              className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)]`}
             >
               Upcoming Trainings
             </h2>
@@ -272,7 +266,7 @@ const InnovationHub = () => {
           ref={opportunitiesRef}
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] text-white`}
           >
             Opportunities
           </h2>
@@ -305,7 +299,7 @@ const InnovationHub = () => {
         >
           <div className="pt-12 flex flex-col gap-8 items-center w-full md:w-2/4">
             <h2
-              className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-black`}
+              className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] text-black`}
             >
               Comment
             </h2>

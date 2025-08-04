@@ -4,16 +4,9 @@ import Image from "next/image";
 import catchThemYoung2 from "../../public/images/catch-them-young-2.jpg";
 import trash from "../../public/images/trash.jpg";
 import chiveroChallenge2 from "../../public/images/chivero-challenge-2.jpg";
-import { Poppins } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import Staff from "../(components)/Staff";
-
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const page = () => {
   useEffect(() => {
@@ -24,14 +17,14 @@ const page = () => {
     <>
       <header className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-about">
         <h1
-          className={`text-white uppercase text-6xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
+          className={`text-white uppercase text-6xl md:text-9xl slide-in text-center font-[family-name:var(--font-poppins)]`}
         >
           About Us
         </h1>
       </header>
       <main className="font-[family-name:var(--font-geist-mono)] text-[#555]">
         <section className="py-[2rem] px-[1rem] md:px-[4rem]">
-          <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+          <h1 className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}>
             AYICC Zimbabwe Overview
           </h1>
           <p className="mt-[4rem] md:my-[1rem] text-xl">
@@ -53,7 +46,7 @@ const page = () => {
         >
           <div className="grid w-full md:w-2/4 gap-y-4">
             <h2
-              className={`heading-special text-4xl ${poppinsBlack.className}`}
+              className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}
             >
               Our Goal
             </h2>
@@ -81,7 +74,7 @@ const page = () => {
           />
           <div className="grid w-full md:w-2/4 gap-y-4">
             <h2
-              className={`heading-special text-4xl ${poppinsBlack.className}`}
+              className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}
             >
               Our Vision
             </h2>
@@ -98,7 +91,7 @@ const page = () => {
         >
           <div className="grid w-full md:w-2/4 gap-y-4">
             <h2
-              className={`heading-special text-4xl ${poppinsBlack.className}`}
+              className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}
             >
               Our Mission
             </h2>
@@ -148,7 +141,7 @@ const page = () => {
           id="history"
         >
           <h2
-            className={`text-center text-white font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+            className={`text-center text-white font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] mb-[3rem]`}
           >
             History
           </h2>
@@ -171,7 +164,7 @@ const page = () => {
           id="staff"
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className}`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)]`}
           >
             Staff
           </h2>
@@ -190,7 +183,7 @@ const page = () => {
           id="thematic-areas"
         >
           <h3
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} mb-[3rem]`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] mb-[3rem]`}
           >
             Our Key Thematic Areas
           </h3>

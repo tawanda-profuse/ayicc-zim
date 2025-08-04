@@ -9,15 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Poppins } from "next/font/google";
 import { toast } from "react-toastify";
 import { redirect } from "next/navigation";
-
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const AdminUsers = () => {
   const { data: session, status } = useSession();
@@ -110,7 +103,7 @@ const AdminUsers = () => {
     <>
       <header className="min-h-[25vh] bg-ayicc-light-green"></header>
     <main className="py-[2rem] px-[1rem] md:px-[4rem]">
-      <h1 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+      <h1 className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}>
         Manage Members
       </h1>
       <ul className="list-disc pl-4 mt-12 text-xl flex flex-col gap-4">

@@ -10,12 +10,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { Poppins } from "next/font/google";
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -77,7 +71,7 @@ const Contact = () => {
     <>
       <header className="min-h-[80vh] w-full flex flex-col items-center justify-center bg-ayicc-light-green">
         <h1
-          className={`text-white py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
+          className={`text-white py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center font-[family-name:var(--font-poppins)]`}
         >
           Contact Us
         </h1>

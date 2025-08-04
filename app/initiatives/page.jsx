@@ -1,12 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-import { Poppins } from "next/font/google";
-
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const Initiatives = () => {
   useEffect(() => {
@@ -17,7 +10,7 @@ const Initiatives = () => {
     <>
       <header className="min-h-[80vh] w-full flex flex-col gap-12 items-center justify-center select-none bg-no-repeat bg-left md:bg-top bg-initiatives">
         <h1
-          className={`text-white uppercase text-5xl md:text-9xl slide-in text-center ${poppinsBlack.className}`}
+          className={`text-white uppercase text-5xl md:text-9xl slide-in text-center font-[family-name:var(--font-poppins)]`}
         >
           Initiatives
         </h1>
@@ -29,7 +22,7 @@ const Initiatives = () => {
         >
           <div className="pt-12 flex flex-col items-center w-full md:w-2/4">
             <h2
-              className={`text-center p-4 heading-special text-4xl ${poppinsBlack.className}`}
+              className={`text-center p-4 heading-special text-4xl font-[family-name:var(--font-poppins)]`}
             >
               Awareness
             </h2>
@@ -46,7 +39,7 @@ const Initiatives = () => {
           id="advocacy"
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl mb-12 ${poppinsBlack.className} text-white`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl mb-12 font-[family-name:var(--font-poppins)] text-white`}
           >
             Advocacy
           </h2>
@@ -108,7 +101,7 @@ const Initiatives = () => {
           id="climate-education"
         >
           <h2
-            className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+            className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] text-white`}
           >
             Climate Education
           </h2>
@@ -130,7 +123,7 @@ const Initiatives = () => {
         >
           <div className="py-6 flex flex-col items-center w-full md:w-2/4">
             <h2
-              className={`heading-special text-4xl text-center underline ${poppinsBlack.className}`}
+              className={`heading-special text-4xl text-center underline font-[family-name:var(--font-poppins)]`}
             >
               Bio Diversity Conservation
             </h2>
@@ -147,7 +140,7 @@ const Initiatives = () => {
           id="waste-management"
         >
           <h2
-            className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+            className={`text-center font-bold underline md:underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] text-white`}
           >
             Waste Management
           </h2>
@@ -168,7 +161,7 @@ const Initiatives = () => {
           id="food-security"
         >
           <h2
-            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-white`}
+            className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] text-white`}
           >
             Food Security
           </h2>
@@ -190,7 +183,7 @@ const Initiatives = () => {
         >
           <div className="flex flex-col items-center gap-8 w-full md:w-2/4 px-4">
             <h2
-              className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl ${poppinsBlack.className} text-black`}
+              className={`text-center font-bold underline underline-offset-[1rem] decoration-[#D1CE68] decoration-[0.4rem] text-4xl font-[family-name:var(--font-poppins)] text-black`}
             >
               Research
             </h2>

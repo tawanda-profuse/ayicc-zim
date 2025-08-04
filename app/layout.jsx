@@ -1,4 +1,4 @@
-import { Open_Sans, Comme } from "next/font/google";
+import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
@@ -12,10 +12,10 @@ const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
-const aclonica = Comme({
-  variable: "--font-aclonica",
+const poppins = Poppins({
+  weight: "900",
   subsets: ["latin"],
-  weight: "400"
+  variable: "--font-poppins",
 });
 
 export const metadata = {
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${openSans.variable} ${aclonica.variable} antialiased`}>
+      <body className={`${openSans.variable} ${poppins.variable} antialiased`}>
         <AuthProvider>
           <Navbar />
           {children}

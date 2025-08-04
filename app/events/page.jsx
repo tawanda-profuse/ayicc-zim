@@ -7,14 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Poppins } from "next/font/google";
 import { toast } from "react-toastify";
-
-const poppinsBlack = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -49,13 +42,13 @@ const Events = () => {
     <>
       <header className="min-h-[80vh] w-full flex flex-col items-center justify-center bg-ayicc-light-green">
         <h1
-          className={`text-white py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center ${poppinsBlack.className}`}
+          className={`text-white py-4 uppercase text-2xl md:text-6xl no-underline md:underline slide-in text-center font-[family-name:var(--font-poppins)]`}
         >
           Our Events
         </h1>
       </header>
       <main className="py-10 px-[1rem] md:px-[10rem] grid grid-cols-1 justify-center gap-8">
-        <h2 className={`heading-special text-4xl ${poppinsBlack.className}`}>
+        <h2 className={`heading-special text-4xl font-[family-name:var(--font-poppins)]`}>
           Upcoming Events
         </h2>
         {loading && (
