@@ -53,7 +53,7 @@ const Home = ({ allEvents, events }) => {
       <Swiper
         modules={[Autoplay, EffectFade]}
         slidesPerView={1}
-        className="h-[90dvh] w-full"
+        className="h-[100dvh] w-full"
         autoplay={{ delay: 1000, disableOnInteraction: false }}
         loop={true}
         allowTouchMove={false}
@@ -79,7 +79,7 @@ const Home = ({ allEvents, events }) => {
             className="relative"
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${item.image.src})`,
-              backgroundPosition: "top",
+              backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
