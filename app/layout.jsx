@@ -4,7 +4,6 @@ import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
 import ScrollUp from "./(components)/ScrollUp";
 import AuthProvider from "./(components)/AuthProvider";
-import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -41,7 +40,7 @@ export default function RootLayout({ children }) {
   const currentYear = new Date().getFullYear(); // Pre-render the year
   return (
     <html lang="en">
-      <Head>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -57,7 +56,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-      </Head>
+      </head>
       <body className={`${openSans.variable} antialiased`}>
         <AuthProvider>
           <Navbar />
