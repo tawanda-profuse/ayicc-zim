@@ -6,6 +6,7 @@ import ScrollUp from "./(components)/ScrollUp";
 import AuthProvider from "./(components)/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Script from "next/script";
 
 const openSans = Open_Sans({
   variable: "--font-geist-mono",
@@ -61,6 +62,12 @@ export default function RootLayout({ children }) {
               sameAs: ["https://www.facebook.com/AYICCZimbabwe/"],
             }),
           }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5686210525462186"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={`${openSans.variable} ${poppins.variable} antialiased`}>
