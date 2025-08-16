@@ -10,13 +10,13 @@ import Script from "next/script";
 
 const openSans = Open_Sans({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets: ["latin"]
 });
 
 const poppins = Poppins({
   weight: "900",
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-poppins"
 });
 
 export const metadata = {
